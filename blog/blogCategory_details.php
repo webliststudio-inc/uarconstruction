@@ -69,9 +69,9 @@
                     return minutes + " min read";
                 }
                 // FULL BLOG CONTENT (not SEO description)
-                let fullContent = $(".main-pages-content-div").text();
-                if (fullContent.trim().length > 0) {
-                    $("#blogRead").text(calculateReadTime(fullContent));
+                let fuontent = $(".main-pages-content-div").text();
+                if (fuontent.trim().length > 0) {
+                    $("#blogRead").text(calculateReadTime(fuontent));
                 } else {
                     $("#blogRead").text("1 min read");
                 }

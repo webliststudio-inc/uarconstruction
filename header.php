@@ -47,7 +47,7 @@
                     </li>
                 </a>
 
-                <a href="<?php echo $websiteUrl?>" title="Portfolio">
+                <a href="#" title="Portfolio">
                     <li id="expand-li"
                         class="<?php if (strstr($websiteAutoUrl, "$websiteUrl/portfolio")) {?> active <?php }?>">
                         Portfolio <i class="bi-plus"></i>

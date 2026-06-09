@@ -83,7 +83,7 @@
                         <div class="main-pages-content-div">
                             <h2>Grace Worship Center Construction Project</h2>
                             <p>
-                                Urban and Rural Construction LLC proudly delivered the construction of Grace Worship Center, a modern and welcoming place of worship designed to inspire faith, community, and spiritual growth. The project reflects our commitment to creating meaningful spaces that combine architectural excellence with functional design tailored for worship environments.
+                                Urban and Rural Construction  proudly delivered the construction of Grace Worship Center, a modern and welcoming place of worship designed to inspire faith, community, and spiritual growth. The project reflects our commitment to creating meaningful spaces that combine architectural excellence with functional design tailored for worship environments.
                             </p>
 
                             <h2>Project Overview</h2>
