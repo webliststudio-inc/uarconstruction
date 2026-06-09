@@ -1,5 +1,5 @@
 <?php
-class alass
+class allClass
 {
     function _otherPagesBtn($websiteUrl) { ?>
         <div class="other-pages-btn-div">
@@ -401,5 +401,5 @@ class alass
         </section>
     <?php }
 } //end of class
-$calass = new alass();
+$callclass = new allClass();
 ?>
