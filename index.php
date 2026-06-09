@@ -209,17 +209,16 @@
                             <div class="project-div" data-aos="fade-in" data-aos-duration="800">
                                 <div class="title">Completed</div>
                                 <div class="img-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/projects/project-1.jpeg"
-                                        alt=">Grace International Worship Center" />
+                                     <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-1.jpeg" alt="Grace Worship Center" />
                                 </div>
 
                                 <div class="text-div">
                                     <div class="div-in">
-                                        <h2>Grace International Worship Center</h2>
+                                        <h2>Grace Worship Center</h2>
                                         <p>Construction of a modern worship facility featuring a spacious auditorium,
                                             administrative offices, and community gathering spaces.</p>
                                         <a href="">
-                                            <button class="btn" title="Grace International Worship Center">READ MORE <i
+                                            <button class="btn" title="Grace Worship Center">READ MORE <i
                                                     class="bi-arrow-right"></i></button></a>
                                     </div>
                                 </div>
@@ -230,43 +229,43 @@
                             <div class="project-image-wrapper">
                                 <div class="project-image">
                                     <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/projects/project-1.jpeg"
-                                            alt=">Grace International Worship Center" />
+                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-2.jpeg"
+                                        alt="Downtown Office Complex" />
                                     </div>
                                 </div>
 
                                 <div class="project-image">
                                     <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/projects/project-2.jpeg"
-                                            alt=">Grace International Worship Center" />
+                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-6.jpeg"
+                                        alt="Kingdom Life Cathedral" />
                                     </div>
                                 </div>
 
                                 <div class="project-image">
                                     <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/projects/project-3.jpeg"
-                                            alt=">Grace International Worship Center" />
+                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-3.jpeg"
+                                            alt="Redeemer Assembly Church Complex" />
                                     </div>
                                 </div>
 
                                 <div class="project-image">
                                     <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/projects/project-4.jpeg"
-                                            alt=">Grace International Worship Center" />
+                                         <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-5.jpeg"
+                                        alt="CityGate Commercial Mall" />
                                     </div>
                                 </div>
 
                                 <div class="project-image">
                                     <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/projects/project-5.jpeg"
-                                            alt=">Grace International Worship Center" />
+                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-4.jpeg"
+                                        alt="New Covenant Worship Center" />
                                     </div>
                                 </div>
 
                                 <div class="project-image">
                                     <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/projects/project-6.jpeg"
-                                            alt=">Grace International Worship Center" />
+                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-7.jpeg"
+                                        alt="New Covenant Worship Center" />
                                     </div>
                                 </div>
                             </div>

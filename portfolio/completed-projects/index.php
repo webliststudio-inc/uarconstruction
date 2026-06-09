@@ -94,7 +94,7 @@
                                 <div class="title COMPLETED">COMPLETED</div>
                                 <div class="image-div">
                                     <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-1.jpeg"
-                                            alt=">Grace Worship Center" />
+                                            alt="Grace Worship Center" />
                                 </div>
                                 <div class="card-content">
                                     <h3 class="card-title" title="Grace Worship Center">Grace Worship Center</h3>
