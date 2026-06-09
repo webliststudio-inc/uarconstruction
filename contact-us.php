@@ -11,13 +11,13 @@
     <meta name="keywords"
         content="<?php echo $appName ?> contact, construction company contact USA, building contractors contact, request construction quote, construction consultation, general contractor contact, construction inquiry USA, project estimate request, commercial construction contact, residential builders contact, construction support, construction company phone email" />
     <meta name="description"
-        content="Contact Urban and Rural Construction LLC for professional construction services across the USA. Request a quote, schedule a consultation, or speak with our team about your residential, commercial, or infrastructure projects." />
+        content="Contact Urban and Rural Construction  for professional construction services across the USA. Request a quote, schedule a consultation, or speak with our team about your residential, commercial, or infrastructure projects." />
     <meta property="og:title"
         content="<?php echo $appName ?> | Contact Us - Construction Services Inquiry" />
     <meta property="og:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta property="og:description"
-        content="Get in touch with Urban and Rural Construction LLC for reliable construction solutions. Request project estimates, consultations, and expert guidance for residential and commercial projects." />
+        content="Get in touch with Urban and Rural Construction  for reliable construction solutions. Request project estimates, consultations, and expert guidance for residential and commercial projects." />
     <meta name="twitter:title"
         content="<?php echo $appName ?> | Contact Us - Construction Services Inquiry" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -45,9 +45,9 @@
             <div class="text-content-div" data-aos="fade-in" data-aos-duration="900">
                 <h1 data-aos="fade-in" data-aos-duration="800"><span>Contact Us</span></h1>
                 <p>
-                  Reach out to Urban and Rural Construction LLC for inquiries and support on construction projects in the USA.
+                  Reach out to Urban and Rural Construction  for inquiries and support on construction projects in the USA.
                 </p>
-                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
+                <?php $calass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>

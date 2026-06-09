@@ -10,18 +10,18 @@
     <meta name="keywords"
         content="<?php echo $appName ?>, about urban and rural construction, construction company USA, construction experts, building contractors USA, residential construction specialists, commercial construction company, infrastructure development experts, renovation contractors, remodeling services USA, construction management company, urban development projects, rural development solutions, quality construction services, experienced builders USA" />
     <meta name="description"
-        content="Learn about Urban and Rural Construction LLC, a trusted construction company delivering residential, commercial, renovation, remodeling, and infrastructure development projects across the USA with quality, integrity, and excellence." />
+        content="Learn about Urban and Rural Construction, a trusted construction company delivering residential, commercial, renovation, remodeling, and infrastructure development projects across the USA with quality, integrity, and excellence." />
     <meta property="og:title"
         content="<?php echo $appName ?> | About Us - Trusted Construction & Infrastructure Experts in the USA" />
     <meta property="og:image" content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta property="og:description"
-        content="Discover the story, mission, and expertise behind Urban and Rural Construction LLC. We provide reliable construction, renovation, and infrastructure solutions throughout the USA." />
+        content="Discover the story, mission, and expertise behind Urban and Rural Construction. We provide reliable construction, renovation, and infrastructure solutions throughout the USA." />
     <meta name="twitter:title"
         content="<?php echo $appName ?> | About Us - Trusted Construction & Infrastructure Experts in the USA" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta name="twitter:description"
-        content="Meet the team behind Urban and Rural Construction LLC and learn how we deliver exceptional construction, renovation, remodeling, and infrastructure projects across the USA." />
+        content="Meet the team behind Urban and Rural Construction  and learn how we deliver exceptional construction, renovation, remodeling, and infrastructure projects across the USA." />
 </head>
 
 <body>
@@ -42,12 +42,12 @@
             <div class="text-content-div" data-aos="fade-in" data-aos-duration="900">
                 <h1 data-aos="fade-in" data-aos-duration="800"><span>Our Services</span></h1>
                 <p>
-                    At Urban and Rural Construction LLC, we transform ideas into quality structures through
+                    At Urban and Rural Construction , we transform ideas into quality structures through
                     expert construction, renovation, and remodeling services. We focus on safety, efficiency,
                     and excellence to ensure every project exceeds client expectations.
                 </p>
 
-                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
+                <?php $calass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>
@@ -170,9 +170,9 @@
             </div>
         </section>
 
-        <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-bl'); ?>
+        <?php $calass->_constructionProcessSection($websiteUrl, 'net-bg-bl'); ?>
 
-        <?php $callclass->_statisticsSection($websiteUrl); ?>
+        <?php $calass->_statisticsSection($websiteUrl); ?>
 
         <?php include '../footer.php' ?>
     </section>

@@ -1,5 +1,5 @@
 <?php
-class allClass
+class alass
 {
     function _otherPagesBtn($websiteUrl) { ?>
         <div class="other-pages-btn-div">
@@ -28,7 +28,7 @@ class allClass
                         </div>
 
                         <div class="text-div">
-                            <p>Urban and Rural Construction LLC is a leading construction company specializing in
+                            <p>Urban and Rural Construction  is a leading construction company specializing in
                                 residential, commercial, renovation, remodeling, and infrastructure development
                                 services across the USA. With a commitment to quality craftsmanship and dependable
                                 project delivery, we build durable and innovative solutions for our clients.</p>
@@ -401,5 +401,5 @@ class allClass
         </section>
     <?php }
 } //end of class
-$callclass = new allClass();
+$calass = new alass();
 ?>

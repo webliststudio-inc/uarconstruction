@@ -10,20 +10,20 @@
     <meta name="keywords"
         content="<?php echo $appName ?> blog, construction blog USA, building tips, construction industry news, construction guides, architecture insights, home building tips, commercial construction updates, renovation ideas, construction best practices, contractor advice, engineering articles" />
     <meta name="description"
-        content="Explore expert insights, construction tips, project guides, and industry updates from Urban and Rural Construction LLC. Learn more about residential, commercial, and infrastructure development." />
+        content="Explore expert insights, construction tips, project guides, and industry updates from Urban and Rural Construction. Learn more about residential, commercial, and infrastructure development." />
     <meta property="og:title"
         content="<?php echo $appName ?> | Construction Blog - Insights & Updates" />
     <meta property="og:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta property="og:description"
-        content="Read expert construction articles, project insights, renovation tips, and industry news from Urban and Rural Construction LLC." />
+        content="Read expert construction articles, project insights, renovation tips, and industry news from Urban and Rural Construction." />
     <meta name="twitter:title"
         content="<?php echo $appName ?> | Construction Blog - Insights & Updates" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta name="twitter:description"
-        content="Stay updated with construction tips, building guides, and industry insights from professionals at Urban and Rural Construction LLC." />
+        content="Stay updated with construction tips, building guides, and industry insights from professionals at Urban and Rural Construction." />
 </head>
 
 <body>
@@ -44,10 +44,10 @@
             <div class="text-content-div" data-aos="fade-in" data-aos-duration="900">
                 <h1 data-aos="fade-in" data-aos-duration="800"><span>Latest Insight & Article</span></h1>
                 <p>
-                    Stay updated with construction tips, building guides, and industry insights from professionals at Urban and Rural Construction LLC.
-                    Read expert construction articles, project insights, renovation tips, and industry news from Urban and Rural Construction LLC.
+                    Stay updated with construction tips, building guides, and industry insights from professionals at Urban and Rural Construction.
+                    Read expert construction articles, project insights, renovation tips, and industry news from Urban and Rural Construction.
                 </p>
-                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
+                <?php $calass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>

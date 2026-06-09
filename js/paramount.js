@@ -411,7 +411,7 @@ function _callAjaxError(callback, message) {
     closeOnOverlayClick: true,
   });
 }
-function _callCatchError(callback) {
+function _caatchError(callback) {
   _showCustomConfirm({
     callback: () => {
       callback();

@@ -16,7 +16,7 @@
     <meta property="og:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta property="og:description"
-        content="Urban and Rural Construction LLC provides quality residential construction, commercial building, renovation, remodeling, and infrastructure development services throughout the USA." />
+        content="Urban and Rural Construction  provides quality residential construction, commercial building, renovation, remodeling, and infrastructure development services throughout the USA." />
     <meta name="twitter:title"
         content="<?php echo $appName ?> | Construction, Renovation & Infrastructure Services in the USA" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -46,7 +46,7 @@
                 <p>
                     Our services cover every stage of construction, renovation, and remodeling, delivering durable, functional, and visually appealing results. We work closely with clients to ensure each project is completed with quality, efficiency, and attention to detail.
                 </p>
-                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
+                <?php $calass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>
@@ -176,9 +176,9 @@
             </div>
         </section>
 
-        <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
+        <?php $calass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
 
-        <?php $callclass->_statisticsSection($websiteUrl); ?>
+        <?php $calass->_statisticsSection($websiteUrl); ?>
 
         <?php include '../footer.php' ?>
     </section>

@@ -43,7 +43,7 @@
                 <p>
                     We deliver professional commercial construction solutions for offices, retail spaces, industrial facilities, and business developments. Our team focuses on quality craftsmanship, efficient project management, and timely delivery to create durable and functional commercial properties that support your business goals.
                 </p>
-                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
+                <?php $calass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>
@@ -63,7 +63,7 @@
                         <div class="main-pages-content-div">
                             <h2>Professional Commercial Construction Services</h2>
                             <p>
-                                At Urban and Rural Construction LLC, we provide comprehensive commercial construction services designed to meet the needs of businesses, developers, and property owners. From office buildings and retail spaces to industrial facilities and mixed-use developments, we deliver high-quality construction solutions that combine durability, functionality, and modern design.
+                                At Urban and Rural Construction , we provide comprehensive commercial construction services designed to meet the needs of businesses, developers, and property owners. From office buildings and retail spaces to industrial facilities and mixed-use developments, we deliver high-quality construction solutions that combine durability, functionality, and modern design.
                             </p>
                             <h2>Our Commercial Construction Expertise</h2>
                             <p>
@@ -85,7 +85,7 @@
                             </p>
                             <h2>Why Choose Us?</h2>
                             <p>
-                                Choosing Urban and Rural Construction LLC means partnering with a team dedicated to excellence, transparency, and client satisfaction. We take pride in delivering commercial construction projects that not only meet expectations but exceed them through innovative solutions, reliable service, and attention to detail.
+                                Choosing Urban and Rural Construction  means partnering with a team dedicated to excellence, transparency, and client satisfaction. We take pride in delivering commercial construction projects that not only meet expectations but exceed them through innovative solutions, reliable service, and attention to detail.
                             </p>
                         </div>
                     </div>

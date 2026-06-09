@@ -10,7 +10,7 @@
     <meta name="keywords"
         content="<?php echo $appName ?> current projects, current construction projects USA, finished building projects, residential construction portfolio, commercial construction projects, current renovations, infrastructure development projects, construction project gallery, successful construction projects, construction company portfolio USA, current building works" />
     <meta name="description"
-        content="Discover our current construction projects across the USA, featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction LLC." />
+        content="Discover our current construction projects across the USA, featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction." />
     <meta property="og:title"
         content="<?php echo $appName ?> | Current Construction Projects Across the USA" />
     <meta property="og:image"
@@ -47,9 +47,9 @@
             <div class="text-content-div" data-aos="fade-in" data-aos-duration="900">
                 <h1 data-aos="fade-in" data-aos-duration="800"><span>Current Projects</span></h1>  
                 <p>
-                    Browse our current construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction LLC.
+                    Browse our current construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction.
                 </p>
-                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
+                <?php $calass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>
@@ -158,7 +158,7 @@
             </div>
         </section>
 
-        <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
+        <?php $calass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
 
         <?php include '../../footer.php' ?>
     </section>
