@@ -47,7 +47,7 @@
                     and excellence to ensure every project exceeds client expectations.
                 </p>
 
-                <?php $calass->_otherPagesBtn($websiteUrl); ?>
+                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>
@@ -170,9 +170,9 @@
             </div>
         </section>
 
-        <?php $calass->_constructionProcessSection($websiteUrl, 'net-bg-bl'); ?>
+        <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-bl'); ?>
 
-        <?php $calass->_statisticsSection($websiteUrl); ?>
+        <?php $callclass->_statisticsSection($websiteUrl); ?>
 
         <?php include '../footer.php' ?>
     </section>

@@ -49,7 +49,7 @@
                 <p>
                     Browse our current construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction.
                 </p>
-                <?php $calass->_otherPagesBtn($websiteUrl); ?>
+                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>
@@ -158,7 +158,7 @@
             </div>
         </section>
 
-        <?php $calass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
+        <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
 
         <?php include '../../footer.php' ?>
     </section>

@@ -46,7 +46,7 @@
                 <p>
                     Our services cover every stage of construction, renovation, and remodeling, delivering durable, functional, and visually appealing results. We work closely with clients to ensure each project is completed with quality, efficiency, and attention to detail.
                 </p>
-                <?php $calass->_otherPagesBtn($websiteUrl); ?>
+                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>
@@ -176,9 +176,9 @@
             </div>
         </section>
 
-        <?php $calass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
+        <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
 
-        <?php $calass->_statisticsSection($websiteUrl); ?>
+        <?php $callclass->_statisticsSection($websiteUrl); ?>
 
         <?php include '../footer.php' ?>
     </section>

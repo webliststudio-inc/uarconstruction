@@ -47,13 +47,13 @@
                     and excellence to ensure every project exceeds client expectations.
                 </p>
 
-                <?php $calass->_otherPagesBtn($websiteUrl); ?>
+                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>
 
     <section class="others-pg-content-div">
-        <?php $calass->_aboutUsSection($websiteUrl); ?>
+        <?php $callclass->_aboutUsSection($websiteUrl); ?>
 
         <section class="body-div">
             <div class="body-div-in">
@@ -114,11 +114,11 @@
             </div>
         </section>
 
-        <?php $calass->_constructionProcessSection($websiteUrl, 'net-bg-bl'); ?>
+        <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-bl'); ?>
 
-        <?php $calass->_testimonialSection($websiteUrl, ' net-bg-tl'); ?>
+        <?php $callclass->_testimonialSection($websiteUrl, ' net-bg-tl'); ?>
 
-        <?php $calass->_statisticsSection($websiteUrl); ?>
+        <?php $callclass->_statisticsSection($websiteUrl); ?>
 
         <?php include 'footer.php' ?>
     </section>

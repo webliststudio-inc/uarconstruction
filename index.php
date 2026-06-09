@@ -186,7 +186,7 @@
             </div>
         </section>
         
-        <?php $calass->_aboutUsSection($websiteUrl, 'net-bg-tr'); ?>
+        <?php $callclass->_aboutUsSection($websiteUrl, 'net-bg-tr'); ?>
 
         <section class="body-div net-bg-bl">
             <div class="body-div-in">
@@ -275,7 +275,7 @@
             </div>
         </section>
 
-        <?php $calass->_constructionProcessSection($websiteUrl, 'net-bg-tl'); ?>
+        <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-tl'); ?>
 
         <section class="body-div net-bg-br">
             <div class="body-div-in">
@@ -353,7 +353,7 @@
             </div>
         </section>
 
-        <?php $calass->_testimonialSection($websiteUrl, 'net-bg-tr'); ?>
+        <?php $callclass->_testimonialSection($websiteUrl, 'net-bg-tr'); ?>
 
         <section class="body-div">
             <div class="body-div-in">
@@ -457,7 +457,7 @@
             </div>
         </section>
 
-        <?php $calass->_statisticsSection($websiteUrl); ?>
+        <?php $callclass->_statisticsSection($websiteUrl); ?>
         
         <?php include 'footer.php' ?>
     </section>

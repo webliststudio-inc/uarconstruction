@@ -43,7 +43,7 @@
                 <p>
                     We deliver professional commercial construction solutions for offices, retail spaces, industrial facilities, and business developments. Our team focuses on quality craftsmanship, efficient project management, and timely delivery to create durable and functional commercial properties that support your business goals.
                 </p>
-                <?php $calass->_otherPagesBtn($websiteUrl); ?>
+                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>

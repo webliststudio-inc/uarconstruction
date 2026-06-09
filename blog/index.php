@@ -47,7 +47,7 @@
                     Stay updated with construction tips, building guides, and industry insights from professionals at Urban and Rural Construction.
                     Read expert construction articles, project insights, renovation tips, and industry news from Urban and Rural Construction.
                 </p>
-                <?php $calass->_otherPagesBtn($websiteUrl); ?>
+                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>

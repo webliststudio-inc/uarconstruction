@@ -43,7 +43,7 @@
                 <p>
                     Grace Worship Center is a modern and functional worship center located in Texas, USA. It is designed to provide a space for worship, community, and education.
                 </p>
-                 <?php $calass->_otherPagesBtn($websiteUrl); ?>
+                 <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>

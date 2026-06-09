@@ -47,7 +47,7 @@
                 <p>
                   Reach out to Urban and Rural Construction  for inquiries and support on construction projects in the USA.
                 </p>
-                <?php $calass->_otherPagesBtn($websiteUrl); ?>
+                <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
         </div>
     </section>
