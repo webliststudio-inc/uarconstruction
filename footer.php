@@ -67,7 +67,9 @@
                             <i class="bi bi-geo-alt-fill"></i>
                         </div>
                         <div class="text-div">
-                            13180 Westpark Drive Ste 201 B/D Houston, TX 77082 USA
+                            13180 Westpark Drive <br>
+                            Ste 201 B/D <br>
+                            Houston, TX 77082 USA
                         </div>
                     </div>
 
