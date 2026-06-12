@@ -71,10 +71,8 @@ function selectField(options) {
 }
 
 function otpField(options) {
-  const { id = "otpCode", length = 6, onKeyUpFunction = null } = options;
-
+  const { id = "otpCode", length = 6, onKeyPressFunction = null } = options;
   let inputs = "";
-
   for (let i = 0; i < length; i++) {
     inputs += `
       <input
@@ -82,22 +80,65 @@ function otpField(options) {
         type="text"
         maxlength="1"
         data-index="${i}"
-        ${onKeyUpFunction ? `onkeyup="${onKeyUpFunction}(this, event)"` : ""}
+        ${onKeyPressFunction ? `onkeypress="${onKeyPressFunction}"` : ''}
       />
     `;
   }
 
   const template = `
+  <div class="otp-wrapper">
     <div class="otp-container" id="${id}_box">
       ${inputs}
     </div>
-
     <input type="hidden" id="${id}" />
+    <div class="issueText" id="issue_${id}"></div>
+  </div>
   `;
-
   $("#" + id + "_container").html(template);
 
-  otpInit(id, length);
+  const otpInputs = $("#" + id + "_box .otp_text_field");
+
+  // Auto move + update hidden input
+  otpInputs.on("input", function () {
+    let value = $(this).val();
+
+    if (value.length === 1) {
+      $(this).next(".otp_text_field").focus();
+    }
+    updateOTP();
+  });
+
+  // Paste OTP (e.g. 109735)
+  otpInputs.on("paste", function (e) {
+    e.preventDefault();
+
+    let pastedData = e.originalEvent.clipboardData.getData("text")
+      .replace(/\D/g, "")
+      .slice(0, length);
+    
+    for (let i = 0; i < pastedData.length; i++) {
+      otpInputs.eq(i).val(pastedData[i]);
+    }
+
+    updateOTP();
+    // focus next empty or last box
+    otpInputs.eq(pastedData.length - 1).focus();
+  });
+
+  // Backspace move back
+  otpInputs.on("keydown", function (e) {
+    if (e.key === "Backspace" && $(this).val() === "") {
+      $(this).prev(".otp_text_field").focus();
+    }
+  });
+
+  function updateOTP() {
+    let otp = "";
+    otpInputs.each(function () {
+      otp += $(this).val();
+    });
+    $("#" + id).val(otp);
+  }
 }
 
 function _selectOption(selectBoxId) {

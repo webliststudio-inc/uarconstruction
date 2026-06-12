@@ -124,6 +124,14 @@
   width:100%;
 }
 
+.login-card-div .form-section .form-back-div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .login-card-div .form-section .form-div{
   width: 100%;
   display: flex;
@@ -289,15 +297,22 @@
   bottom: 20px;
 }
 
-.otp-container {
+.otp-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.otp-wrapper .otp-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5px 0px;
+  margin-top: 5px;
 }
 
-.otp-container .otp_text_field{
+.otp-wrapper .otp-container .otp_text_field{
   width: 65px; 
   height: 65px;
   text-align: center;
@@ -311,11 +326,23 @@
   outline: none !important;
 }
 
-.otp-container .otp_text_field:focus {  
+.otp-wrapper .otp-container .otp_text_field:focus {  
   background: #fff;
   border: #f1c40f 1px solid;
 }
 
+.otp-wrapper .otp-container .otp_text_field.issue {
+  background: #fff;
+  border: #f00 1px solid;
+}
+
+.otp-wrapper .issueText {
+  margin-top: 1px;
+  color: #f00;
+  font-family: body-font;
+  font-size: 10px;
+  font-style: italic;
+}
 
 @media all and (max-width: 930px) {	
 	.login-image-div{
