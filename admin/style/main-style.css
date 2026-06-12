@@ -124,6 +124,14 @@
   width:100%;
 }
 
+.login-card-div .form-section .form-back-div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .login-card-div .form-section .form-div{
   width: 100%;
   display: flex;
