@@ -4,7 +4,7 @@
         <div class="header-top-inner">
             <div class="contact-info">
                 <div>
-                    <a href="tel:+880 278 367 367"><i class="bi bi-telephone-inbound-fill"></i> +183 228 856 257</a>
+                    <a href="tel:+1 (832) 288-5625"><i class="bi bi-telephone-inbound-fill"></i> +1 (832) 288-5625</a>
                 </div>
                 <div class="email-info">
                     <a href="mailto:info@uarconstruction.com"><i class="bi bi-envelope-fill"></i>

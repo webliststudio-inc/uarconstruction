@@ -67,9 +67,9 @@
                             <i class="bi bi-geo-alt-fill"></i>
                         </div>
                         <div class="text-div">
-                            1100 Congress Ave
-                            Austin, TX 78701
-                            United States
+                            13180 Westpark Drive <br>
+                            Ste 201 B/D <br>
+                            Houston, TX 77082 USA
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@
                             <i class="bi bi-telephone-inbound-fill"></i>
                         </div>
                         <div class="text-div">
-                            <a href="tel:+880 278 367 367" title="Phone Number">+183 228 856 257</a>
+                            <a href="tel:+880 278 367 367" title="Phone Number">+1 (832) 288-5625</a>
                         </div>
                     </div>
 
@@ -109,7 +109,7 @@
         <div class="div-in">
             <div class="text">Copyright © <?php echo date('Y') ?> <?php echo $thename?>. All Rights Reserved |
                 <span>Developed by <a href="https://webliststudio.com" target="_blank"
-                        title="Weblist Studio Inc">Weblist Studio Inc</a></span>
+                        title="Weblist Studio Inc">Weblist Studio Solution Inc.</a></span>
             </div>
             <div class="social-media-wrapper">
                 <div class="social-media">

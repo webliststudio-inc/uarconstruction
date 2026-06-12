@@ -72,7 +72,7 @@
 
                         <div class="text">
                             <h2>CALL US</h2>
-                            <p>+183 228 856 257</p>
+                            <p>+1 (832) 288-5625</p>
                         </div>
                     </div>
                 </div>
@@ -83,9 +83,9 @@
 
                         <div class="text">
                             <h2>LOCATION</h2>
-                            <p>1100 Congress Ave
-                            Austin, TX 78701
-                            United States</p>
+                            <p> 13180 Westpark Drive <br>
+                            Ste 201 B/D <br>
+                            Houston, TX 77082 USA</p>
                         </div>
                     </div>
                 </div>
