@@ -407,7 +407,7 @@ function _callAjaxError(callback, message) {
         ? "Check your internet connection and try again."
         : message,
     alertType: "error",
-    trueActionBtnText: "OK",
+    trueActionBtnText: "OK, Retry",
     closeOnOverlayClick: true,
   });
 }

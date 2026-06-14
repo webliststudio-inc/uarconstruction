@@ -69,14 +69,16 @@
 
 <?php if($page=='otpPage'){?>
 	<script>
-		$(document).ready(function() {
+		$(document).ready(function () {
 			let staffResetPasswordSession = JSON.parse(localStorage.getItem("staffResetPasswordSession"));
 			if (!staffResetPasswordSession) {
 				window.location.href = adminUrl;
+				return;
 			}
+
 			$("#fullName").html(staffResetPasswordSession?.fullName);
 			$("#userEmailAddress").html(staffResetPasswordSession?.emailAddress);
- 		});
+		});
 	</script>
 
 	<div class="form-div" data-aos="fade-in" data-aos-duration="1200">
@@ -114,6 +116,6 @@
         </div>
     </div>
 	<script>
-		_counDownOtp(20);
+		_counDownOtp(180);
 	</script>
 <?php }?>

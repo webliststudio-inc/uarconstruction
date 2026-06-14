@@ -131,7 +131,7 @@ function _proceedResetPasswordCallback(formData, isResendOtp) {
       } else {
         _hideLoader();
         _actionAlert(response.message, true);
-        _counDownOtp(20);
+        _counDownOtp(180);
       }
     })
     .catch((error) => {
@@ -172,17 +172,23 @@ function _proceedResetPasswordCallback(formData, isResendOtp) {
 function _proceedOtpVerification() {
   try {
     let issueCount = 0;
-    const otp = $("#otp").val()?.trim();
+    const otp = $("#otp").val().trim();
 
     ///// empty field validation//////////
-    issueCount += _validateEmptyValue("otp", "OTP");
-
-    if (issueCount > 0) {
+    if (!otp) {
       $("#otp_box .otp_text_field").addClass("issue");
-      return;
+      $('#issue_otp').html('USER ERROR! OTP REQUIRED');
+      issueCount++;
+    } else if (otp.length < 6 || !/^\d+$/.test(otp)) {
+      $("#otp_box .otp_text_field").addClass("issue");
+      $('#issue_otp').html('USER ERROR! OTP must be a 6-digit number');
+      issueCount++;
     } else {
       $("#otp_box .otp_text_field").removeClass("issue");
+      $('#issue_otp').html('');
     }
+
+    if (issueCount > 0) return;
 
     // Gather form data
     const formData = {
@@ -214,10 +220,14 @@ function _proceedOtpVerificationCallback(formData) {
     })
     .then((response) => {
       const data = response;
+      
       _btnDisable("verifyBtn", btnText, false);
       localStorage.setItem("saveAcceesKeySession", JSON.stringify(data?.accessKey));
       _showLoader("OTP Verified Successfully!. Please wait...");
-      window.location.href = completeResetPasswordUrl;
+      
+      // Remove OTP Session
+      localStorage.removeItem("staffResetPasswordSession");
+      window.location.replace(completeResetPasswordUrl);
     })
     .catch((error) => {
       console.error("Error:", error);
