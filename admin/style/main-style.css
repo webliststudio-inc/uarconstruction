@@ -126,9 +126,10 @@
 
 .login-card-div .form-section .form-back-div{
   width: 100%;
+  min-height: 200px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column !important;
   gap: 10px;
 }
 

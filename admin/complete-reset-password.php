@@ -28,6 +28,14 @@
         </div>
 
         <div class="login-card-div">
+            <script>
+                $(document).ready(function () {
+                    window.history.pushState(null, "", window.location.href);
+                    window.addEventListener("popstate", function () {
+                        window.location.replace(adminUrl);
+                    });
+                });
+	        </script>
             <div class="form-section" data-aos="fade-in" data-aos-duration="1200">
                 <a href="<?php echo $websiteUrl ?>">
                 <div class="logo-div">
