@@ -315,6 +315,7 @@ function _completeResetPasswordCallback(formData) {
       formData,
     })
       .then((response) => {
+        localStorage.removeItem("saveAcceesKeySession");
         _showCustomConfirm({
           callback: () => {
             window.location.href = adminUrl;
