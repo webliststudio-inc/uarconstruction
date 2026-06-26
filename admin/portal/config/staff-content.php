@@ -205,34 +205,16 @@
                     <div class="content-title">
                         <div class="title">
                             <i class="bi bi-person-bounding-box"></i>
-                            <p>Create new staff here</p>
+                            <p>Basic Information</p>
                         </div>
                     </div>
 
                     <div class="form-container">
-                        <div class="text_field_container" id="firstName_container">
+                        <div class="text_field_container" id="fullName_container">
                             <script>
                                 textField({
-                                    id: 'firstName',
-                                    title: 'First Name'
-                                });
-                            </script>
-                        </div>
-
-                        <div class="text_field_container" id="middleName_container">
-                            <script>
-                                textField({
-                                    id: 'middleName',
-                                    title: 'Middle Name'
-                                });
-                            </script>
-                        </div>
-
-                        <div class="text_field_container" id="lastName_container">
-                            <script>
-                                textField({
-                                    id: 'lastName',
-                                    title: 'Last Name'
+                                    id: 'fullName',
+                                    title: 'Full Name'
                                 });
                             </script>
                         </div>
@@ -257,59 +239,38 @@
                                 });
                             </script>
                         </div>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="text_field_container" id="genderId_container">
+            <div class="main-content-div form-main-content-div">
+                <div class="tables-content-div form-table-content-div">
+                    <div class="content-title">
+                        <div class="title">
+                            <i class="bi bi-person-bounding-box"></i>
+                            <p>Administrative Information</p>
+                        </div>
+                    </div>
+
+                    <div class="form-container">
+                        <div class="text_field_container" id="roleId_container">
                             <script>
                                 selectField({
-                                    id: 'genderId',
-                                    title: 'Select Gender'
+                                    id: 'roleId',
+                                    title: 'Select Role'
                                 });
-                                _getSelectGender('genderId');
+                                //_getSelectRole('roleId');
                             </script>
                         </div>
 
-                        <div class="text_field_container" id="dateOfBirth_container">
+                        <div class="text_field_container" id="statusId_container">
                             <script>
-                                textField({
-                                    id: 'dateOfBirth',
-                                    title: 'Date Of Birth',
-                                    type: 'date'
+                                selectField({
+                                    id: 'statusId',
+                                    title: 'Select Status'
                                 });
+                                // _getSelectStatusId('statusId', '1,2');
                             </script>
-                        </div>
-
-                        <div class="text_field_container" id="address_container">
-                            <script>
-                                textField({
-                                    id: 'address',
-                                    title: 'Home Address'
-                                });
-                            </script>
-                        </div>
-
-                        <div class="alert alert-success form-alert-div">
-                            <span>ADMINISTRATIVE INFORMATION</span>
-                            <div class="text_field_back_container">
-                                <div class="text_field_container" id="roleId_container">
-                                    <script>
-                                        selectField({
-                                            id: 'roleId',
-                                            title: 'Select Role'
-                                        });
-                                        //_getSelectRole('roleId');
-                                    </script>
-                                </div>
-
-                                <div class="text_field_container" id="statusId_container">
-                                    <script>
-                                        selectField({
-                                            id: 'statusId',
-                                            title: 'Select Status'
-                                        });
-                                       // _getSelectStatusId('statusId', '1,2');
-                                    </script>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

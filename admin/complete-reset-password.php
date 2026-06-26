@@ -30,6 +30,12 @@
         <div class="login-card-div">
             <script>
                 $(document).ready(function () {
+                    saveAcceesKeySession = JSON.parse(localStorage.getItem("saveAcceesKeySession"));
+                    if (!saveAcceesKeySession) {
+                       window.location.replace(adminUrl);
+                        return;
+                    }
+
                     window.history.pushState(null, "", window.location.href);
                     window.addEventListener("popstate", function () {
                         window.location.replace(adminUrl);

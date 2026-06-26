@@ -4,10 +4,10 @@
 		<p>Sign in to access the <?php echo $appName ?> Admin Portal and manage your projects, operations, and company resources.</p>
 
 		<div class="inner-form" id="viewLogin">
-			<div class="text_field_container" id="userName_container">
+			<div class="text_field_container" id="emailAddress_container">
 				<script>
 					textField({
-						id: 'userName',
+						id: 'emailAddress',
 						title: 'Email Address'
 					});
 				</script>
