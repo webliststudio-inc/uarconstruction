@@ -10,7 +10,7 @@
     <meta name="keywords"
         content="<?php echo $appName ?> completed projects, completed construction projects USA, finished building projects, residential construction portfolio, commercial construction projects, completed renovations, infrastructure development projects, construction project gallery, successful construction projects, construction company portfolio USA, completed building works" />
     <meta name="description"
-        content="Discover our completed construction projects across the USA, featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction LLC." />
+        content="Discover our completed construction projects across the USA, featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction." />
     <meta property="og:title"
         content="<?php echo $appName ?> | Completed Construction Projects Across the USA" />
     <meta property="og:image"
@@ -47,7 +47,7 @@
             <div class="text-content-div" data-aos="fade-in" data-aos-duration="900">
                 <h1 data-aos="fade-in" data-aos-duration="800"><span>Completed Projects</span></h1>  
                 <p>
-                    Browse our completed construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction LLC.
+                    Browse our completed construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction.
                 </p>
                 <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>

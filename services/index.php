@@ -16,7 +16,7 @@
     <meta property="og:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta property="og:description"
-        content="Urban and Rural Construction LLC provides quality residential construction, commercial building, renovation, remodeling, and infrastructure development services throughout the USA." />
+        content="Urban and Rural Construction  provides quality residential construction, commercial building, renovation, remodeling, and infrastructure development services throughout the USA." />
     <meta name="twitter:title"
         content="<?php echo $appName ?> | Construction, Renovation & Infrastructure Services in the USA" />
     <meta name="twitter:card" content="summary_large_image" />

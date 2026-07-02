@@ -1,145 +1,102 @@
 let allowOverlayClose = false;
 
 function _getPage(options) {
-  const {
-    page = "",
-    action = "get_page",
-    url = "",
-    pageContainer = "page-content",
-  } = options;
+	const {
+        page = '',
+		action='get_page',
+		url='',
+		pageContainer='page-content'
+    } = options;
 
-  $("#" + pageContainer)
-    .html(
-      '<div class="ajax-loader"><img src="' +
-        websiteUrl +
-        '/all-images/images/spinner.gif"/></div>',
-    )
-    .css({
-      display: "flex",
-      "flex-direction": "column",
-      gap: "20px",
-      "align-items": "center",
-      "align-items": "center",
-    })
-    .fadeIn(500);
-  const dataString = "action=" + action + "&page=" + page;
-  $.ajax({
-    type: "POST",
-    url: url,
-    data: dataString,
-    cache: false,
-    success: function (html) {
-      $("#" + pageContainer).html(html);
-    },
-  });
+		$("#"+pageContainer).html('<div class="ajax-loader"><img src="'+ websiteUrl +'/all-images/images/spinner.gif"/></div>').css({'display': 'flex','flex-direction': 'column','gap': '20px','align-items': 'center','align-items': 'center'}).fadeIn(500);
+		const dataString = "action=" + action + "&page=" + page;
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: dataString,
+			cache: false,
+			success: function (html) {
+				$("#"+pageContainer).html(html);
+			},
+		});
 }
 
 function _getForm(options) {
-  const {
-    page = "",
-    id = "",
-    layer = 1,
-    action = "get_form",
+	const {
+    page = '',
+    id = '',
+		layer=1,
+		action='get_form',
     pageCategory = "", /// optional
-    url = "",
-  } = options;
+		url=''
+    } = options;
 
-  allowOverlayClose = false;
+    // Allow overlay click only for cartForm
+    if (page === "cartForm") {
+      allowOverlayClose = true;
+    } else {
+      allowOverlayClose = false;
+    }
 
-  const target =
-    layer === 1
-      ? "#get-form-more-div"
-      : layer === 2
-        ? "#get-more-div-secondary"
-        : "#get-more-third-layer";
-  $(target)
-    .css({
-      display: "flex",
-      "justify-content": "center",
-      "align-items": "center",
-    })
-    .fadeIn(500);
-  const dataString =
-    "action=" +
-    action +
-    "&page=" +
-    page +
-    "&id=" +
-    id +
-    "&pageCategory=" +
-    pageCategory +
-    "&modalLayer=" +
-    layer;
-  $.ajax({
-    type: "POST",
-    url: url,
-    data: dataString,
-    cache: false,
-    success: function (html) {
-      $(target).html(html);
-    },
+    const target = layer === 1 ? '#get-form-more-div' : layer === 2  ? '#get-more-div-secondary' : '#get-more-third-layer';
+    $(target).css({ 'display': 'flex', 'justify-content': 'center', 'align-items': 'center' }).fadeIn(500);
+    const dataString = "action=" + action + "&page=" + page + "&id=" + id + "&pageCategory=" + pageCategory + "&modalLayer=" + layer;
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: dataString,
+        cache: false,
+        success: function (html) {
+          $(target).html(html);
+        },
   });
 }
 
-function _alertClose(layer = 1) {
-  let text = "";
-  text +=
-    '<div class="alert-loading-div">' +
-    '<div class="icon"><img src="' +
-    websiteUrl +
-    '/all-images/images/loading.gif" width="20px" alt="Loading"/></div>' +
-    '<div class="text"><p>LOADING...</p></div>' +
-    "</div>";
-  $(
-    layer === 1
-      ? "#get-form-more-div"
-      : layer === 2
-        ? "#get-more-div-secondary"
-        : "#get-more-third-layer",
-  )
-    .html(text)
-    .fadeOut(200);
+function _alertClose(layer=1){
+	let text = '';
+	  text +=
+	  '<div class="alert-loading-div">' +
+		'<div class="icon"><img src="'+ websiteUrl +'/all-images/images/loading.gif" width="20px" alt="Loading"/></div>' +
+		'<div class="text"><p>LOADING...</p></div>'+
+		'</div>';
+			$(layer === 1 ? '#get-form-more-div' : layer === 2  ? '#get-more-div-secondary' : '#get-more-third-layer').html(text).fadeOut(200);
 }
 
-$(document).on("click", "#get-form-more-div", function () {
+$(document).on('click', '#get-form-more-div', function () {
   if (allowOverlayClose) {
     _alertClose(1);
   }
 });
 
-function _actionAlert(message, status) {
-  let text = "";
-  $(".all-alert-back-div").html(text).css("display", "flex");
-  if (status == true) {
-    text +=
-      '<div class="success-alert-div animated fadeInDown">' +
-      '<div class="icon"><i class="bi-check-all"></i></div>' +
-      '<div class="text"><p>' +
-      message +
-      "</p></div>" +
-      "</div>";
-  } else {
-    text +=
-      '<div class="failed-alert-div animated fadeInDown">' +
-      '<div class="icon"><i class="bi-exclamation-octagon-fill"></i></div>' +
-      '<div class="text"><p>' +
-      message +
-      "</p></div>" +
-      "</div>";
-  }
-  $(".all-alert-back-div").html(text).fadeIn(500).delay(3000).fadeOut(100);
+function _actionAlert(message,status ){
+	let text = '';
+	$('.all-alert-back-div').html(text).css('display', 'flex');
+	if(status==true){
+		text +=
+		'<div class="success-alert-div animated fadeInDown">' +
+			'<div class="icon"><i class="bi-check-all"></i></div>'+
+			'<div class="text"><p>'+message+'</p></div>'+
+		'</div>';
+	}else{
+		text +=
+		'<div class="failed-alert-div animated fadeInDown">' +
+			'<div class="icon"><i class="bi-exclamation-octagon-fill"></i></div>'+
+			'<div class="text"><p>'+message+'</p></div>'+
+		'</div>';
+	}
+	$('.all-alert-back-div').html(text).fadeIn(500).delay(3000).fadeOut(100);
 }
 
 function isNumberCheck(e) {
-  var key = e.keyCode || e.which;
+    var key = e.keyCode || e.which;
 
-  if (!(key >= 48 && key <= 57)) {
-    if (e.preventDefault) {
-      e.preventDefault();
-    } else {
-      e.returnValue = false;
+    if (!((key >= 48 && key <= 57))) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else {
+            e.returnValue = false;
+        }
     }
-  }
 }
 
 function _showCustomConfirm(options) {
@@ -182,10 +139,10 @@ function _showCustomConfirm(options) {
 			<div class="btn-div">
 				${
           falseActionBtn
-            ? `<button id="confirmCancelBtn" class="btn false-btn">${falseActionBtnText}</button>`
+            ? `<button id="confirmCancelBtn" class="btn false-btn" title="${falseActionBtnText}">${falseActionBtnText}</button>`
             : ""
         }
-				<button id="confirmOkBtn" class="btn">${trueActionBtnText}</button>
+				<button id="confirmOkBtn" class="btn" title="${trueActionBtnText}">${trueActionBtnText}</button>
 			</div>
 		</div>
 	`;
@@ -208,6 +165,7 @@ function _showCustomConfirm(options) {
   }
 
   $("#customConfirmModal").off("click");
+
   if (closeOnOverlayClick) {
     $("#customConfirmModal").on("click", function (e) {
       if (e.target === this) {
@@ -252,7 +210,7 @@ function _validateEmail(fieldId, fieldName) {
   if (/email|username/i.test(fieldName)) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
       isValid = false;
-      message = "PROVIDE A VALID " + fieldName.toUpperCase() + " ADDRESS";
+      message = "PROVIDE A VALID " + fieldName.toUpperCase();
     }
   }
 
@@ -281,7 +239,7 @@ function _validateNumber(fieldId, number) {
   if (!/^\d+(\.\d+)?$/.test(number)) {
     $("#" + fieldId).addClass("issue");
     $("#issue_" + fieldId).html(
-      "NUMBER MUST CONTAIN ONLY DIGITS OR DECIMAL POINT",
+      "NUMBER MUST CONTAIN ONLY DIGITS OR DECIMAL POINT"
     );
     return 1;
   }
@@ -321,8 +279,7 @@ function _callRawEndPoints(payLoadProps) {
       error: function (jqXHR, errorThrown) {
         // normalize the error object
         const err = jqXHR.responseJSON || {
-          message:
-            errorThrown || "Check your internet connection and try again.",
+          message: errorThrown || "Check your internet connection and try again.",
           status: jqXHR.status,
         };
         reject(err);
@@ -359,8 +316,7 @@ function _callFileEndPoints(payLoadProps) {
       error: function (jqXHR, errorThrown) {
         // normalize the error object
         const err = jqXHR.responseJSON || {
-          message:
-            errorThrown || "Check your internet connection and try again.",
+          message: errorThrown || "Check your internet connection and try again.",
           status: jqXHR.status,
         };
         reject(err);
@@ -386,8 +342,7 @@ function _callFetchEndPoints(payLoadProps) {
       error: function (jqXHR, errorThrown) {
         // normalize the error object
         const err = jqXHR.responseJSON || {
-          message:
-            errorThrown || "Check your internet connection and try again.",
+          message: errorThrown || "Check your internet connection and try again.",
           status: jqXHR.status,
         };
         reject(err);
@@ -402,10 +357,7 @@ function _callAjaxError(callback, message) {
       callback();
     },
     title: "Connection Error!",
-    message:
-      message === "error"
-        ? "Check your internet connection and try again."
-        : message,
+    message: message==='error' ?  "Check your internet connection and try again." : message,
     alertType: "error",
     trueActionBtnText: "OK",
     closeOnOverlayClick: true,
@@ -430,7 +382,7 @@ function _btnDisable(btnId, btnText = "SUBMIT", action = true) {
     $("#" + btnId).html(
       '<img src="' +
         websiteUrl +
-        '/all-images/images/loading.gif" style="width:12px;" alt="Loading"/>',
+        '/all-images/images/loading.gif" style="width:12px;" alt="Loading"/>'
     );
     $("#" + btnId).prop("disabled", action);
   } else {
@@ -451,54 +403,43 @@ function thousandSeperator(val) {
   //   return formatter.format(val);
   return isNaN(parseFloat(formatter.format(val))) ? "-" : formatter.format(val);
 }
-////////////////////////////////////////////////
-function _showLoader(message = "Processing, please wait...") {
-  $("#globalLoaderText").html(message);
-  $("#globalLoader").fadeIn(150);
+ ////////////////////////////////////////////////
+function _showLoader(message = 'Processing, please wait...') {
+  $('#globalLoaderText').html(message);
+  $('#globalLoader').fadeIn(150);
 }
 
 function _hideLoader() {
-  $("#globalLoader").fadeOut(150);
+  $('#globalLoader').fadeOut(150);
 }
 
-function _formatDate(dateString) {
-  if (!dateString) return "N/A"; // fallback if no date
-  const dateObj = new Date(dateString);
-  const options = { day: "2-digit", month: "short", year: "numeric" };
-  // Example: 25 Jan 2025
-  return dateObj.toLocaleDateString("en-GB", options).replace(" ", " ");
+function _formatDate(newDate) {
+  if (!newDate) return "";
+
+  const d = new Date(newDate);
+  const day = d.getDate();
+  const month = d.toLocaleDateString("en-US", { month: "long" });
+  const year = d.getFullYear();
+
+  // Get ordinal suffix
+  const getOrdinal = (n) => {
+    const j = n % 10,
+      k = n % 100;
+
+    if (j === 1 && k !== 11) return `${n}st`;
+    if (j === 2 && k !== 12) return `${n}nd`;
+    if (j === 3 && k !== 13) return `${n}rd`;
+    return `${n}th`;
+  };
+
+  return `${getOrdinal(day)} ${month}, ${year}`;
 }
 
-////// Show False Notofication /////
-function _showFalseNotification(props) {
-  const {
-    container = "",
-    message = "Something went wrong",
-    colspan = null,
-    button = "",
-    paginationContainer = "",
-  } = props;
-
-  let content = `
-    <div class="false-notification-div">
-      <p>${message}</p>
-      ${button ? `<div>${button}</div>` : ""}
-    </div>
-  `;
-
-  if (colspan) {
-    content = `
-      <tr>
-        <td colspan="${colspan}">
-          ${content}
-        </td>
-      </tr>
-    `;
+function capitalizeFirstLetterOfEachWord(inputText) {
+  const words = inputText.toLowerCase().split(" ");
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
   }
-
-  $(container).html(content);
-
-  if (paginationContainer) {
-    $(paginationContainer).html("");
-  }
+  const result = words.join(" ");
+  return result;
 }

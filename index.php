@@ -10,7 +10,7 @@
     <meta name="keywords"
         content="<?php echo $appName ?>, construction company USA, urban construction services, rural construction company, residential construction, commercial construction, building contractors USA, home renovation services, property remodeling, infrastructure development, general contractors USA, construction management, building renovation, construction solutions, custom home builders, office construction, civil construction services, rural development projects, urban development contractors, USA construction experts" />
     <meta name="description"
-        content="Urban and Rural Construction LLC delivers professional construction, renovation, remodeling, and infrastructure solutions across the USA. We build quality residential, commercial, and development projects with reliability and excellence." />
+        content="Urban and Rural Construction delivers professional construction, renovation, remodeling, and infrastructure solutions across the USA. We build quality residential, commercial, and development projects with reliability and excellence." />
     <meta property="og:title"
         content="<?php echo $appName ?> | Professional Construction, Renovation & Infrastructure Services in the USA" />
     <meta property="og:image" content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
@@ -21,7 +21,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta name="twitter:description"
-        content="Urban and Rural Construction LLC specializes in construction, renovation, remodeling, and infrastructure projects across the USA, delivering durable and high-quality building solutions." />
+        content="Urban and Rural Construction specializes in construction, renovation, remodeling, and infrastructure projects across the USA, delivering durable and high-quality building solutions." />
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                 <div class="content-div" data-aos="fade-in" data-aos-duration="1200">
                     <h1 id="pageTitle">Building the Future of Urban and Rural Development</h1>
                     <p>Our civil and structural team is committed to providing sustainable, creative & efficient
-                        engineering solutions for our communities</p>
+                        engineering solutions for our communities.</p>
 
                     <div class="btn-div">
                         <a href="<?php echo $websiteUrl ?>">

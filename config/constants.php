@@ -45,12 +45,18 @@ $userDeviceId = getBrowserId();
     var userIpAddress = "<?php echo $userIpAddress; ?>"; /// For User IP Address //
     var userDeviceId = "<?php echo $userDeviceId; ?>"; /// For User Device Id //
 
+    ////// EndPoints///
+    var endPoint = "https://eleadersnetwork.com/api/dev"; /// For EndPoint Url //
+    var apiKey = "fa8ace893c172b5b05f3befef1dc22cd"; /// For Api Key //
+
     /// Site Middleware Urls ///
     var siteMiddlewareUrl = websiteUrl + '/config/code'; //// For site url
 
     /// Admin Middleware Urls ///
     var adminMiddleWareUrl = websiteUrl + '/admin/config/code'; /// For Admin Login Middleware Url //
     var adminUrl = websiteUrl + '/admin'; /// For Admin Url //
+    var userVerificationUrl = websiteUrl + '/admin/user-verification'; /// For User Verification Url //
+    var completeResetPasswordUrl = websiteUrl + '/admin/complete-reset-password'; /// For Complete Reset Password Url //
 
     /// Admin Portal Middleware Urls ///
     var adminPortalMiddlewareUrl = websiteUrl + '/admin/portal/config/code'; /// For Admin Portal Middleware Url //

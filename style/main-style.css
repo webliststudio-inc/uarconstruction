@@ -3236,8 +3236,6 @@ header .header-div-in .mobile-btn:hover{
   .contact-back-div
   .contact-div {
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
 }
 

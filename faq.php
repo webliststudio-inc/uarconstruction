@@ -10,20 +10,20 @@
     <meta name="keywords"
         content="<?php echo $appName ?> FAQ, construction FAQ USA, building questions, construction company questions, contractor FAQ, construction services questions, project inquiry answers, construction process explained, home building FAQ, commercial construction questions, renovation FAQ, construction help, building guidance" />
     <meta name="description"
-        content="Find answers to frequently asked questions about Urban and Rural Construction LLC. Learn more about our construction services, project process, timelines, pricing, and how we deliver residential, commercial, and infrastructure projects." />
+        content="Find answers to frequently asked questions about Urban and Rural Construction. Learn more about our construction services, project process, timelines, pricing, and how we deliver residential, commercial, and infrastructure projects." />
     <meta property="og:title"
         content="<?php echo $appName ?> | Frequently Asked Questions - Construction Services FAQ" />
     <meta property="og:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta property="og:description"
-        content="Get answers to common questions about construction services, project execution, timelines, and working with Urban and Rural Construction LLC." />
+        content="Get answers to common questions about construction services, project execution, timelines, and working with Urban and Rural Construction." />
     <meta name="twitter:title"
         content="<?php echo $appName ?> | Frequently Asked Questions - Construction Services FAQ" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta name="twitter:description"
-        content="Explore FAQs about construction services, project planning, costs, timelines, and how we work at Urban and Rural Construction LLC." />
+        content="Explore FAQs about construction services, project planning, costs, timelines, and how we work at Urban and Rural Construction." />
 </head>
 
 <body>
@@ -44,7 +44,7 @@
             <div class="text-content-div" data-aos="fade-in" data-aos-duration="900">
                 <h1 data-aos="fade-in" data-aos-duration="800"><span>Frequently Asked Questions</span></h1>
                 <p>
-                    Find answers to common questions about construction services, project execution, timelines, and working with Urban and Rural Construction LLC.
+                    Find answers to common questions about construction services, project execution, timelines, and working with Urban and Rural Construction.
                 </p>
                 <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
