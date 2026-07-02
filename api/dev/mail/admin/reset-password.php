@@ -1,11 +1,11 @@
 <?php
-$getSmtpDetails = _get_branch_smtp_details($conn, $branchId);
-$smtpData  = json_decode($getSmtpDetails, true);
+$getSmtpDetails = _get_smtp_details($conn);
+$smtpData = json_decode($getSmtpDetails, true);
 $smtpHost = $smtpData['smtpHost'];
 $smtpUsername = $smtpData['smtpUsername'];
 $smtpPassword = $smtpData['smtpPassword'];
 $smtpPort = $smtpData['smtpPort'];
-$senderName = $appName . " - " . $smtpData['senderName'];
+$senderName = $smtpData['senderName'];
 $supportEmail = $smtpData['supportEmail'];
 $currentDate = date("l, d F Y");
 
@@ -24,32 +24,32 @@ try {
 
     $mail->SMTPDebug = SMTP::DEBUG_OFF;  // Disable verbose debug output
     $mail->isSMTP();  // Set mailer to use SMTP
-    $mail->Host       = $smtpHost;  // Specify main and backup SMTP servers
-    $mail->SMTPAuth   = true;  // Enable SMTP authentication
-    $mail->Username   = $smtpUsername;  // SMTP username
-    $mail->Password   = $smtpPassword;  // SMTP password
-    $mail->SMTPSecure = 'ssl';  // Enable SSL encryption
-    $mail->Port       = $smtpPort;  // TCP port to connect to
+    $mail->Host = $smtpHost;  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;  // Enable SMTP authentication
+    $mail->Username = $smtpUsername;  // SMTP username
+    $mail->Password = $smtpPassword;  // SMTP password
+    $mail->SMTPSecure = $smtpPort == 465 ? 'ssl' : 'tls';  // Enable SSL encryption
+    $mail->Port = $smtpPort;  // TCP port to connect to
 
     $mail->SMTPOptions = [
-    'ssl' => [
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' =>true
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
         ]
-    ];  
+    ];
     $mail->isHTML(true);
     //// sender and replyTo
     $mail->setFrom($smtpUsername, $senderName);
     $mail->addReplyTo($supportEmail, $senderName); // Reply-to address
-    
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$sendTo=$emailAddress;
-$recieverName=$fullName;
-$subject="Email Verification OTP -- $otp";
 
-$message = '
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    $sendTo = $emailAddress;
+    $recieverName = $fullName;
+    $subject = "Email Verification OTP -- $otp";
+
+    $message = '
 <div style="width:100%; background:#f4f6f8; padding:30px 0; font-family:Arial, Helvetica, sans-serif;">
   <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
 
@@ -57,11 +57,11 @@ $message = '
 
     <div style="padding:30px; color:#333333;">
 
-        <h2 style="color:#3C8C29; margin-top:0;">Email Verification Required</h2>
+        <h2 style="color:#07418d; margin-top:0;">Email Verification Required</h2>
 
-        <p>Dear <strong>'.$fullName.'</strong>,</p>
+        <p>Dear <strong>' . $fullName . '</strong>,</p>
 
-        <p>We received a request to verify your email address for your <strong>'.$appName.'</strong> administrative account.</p>
+        <p>We received a request to verify your email address for your <strong>' . $appName . '</strong> administrative account.</p>
 
         <p>Please use the One-Time Password (OTP) below to complete your verification:</p>
 
@@ -71,12 +71,12 @@ $message = '
                 font-size:32px;
                 letter-spacing:6px;
                 font-weight:bold;
-                color:#3C8C29;
+                color:#07418d;
                 background:#f1f5ff;
                 padding:15px 30px;
                 border-radius:8px;
-                border:1px dashed #3C8C29;">
-                '.$otp.'
+                border:1px dashed #07418d;">
+                ' . $otp . '
             </div>
         </div>
 
@@ -88,19 +88,19 @@ $message = '
 
         <p style="margin-top:30px;">
             Need help? Contact us at 
-            <a href="mailto:'.$supportEmail.'" style="color:#3C8C29;">'.$supportEmail.'</a>
+            <a href="mailto:' . $supportEmail . '" style="color:#07418d;">' . $supportEmail . '</a>
         </p>
 
         <p style="margin-top:30px;">
             Best regards,<br>
-            <strong>'.$senderName.'</strong><br>
-            getfoodstuffs.com
+            <strong>' . $senderName . '</strong><br>
+            ' . $websiteUrl . '
         </p>
 
     </div>
 
-    <div style="background:#3C8C29; color:#ffffff; text-align:center; padding:15px; font-size:13px;">
-        &copy; '.date("Y").' '.$senderName.'. All Rights Reserved.
+    <div style="background:#07418d; color:#ffffff; text-align:center; padding:15px; font-size:13px;">
+        &copy; ' . date("Y") . ' ' . $senderName . '. All Rights Reserved.
     </div>
 
   </div>
@@ -109,19 +109,18 @@ $message = '
 
 
     $mail->Subject = $subject;
-    $mail->Body    = $message;
+    $mail->Body = $message;
     $mail->AltBody = strip_tags($message);  // Fallback for non-HTML clients
-    
+
     /// copy this emails
     $mail->addAddress($sendTo, $recieverName);  // Recipient email and name
     $mail->addAddress($supportEmail, $senderName); // Reply-to address
-    $mail->addAddress("afootechglobal@gmail.com", "AfooTECH Global");  // Additional recipient
 
     // Attach images
     $mail->addEmbeddedImage('../../mail/img/mail_header.jpg', 'mail_header');
-    
+
     // Send the email
-    if(!$mail->send()){
+    if (!$mail->send()) {
         echo 'Not Working';
     }
 

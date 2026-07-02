@@ -10,17 +10,16 @@ try {
 
     //// validate input parameters
     validateEmptyField($emailAddress, "EMAIL");
-    validateEmailField ($emailAddress, "EMAIL");
-    
+    validateEmailField($emailAddress, "EMAIL");
+
     /* Check staff status*/
-    $selectQuery="SELECT branchId, staffId, CONCAT(firstName, ' ', lastName) AS fullName, emailAddress, statusId FROM STAFF_TAB WHERE emailAddress = ?";
-    $selectParams=[$emailAddress];
+    $selectQuery = "SELECT staffId, CONCAT(firstName, ' ', lastName) AS fullName, emailAddress, statusId FROM STAFF_TAB WHERE emailAddress = ?";
+    $selectParams = [$emailAddress];
     $userData = selectQuery($conn, $selectQuery, 's', $selectParams)[0];
-    $branchId = $userData['branchId'] ?? null;
     $staffId = $userData['staffId'] ?? null;
     $statusId = $userData['statusId'] ?? null;
     $fullName = $userData['fullName'] ?? null;
-    
+
     if (empty($userData)) {
         throw new ForbiddenException("INVALID EMAIL ADDRESS! Enter a valid email address and try again");
     }
@@ -35,8 +34,8 @@ try {
     $otp = random_int(100000, 999999);
 
     /// update OTP in database using prepared statement
-    $updateQuery="UPDATE STAFF_TAB SET otp = ? WHERE staffId = ?";
-    $updateParams=[$otp, $staffId];
+    $updateQuery = "UPDATE STAFF_TAB SET otp=? WHERE staffId = ?";
+    $updateParams = [$otp, $staffId];
     updateQuery($conn, $updateQuery, 'is', $updateParams);
     /* Send OTP email */
     require_once('../../mail/admin/reset-password.php');
@@ -44,19 +43,12 @@ try {
         'response' => 200,
         'success' => true,
         'message' => "OTP SENT! An OTP has been sent to your email address. Use it to reset your password.",
-        'staff_id' => $staffId,
-        'fullName' => $fullName, 
+        'staffId' => $staffId,
+        'fullName' => $fullName,
         'emailAddress' => $emailAddress,
-        'branchId' => $branchId,
-        'smtpHost' => $smtpHost,
-        'smtpUsername' => $smtpUsername,
-        'smtpPassword' => $smtpPassword,
-        'smtpPort' => $smtpPort,
-        'senderName' => $senderName,
-        'supportEmail' => $supportEmail
     ];
 
- }catch (Throwable $e) {
+} catch (Throwable $e) {
     ErrorHandler::handle($e);
 }
 http_response_code($response['response']); // sets HTTP status

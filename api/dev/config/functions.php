@@ -1,20 +1,21 @@
 <?php
-function _staff_accesskey_validation($conn, $accessKey) {
+function _staff_accesskey_validation($conn, $accessKey)
+{
     $getQuery = "SELECT * FROM STAFF_VIEW WHERE accessKey=? AND statusId=?";
-    $getParams=[$accessKey, 1];
+    $getParams = [$accessKey, 1];
     $getResult = selectQuery($conn, $getQuery, 'si', $getParams);
     $count = count($getResult);
     if ($count > 0) {
         $userData = $getResult[0];
-		$firstName=$userData['firstName'];
-		$lastName=$userData['lastName'];
+        $firstName = $userData['firstName'];
+        $lastName = $userData['lastName'];
         $response = [
             "checkSession" => true,
             "loginStaffId" => $userData['staffId'],
             "loginFullname" => "$firstName $lastName",
             "loginRoleid" => $userData['roleId']
         ];
-    }else{
+    } else {
         $response = [
             "checkSession" => false
         ];
@@ -23,15 +24,16 @@ function _staff_accesskey_validation($conn, $accessKey) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function _get_sequence_count($conn, $counterId){
+function _get_sequence_count($conn, $counterId)
+{
     $getQuery = "SELECT counterValue FROM SETUP_COUNTER_TAB WHERE counterId = ? FOR UPDATE";
-    $getParams=[$counterId];
+    $getParams = [$counterId];
     $getResult = selectQuery($conn, $getQuery, 's', $getParams);
     $count = $getResult[0]['counterValue'];
     $num = $count + 1;
     ///// update the counter value in the database
     $updateQuery = "UPDATE `SETUP_COUNTER_TAB` SET `counterValue` = ? WHERE counterId = ?";
-    $updateParams=[$num, $counterId];
+    $updateParams = [$num, $counterId];
     updateQuery($conn, $updateQuery, 'is', $updateParams);
     if ($num < 10) {
         $no = '00' . $num;
@@ -43,47 +45,53 @@ function _get_sequence_count($conn, $counterId){
     $response = ["no" => $no];
     return json_encode($response);
 }
-////// get genderdata from SETUP_GENDER_TAB
-function _get_gender_details($conn, $genderId){
-    $getQuery = "SELECT * FROM SETUP_GENDER_TAB WHERE genderId = ?";
-    $getParams=[$genderId];
-    $getResult = selectQuery($conn, $getQuery, 's', $getParams);
-    return ($getResult[0]);
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function updatePageViewsCount($conn, $publishId) {
+function updatePageViewsCount($conn, $publishId)
+{
     $updateQuery = "UPDATE PAGES_TAB SET viewCount = viewCount + 1 WHERE publishId = ?";
     $updateParams = [$publishId];
     updateQuery($conn, $updateQuery, 's', $updateParams);
 }
 
-function _get_branch_smtp_details($conn, $branchId) {
-    $getQuery = "SELECT smtpHost, smtpUsername, smtpPassword, smtpPort, name AS senderName, supportEmail FROM BRANCHES_TAB WHERE branchId = ?";
-    $getParams=[$branchId];
-    $getResult = selectQuery($conn, $getQuery, 's', $getParams);
+function _get_smtp_details($conn)
+{
+    $getQuery = "SELECT smtpHost, smtpUsername, smtpPassword, smtpPort, senderName, supportEmail FROM SETUP_BACKEND_SETTINGS_TAB WHERE settingsId = 'ID001'";
+    $getResult = selectQuery($conn, $getQuery, 's', []);
     return json_encode($getResult[0]);
 }
 
-function _get_information_category_details($conn, $categoryId){
+function _get_information_category_details($conn, $categoryId)
+{
     $getQuery = "SELECT * FROM INFORMATION_CATEGORY_TAB WHERE categoryId = ?";
-    $getParams=[$categoryId];
+    $getParams = [$categoryId];
     $getResult = selectQuery($conn, $getQuery, 's', $getParams);
     return ($getResult[0]);
 }
 
 
-function _action_performed_by($conn, $staffId){
+function _action_performed_by($conn, $staffId)
+{
     $getQuery = "SELECT CONCAT(firstName,' ',lastName) AS fullname, emailAddress FROM STAFF_TAB WHERE staffId = ?";
-    $getParams=[$staffId];
+    $getParams = [$staffId];
     $getResult = selectQuery($conn, $getQuery, 's', $getParams);
     return ($getResult[0]);
 }
 
 ////// get STATUS details
-function _get_status_details($conn, $statusId){
+function _get_status_details($conn, $statusId)
+{
     $getQuery = "SELECT statusId, statusName FROM SETUP_STATUS_TAB WHERE statusId = ?";
-    $getParams=[$statusId];
+    $getParams = [$statusId];
+    $getResult = selectQuery($conn, $getQuery, 's', $getParams);
+    return ($getResult[0]);
+}
+
+////// get ROLE details
+function _get_role_details($conn, $roleId)
+{
+    $getQuery = "SELECT roleId, roleName FROM ROLE_TAB WHERE roleId = ?";
+    $getParams = [$roleId];
     $getResult = selectQuery($conn, $getQuery, 's', $getParams);
     return ($getResult[0]);
 }

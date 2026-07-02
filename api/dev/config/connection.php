@@ -14,14 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // --- rest of your code ---
-$appName = "Urban & Rural Construction Services";
 $appVersion = "1.0.0";
-$_HOST_NAME = "145.239.185.59";
-$_DB_USERNAME = "getfoodstuffsng";
-$_DB_PASSWORD = "Password@14012026";
+$_HOST_NAME = "23.106.46.178";
+$_DB_USERNAME = "uarconstruction_admin";
+$_DB_PASSWORD = "Y@t4)Km_#X8kWQgs";
 
 $conn = mysqli_connect($_HOST_NAME, $_DB_USERNAME, $_DB_PASSWORD) or die("Unable to connect to MySQL");
-mysqli_select_db($conn, "getfoodstuffsng_db") or die("Could not select database");
+mysqli_select_db($conn, "uarconstruction_main_db") or die("Could not select database");
 mysqli_set_charset($conn, "utf8mb4");
 
 /////////////////////////////////////////////////////////////////
