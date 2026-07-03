@@ -31,12 +31,7 @@ function _getForm(options) {
 		url=''
     } = options;
 
-    // Allow overlay click only for cartForm
-    if (page === "cartForm") {
-      allowOverlayClose = true;
-    } else {
-      allowOverlayClose = false;
-    }
+    allowOverlayClose = false;
 
     const target = layer === 1 ? '#get-form-more-div' : layer === 2  ? '#get-more-div-secondary' : '#get-more-third-layer';
     $(target).css({ 'display': 'flex', 'justify-content': 'center', 'align-items': 'center' }).fadeIn(500);
@@ -249,9 +244,7 @@ function _validateNumber(fieldId, number) {
 function getAuthHeaders(includeAuth = false) {
   return {
     apiKey: apiKey,
-    userOsBrowser: userOsBrowser,
     userIpAddress: userIpAddress,
-    userDeviceId: userDeviceId,
     Authorization: includeAuth ? "Bearer " + (loginAccessKey ?? "") : undefined,
   };
 }
@@ -413,28 +406,17 @@ function _hideLoader() {
   $('#globalLoader').fadeOut(150);
 }
 
-function _formatDate(newDate) {
-  if (!newDate) return "";
 
-  const d = new Date(newDate);
-  const day = d.getDate();
-  const month = d.toLocaleDateString("en-US", { month: "long" });
-  const year = d.getFullYear();
-
-  // Get ordinal suffix
-  const getOrdinal = (n) => {
-    const j = n % 10,
-      k = n % 100;
-
-    if (j === 1 && k !== 11) return `${n}st`;
-    if (j === 2 && k !== 12) return `${n}nd`;
-    if (j === 3 && k !== 13) return `${n}rd`;
-    return `${n}th`;
-  };
-
-  return `${getOrdinal(day)} ${month}, ${year}`;
+//// Get Date Format /////
+function _fetchFormatDate(dateString) {
+  if (!dateString) return "N/A"; // fallback if no date
+  const dateObj = new Date(dateString);
+  const options = { day: "2-digit", month: "short", year: "numeric" };
+  // Example: 25 Jan 2025
+  return dateObj.toLocaleDateString("en-GB", options).replace(" ", " ");
 }
 
+//// Get First Letter of a String /////
 function capitalizeFirstLetterOfEachWord(inputText) {
   const words = inputText.toLowerCase().split(" ");
   for (let i = 0; i < words.length; i++) {
@@ -442,4 +424,47 @@ function capitalizeFirstLetterOfEachWord(inputText) {
   }
   const result = words.join(" ");
   return result;
+}
+
+///// Get First Letters of Each Word /////
+function getFirstLettersOfEachWord(str) {
+  return str
+    .split(" ") // split by spaces
+    .filter((word) => word) // remove empty strings (in case of double spaces)
+    .map((word) => word[0].toUpperCase()) // take first letter and uppercase it
+    .join(""); // join into a single string
+}
+
+////// Show False Notofication /////
+function _showFalseNotification(props) {
+  const {
+    container = "",
+    message = "Something went wrong",
+    colspan = null,
+    button = "",
+    paginationContainer = ""
+  } = props;
+
+  let content = `
+    <div class="false-notification-div">
+      <p>${message}</p>
+      ${button ? `<div>${button}</div>` : ""}
+    </div>
+  `;
+
+  if (colspan) {
+    content = `
+      <tr>
+        <td colspan="${colspan}">
+          ${content}
+        </td>
+      </tr>
+    `;
+  }
+
+  $(container).html(content);
+
+  if (paginationContainer) {
+    $(paginationContainer).html("");
+  }
 }

@@ -46,7 +46,7 @@ $userDeviceId = getBrowserId();
     var userDeviceId = "<?php echo $userDeviceId; ?>"; /// For User Device Id //
 
     ////// EndPoints///
-    var endPoint = "https://eleadersnetwork.com/api/dev"; /// For EndPoint Url //
+    var endPoint = "https://uarconstruction.com/api/dev"; /// For EndPoint Url //
     var apiKey = "fa8ace893c172b5b05f3befef1dc22cd"; /// For Api Key //
 
     /// Site Middleware Urls ///
