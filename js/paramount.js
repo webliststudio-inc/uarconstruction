@@ -245,6 +245,7 @@ function getAuthHeaders(includeAuth = false) {
   return {
     apiKey: apiKey,
     userIpAddress: userIpAddress,
+    userDeviceId: userDeviceId,
     Authorization: includeAuth ? "Bearer " + (loginAccessKey ?? "") : undefined,
   };
 }
@@ -436,7 +437,7 @@ function getFirstLettersOfEachWord(str) {
 }
 
 ////// Show False Notofication /////
-function _showFalseNotification(props) {
+function _showEmptyState(props) {
   const {
     container = "",
     message = "Something went wrong",
@@ -446,7 +447,8 @@ function _showFalseNotification(props) {
   } = props;
 
   let content = `
-    <div class="false-notification-div">
+    <div class="empty-state-div">
+      <div class="icon"><img src="${websiteUrl}/all-images/images/no-record.png" alt="Warning" /></div>
       <p>${message}</p>
       ${button ? `<div>${button}</div>` : ""}
     </div>
@@ -465,6 +467,6 @@ function _showFalseNotification(props) {
   $(container).html(content);
 
   if (paginationContainer) {
-    $(paginationContainer).html("");
+    $(paginationContainer).empty().hide();
   }
 }

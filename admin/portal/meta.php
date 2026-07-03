@@ -9,10 +9,10 @@
 <link href="<?php echo $websiteUrl?>/style/animate.css" type="text/css" rel="stylesheet" media="all">
 <link href="<?php echo $websiteUrl?>/style/aos.css" type="text/css" rel="stylesheet" />
 <link href="<?php echo $websiteUrl?>/style/paramount.css?v=<?php echo $codeVersion?>" type="text/css"rel="stylesheet" />
+<link href="<?php echo $websiteUrl?>/style/tablePaginator.css?v=<?php echo $codeVersion?>" type="text/css" rel="stylesheet" />
 <link href="<?php echo $websiteUrl?>/admin/portal/style/main-style.css?v=<?php echo $codeVersion?>" type="text/css"rel="stylesheet" />
 <link href="<?php echo $websiteUrl?>/admin/portal/style/nav-style.css?v=<?php echo $codeVersion?>" type="text/css"rel="stylesheet" />
 <link href="<?php echo $websiteUrl?>/admin/portal/style/jquery.datetimepicker.css" type="text/css"rel="stylesheet"/>
-<link href="<?php echo $websiteUrl?>/style/tablePagenator.css?v=<?php echo $codeVersion?>" type="text/css" rel="stylesheet" />
 
 <script src="<?php echo $websiteUrl?>/js/jquery-v3.6.1.min.js"></script>
 
@@ -37,3 +37,5 @@
 <script src="<?php echo $websiteUrl?>/admin/portal/js/useService.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
 <script src="<?php echo $websiteUrl?>/admin/portal/js/usePage.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
 <script src="<?php echo $websiteUrl?>/admin/portal/js/useRole.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/useInformationCategory.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/useBlog.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>

@@ -62,6 +62,9 @@ $userDeviceId = getBrowserId();
     var adminPortalMiddlewareUrl = websiteUrl + '/admin/portal/config/code'; /// For Admin Portal Middleware Url //
     var adminPortalUrl = websiteUrl + '/admin/portal'; /// For Portal Url //
 
+    /// Pictures Paths ///
+    var blogPixPath = websiteUrl + '/uploaded_files/blog'; /// For Blog Picture Path //
+
     var pageCategory = {
         services: 'services',
         portfolio: 'portfolio',
