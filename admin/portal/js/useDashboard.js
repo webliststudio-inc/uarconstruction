@@ -49,23 +49,6 @@ function _closeSearchDiv(event) {
 }
 $(document).on("click", _closeSearchDiv);
 
-function capitalizeFirstLetterOfEachWord(inputText) {
-  const words = inputText.toLowerCase().split(" ");
-  for (let i = 0; i < words.length; i++) {
-    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
-  }
-  const result = words.join(" ");
-  return result;
-}
-
-function getFirstLettersOfEachWord(str) {
-  return str
-    .split(" ") // split by spaces
-    .filter((word) => word) // remove empty strings (in case of double spaces)
-    .map((word) => word[0].toUpperCase()) // take first letter and uppercase it
-    .join(""); // join into a single string
-}
-
 function _chevronCollapse(divId) {
   var x = document.getElementById(divId + "num");
   var titleDiv = x.closest(".pages-toggle-title");
@@ -84,6 +67,7 @@ function _chevronCollapse(divId) {
 
 function _logOut() {
   sessionStorage.clear();
+  localStorage.clear();
   window.parent.location.href = adminUrl;
 }
 
@@ -108,75 +92,45 @@ function _staffValidationCheck(code) {
   }
 }
 
-function _fetchFormatDate(dateString) {
-  if (!dateString) return "N/A"; // fallback if no date
-  const dateObj = new Date(dateString);
-  const options = { day: "2-digit", month: "short", year: "numeric" };
-  // Example: 25 Jan 2025
-  return dateObj.toLocaleDateString("en-GB", options).replace(" ", " ");
-}
-
-function thousandSeparator(val) {
-  let dp = 2;
-  const formatter = new Intl.NumberFormat("ng-NG", {
-    style: "decimal",
-    maximumFractionDigits: dp,
-    minimumFractionDigits: dp,
-  });
-  //   return formatter.format(val);
-  return isNaN(parseFloat(formatter.format(val))) ? "-" : formatter.format(val);
-}
-
-///// Admin SelectFields ///////////
-function _getSelectStatusId(fieldId, statusIds) {
-  try {
-    $.ajax({
-      type: "GET",
-      url: endPoint + "/preset-data/fetch-status?statusId=" + statusIds,
-      dataType: "json",
-      cache: false,
-      headers: {
-        apiKey: apiKey,
-        Authorization: "Bearer " + loginAccessKey,
-      },
-      success: function (info) {
-        const data = info.data;
-        const success = info.success;
-
-        if (success === true) {
-          for (let i = 0; i < data.length; i++) {
-            const id = data[i].statusId;
-            const value = data[i].statusName;
-            $("#searchList_" + fieldId).append(
-              "<li onclick=\"_clickOption('searchList_" +
-                fieldId +
-                "', '" +
-                id +
-                "', '" +
-                value +
-                "');\">" +
-                value +
-                "</li>",
-            );
-          }
-        } else {
-          _actionAlert(info.message, false);
-          const response = info.response;
-          if (response < 100) {
-            _logOut();
-          }
-        }
-      },
-    });
-  } catch (error) {
-    console.error("Error: ", error);
-    _actionAlert("An unexpected error occurred. Please try again.", false);
-  }
-}
-
 function _userRoleCheck(){
 	$('.switch input').on('change', function () {
 		const label = $(this).next().next(); // Grab the toggle-label span
 		label.text($(this).prop('checked') ? 'Yes' : 'No');
 	});
+}
+
+//// Get Status Preset Data ////
+function _getSelectStatusId(fieldId, statusIds) {
+	try {
+		//// call endpoint //////
+		_callFetchEndPoints({
+			url: `preset-data/fetch-status?statusId=${statusIds}`,
+      accessKey: true,
+		})
+        .then((response) => {
+            $("#searchList_" + fieldId).html("");
+			for (let i = 0; i < response.data.length; i++) {
+				const id = response.data[i].statusId;
+        const value = response.data[i].statusName;
+                
+				$("#searchList_" + fieldId).append(`
+          <li onclick="
+            _clickOption(
+              'searchList_${fieldId}',
+              '${id}',
+              '${value}'
+            );
+          ">
+            ${value}
+          </li>
+        `);
+			}				
+		})
+		.catch((error) => {
+			console.error("Error:", error);
+		});
+	} catch (error) {
+		console.error("Error:", error);
+		_actionAlert('An unexpected error occurred. Please try again.', false);
+  }
 }

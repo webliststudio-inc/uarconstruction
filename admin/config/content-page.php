@@ -4,10 +4,10 @@
 		<p>Sign in to access the <?php echo $appName ?> Admin Portal and manage your projects, operations, and company resources.</p>
 
 		<div class="inner-form" id="viewLogin">
-			<div class="text_field_container" id="emailAddress_container">
+			<div class="text_field_container" id="userName_container">
 				<script>
 					textField({
-						id: 'emailAddress',
+						id: 'userName',
 						title: 'Email Address'
 					});
 				</script>
@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="btn-div">
-				<button class="btn" id="submitBtn" title="Log In" onclick="window.location.href = adminPortalUrl;">Log In <i class="bi-arrow-right"></i></button>
+				<button class="btn" id="submitBtn" title="Log In" onclick="_confirmLogin();">Log In <i class="bi-arrow-right"></i></button>
 			</div>
 		</div>
     </div>
