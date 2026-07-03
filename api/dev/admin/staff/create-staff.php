@@ -14,33 +14,19 @@ try {
 
     ////////////////// Variables //////////////////
 
-    $firstName     = strtoupper(trim($data['firstName'] ?? ''));
-    $middleName    = strtoupper(trim($data['middleName'] ?? ''));
-    $lastName      = strtoupper(trim($data['lastName'] ?? ''));
-    $emailAddress  = trim($data['emailAddress'] ?? '');
-    $mobileNumber  = trim($data['mobileNumber'] ?? '');
-    $genderId      = trim($data['genderId'] ?? '');
-    $dateOfBirth   = trim($data['dateOfBirth'] ?? '');
-    $stateId       = trim($data['stateId'] ?? '');
-    $lgaId         = trim($data['lgaId'] ?? '');
-    $address       = strtoupper(trim($data['address'] ?? ''));
-    $branchId      = trim($data['branchId'] ?? '');
-    $roleId        = trim($data['roleId'] ?? '');
-    $statusId      = trim($data['statusId'] ?? '');
+    $firstName = strtoupper(trim($data['firstName'] ?? ''));
+    $lastName = strtoupper(trim($data['lastName'] ?? ''));
+    $emailAddress = trim($data['emailAddress'] ?? '');
+    $phoneNumber = trim($data['phoneNumber'] ?? '');
+    $roleId = trim($data['roleId'] ?? '');
+    $statusId = trim($data['statusId'] ?? '');
 
     ////////////////// Validation //////////////////
 
     validateEmptyField($firstName, 'FIRST NAME');
-    validateEmptyField($middleName, 'MIDDLE NAME');
     validateEmptyField($lastName, 'LAST NAME');
     validateEmptyField($emailAddress, 'EMAIL');
-    validateEmptyField($mobileNumber, 'PHONE NUMBER');
-    validateEmptyField($genderId, 'STAFF GENDER');
-    validateEmptyField($dateOfBirth, 'DATE OF BIRTH');
-    validateEmptyField($stateId, 'STATE OF ORIGIN');
-    validateEmptyField($lgaId, 'LOCAL GOVT AREA');
-    validateEmptyField($address, 'ADDRESS');
-    validateEmptyField($branchId, 'BRANCH');
+    validateEmptyField($phoneNumber, 'PHONE NUMBER');
     validateEmptyField($roleId, 'STAFF ROLE');
     validateEmptyField($statusId, 'STATUS');
 
@@ -57,75 +43,50 @@ try {
     }
 
     ////////////////// Generate Staff ID //////////////////
-    $sequence = _get_sequence_count($conn, 'GFSS');
-    $array = json_decode($sequence, true);
-    $no = $array[0]['no'];
-    $staffId = 'GFSS' . $no . date("YmdHis");
+    $sequence = _get_sequence_count($conn, 'STF');
+    $staffId = 'STF' . $sequence['no'] . date("Ymdhis");
 
     ////////////////// Secure Password //////////////////
-
     $password = password_hash($staffId, PASSWORD_DEFAULT);
 
     ////////////////// Insert Staff //////////////////
-
-    $insertQuery = "
-        INSERT INTO STAFF_TAB (
-            staffId,
-            firstName,
-            middleName,
-            lastName,
-            emailAddress,
-            mobileNumber,
-            genderId,
-            dateOfBirth,
-            stateId,
-            lgaId,
-            address,
-            branchId,
-            roleId,
-            statusId,
-            password,
-            createdBy,
-            createdTime
-        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())
-    ";
+    $insertQuery = "INSERT INTO `STAFF_TAB`
+    (`staffId`, `firstName`, `lastName`, `emailAddress`, `password`, `phoneNumber`, `roleId`, `statusId`, `createdBy`, `createdTime`) VALUES
+    (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
     $insertParams = [
         $staffId,
         $firstName,
-        $middleName,
         $lastName,
         $emailAddress,
-        $mobileNumber,
-        $genderId,
-        $dateOfBirth,
-        $stateId,
-        $lgaId,
-        $address,
-        $branchId,
+        $password,
+        $phoneNumber,
         $roleId,
         $statusId,
-        $password,
         $loginStaffId
     ];
-    insertQuery($conn, $insertQuery, "ssssssssssssssss", $insertParams);
+    insertQuery($conn, $insertQuery, "sssssssis", $insertParams);
 
     ////////////////// Fetch Created Staff //////////////////
+    $selectQuery = "SELECT * FROM STAFF_VIEW WHERE staffId = ?";
+    $selectParams = [$staffId];
+    $staffData = selectQuery($conn, $selectQuery, 's', $selectParams)[0];
+    $roleId = $staffData['roleId'];
+    $statusId = $staffData['statusId'];
+    $createdBy = $staffData['createdBy'];
+    $updatedBy = $staffData['updatedBy'];
 
-    $staffQuery = "SELECT * FROM STAFF_VIEW WHERE staffId = ?";
-    $staffData = selectQuery($conn, $staffQuery, "s", [$staffId]);
-
-    foreach ($staffData as &$staff) {
-
-        $createdBy = $staff['createdBy'];
-        $updatedBy = $staff['updatedBy'];
-
-    ////////////////// Created By //////////////////
-        $staff['createdBy'] = _action_performed_by($conn, $createdBy) ?? null;
-    ////////////////// Updated By //////////////////
-        $staff['updatedBy'] = _action_performed_by($conn, $updatedBy) ?? null;
-    }
-
-    ////////////////// Response //////////////////
+    /// get roleData
+    $roleData = _get_role_details($conn, $roleId);
+    $staffData['roleData'] = $roleData;
+    /// get statusData
+    $statusData = _get_status_details($conn, $statusId);
+    $staffData['statusData'] = $statusData;
+    /// get createdByData
+    $createdByData = _action_performed_by($conn, $createdBy);
+    $staffData['createdByData'] = $createdByData;
+    /// get updatedByData
+    $updatedByData = _action_performed_by($conn, $updatedBy);
+    $staffData['updatedByData'] = $updatedByData;
 
     $response = [
         'response' => 200,
@@ -133,6 +94,7 @@ try {
         'message' => "STAFF CREATED SUCCESSFULLY!",
         'data' => $staffData
     ];
+
 
 } catch (Throwable $e) {
     ErrorHandler::handle($e);

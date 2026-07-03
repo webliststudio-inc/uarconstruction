@@ -41,7 +41,7 @@ try {
 	updateQuery($conn, $updateQuery, 'ss', $updateParams);
 
 	///// fetch staff view
-	$selectQuery = "SELECT staffId, firstName, lastName, emailAddress, phoneNumber, roleId, statusId, lastLoginTime, createdBy, updatedBy, createdTime, updatedTime FROM STAFF_TAB WHERE staffId = ?";
+	$selectQuery = "SELECT * FROM STAFF_VIEW WHERE staffId = ?";
 	$selectParams = [$staffId];
 	$userData = selectQuery($conn, $selectQuery, 's', $selectParams)[0];
 	$roleId = $userData['roleId'];

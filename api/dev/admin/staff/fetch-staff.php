@@ -44,17 +44,15 @@ try {
     $searchClause = "
         (
             firstName LIKE ?
-            OR middleName LIKE ?
             OR lastName LIKE ?
-            OR mobileNumber LIKE ?
-            OR address LIKE ?
+            OR phoneNumber LIKE ?
         )
     ";
 
     $searchValue = "%{$q}%";
 
-    $params = array_merge([$searchValue,$searchValue,$searchValue,$searchValue,$searchValue], $params);
-    $types = "sssss" . $types;
+    $params = array_merge([$searchValue, $searchValue, $searchValue], $params);
+    $types = "sss" . $types;
 
     $selectQuery = "
         SELECT *
@@ -74,16 +72,24 @@ try {
     ////////////////// Process Data //////////////////
 
     foreach ($staffData as &$staff) {
-
-        $staff['fullName'] = $staff['firstName'] . " " . $staff['lastName'];
-
+        $roleId = $staff['roleId'];
+        $statusId = $staff['statusId'];
         $createdBy = $staff['createdBy'];
         $updatedBy = $staff['updatedBy'];
 
-        ////////////////// Created By //////////////////
-        $staff['createdBy'] = _action_performed_by($conn, $createdBy) ?? null;
-        ////////////////// Updated By //////////////////
-        $staff['updatedBy'] = _action_performed_by($conn, $updatedBy) ?? null;
+        $staff['fullName'] = $staff['firstName'] . " " . $staff['lastName'];
+        /// get roleData
+        $roleData = _get_role_details($conn, $roleId);
+        $staff['roleData'] = $roleData;
+        /// get statusData
+        $statusData = _get_status_details($conn, $statusId);
+        $staff['statusData'] = $statusData;
+        /// get createdByData
+        $createdByData = _action_performed_by($conn, $createdBy);
+        $staff['createdByData'] = $createdByData;
+        /// get updatedByData
+        $updatedByData = _action_performed_by($conn, $updatedBy);
+        $staff['updatedByData'] = $updatedByData;
     }
 
     ////////////////// Response //////////////////

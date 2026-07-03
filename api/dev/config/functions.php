@@ -1,9 +1,9 @@
 <?php
 function _staff_accesskey_validation($conn, $accessKey)
 {
-    $getQuery = "SELECT * FROM STAFF_VIEW WHERE accessKey=? AND statusId=?";
-    $getParams = [$accessKey, 1];
-    $getResult = selectQuery($conn, $getQuery, 'si', $getParams);
+    $getQuery = "SELECT * FROM STAFF_TAB WHERE accessKey=? AND statusId=1";
+    $getParams = [$accessKey];
+    $getResult = selectQuery($conn, $getQuery, 's', $getParams);
     $count = count($getResult);
     if ($count > 0) {
         $userData = $getResult[0];
@@ -43,7 +43,7 @@ function _get_sequence_count($conn, $counterId)
         $no = $num;
     }
     $response = ["no" => $no];
-    return json_encode($response);
+    return ($response);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
