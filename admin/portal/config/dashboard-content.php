@@ -5,8 +5,11 @@
                 <div class="icon-div"><i class="bi bi-speedometer2"></i></div>
             </div>
             <div class="text-div">
-                <h2>Welcome Back, <span id="DashFullname">
-                       Paul</span>!</h2>
+               <h2>Welcome Back, <span id="DashFullname">
+                    <script>
+                        $("#DashFullname").html(capitalizeFirstLetterOfEachWord(staffLoginData.firstName));
+                    </script>
+                </span>!</h2>
                 <p>Welcome to your dashboard, where you can oversee all your activities, tasks, progress, and updates—helping you stay organized and on track</p>
             </div>
         </div>
@@ -16,7 +19,9 @@
                 <p><span><i class="bi-clock"></i> Last Login Date </span></p>
             </div>
             <div><strong id="lastLoginTime">
-                    2023-12-12 12:00:00
+                    <script>
+                        $("#lastLoginTime").html(staffLoginData.lastLoginTime);
+                    </script>
                 </strong></div>
         </div>
     </div>

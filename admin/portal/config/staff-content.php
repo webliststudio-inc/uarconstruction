@@ -259,7 +259,7 @@
                                     id: 'roleId',
                                     title: 'Select Role'
                                 });
-                                //_getSelectRole('roleId');
+                                _getSelectRole('roleId');
                             </script>
                         </div>
 
@@ -269,7 +269,7 @@
                                     id: 'statusId',
                                     title: 'Select Status'
                                 });
-                                // _getSelectStatusId('statusId', '1,2');
+                                _getSelectStatusId('statusId', '1,2');
                             </script>
                         </div>
                     </div>
