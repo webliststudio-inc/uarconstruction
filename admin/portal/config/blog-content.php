@@ -106,6 +106,12 @@
 <?php } ?>
 
 <?php if ($page == 'blogReg') { ?>
+    <script>
+        useEachBlogSession = JSON.parse(sessionStorage.getItem("useEachBlogSession"));
+        $('#pageTitle').html(useEachBlogSession?.blogId ? 'UPDATE BLOG' : 'CREATE NEW BLOG');
+        $('#subTitle, #subTitle2').html(useEachBlogSession?.blogId ? 'update this blog' : 'create new blog');
+    </script>
+
     <div class="slide-form-div" data-aos="fade-left" data-aos-duration="900">
         <div class="form-title-div">
             <div class="title-div">
@@ -135,32 +141,45 @@
                     </div>
 
                     <div class="form-container">
-                        <div class="text_field_container" id="catId_container">
+                        <div class="text_field_container" id="categoryId_container">
                             <script>
                                 selectField({
-                                    id: 'catId',
+                                    id: 'categoryId',
                                     title: 'Select Blog Category',
+                                    fieldValue: useEachBlogSession?.blogCatData?.categoryId ?? '',
+                                    fieldLabel: useEachBlogSession?.blogCatData?.categoryName ?? ''
                                 });
+                                _getSelectCategory('categoryId');
                             </script>
                         </div>
 
-                        <div class="text_field_container" id="regTile_container">
+                        <div class="text_field_container" id="blogTitle_container">
                             <script>
                                 textField({
-                                    id: 'regTile',
+                                    id: 'blogTitle',
                                     title: 'Blog Title',
+                                    value: useEachBlogSession?.blogTitle ?? ''
                                 });
                             </script>
                         </div>
 
                         <div class="title-div">UPLOAD BLOG PICTURE: <i>(JPG, PNG FORMAT ONLY)</i> <span>*</span></div>
                         <label>
-                            <div class="pix-div" id="blogPixWrapper">
+                            <div class="pix-div" id="issueBorder">
                                 <label>
                                     <img id="blogPixPreview" src="<?php echo $websiteUrl ?>/all-images/images/sample.jpg" alt="Default Image">      
-                                    <input type="file" id="blogPix" style="display:none" accept=".jpg, .jpeg, .png, .gif, .bmp, .tiff, .webp, .svg, .avif" onchange="blogPixPreview.UpdatePreview(this);" />    
+                                    <input type="file" id="blogPix" style="display:none" accept=".jpg, .jpeg, .png, .gif, .bmp, .tiff, .webp, .svg, .avif" onchange="blogPicturePreview.UpdatePreview(this);" />    
                             </div>
                             <div class="issue-text" id="issues_blogPix"></div>
+
+                            <script>
+                                $(document).ready(function () {
+                                    const fetchBlogPix = useEachBlogSession?.blogPix;
+                                    const blogPixUrl = fetchBlogPix ? blogPixPath + "/" + fetchBlogPix : "<?php echo $websiteUrl ?>/all-images/images/sample.jpg";
+
+                                    $("#blogPixPreview").attr("src", blogPixUrl).attr("alt", useEachBlogSession?.blogTitle);
+                                });
+                            </script>
                         </label>
 
                         <div class="text_field_container" id="statusId_container">
@@ -168,8 +187,10 @@
                                 selectField({
                                     id: 'statusId',
                                     title: 'Select Status',
+                                    fieldValue: useEachBlogSession?.statusData?.statusId ?? '',
+                                    fieldLabel: useEachBlogSession?.statusData?.statusName ?? ''
                                 });
-                                //_getSelectStatusId('statusId', '1,2');
+                                _getSelectStatusId('statusId', '1,2');
                             </script>
                         </div>
                     </div>
@@ -177,7 +198,7 @@
             </div>
 
             <div class="btn-div">
-                <button class="btn" title="SUBMIT" id="submitBtn" onclick=""> <i class="bi-check"></i> SUBMIT </button>
+                <button class="btn" title="SUBMIT" id="submitBtn" onclick="_createAndUpdateBlog();"> <i class="bi-check"></i> SUBMIT </button>
             </div>
         </div>
     </div>

@@ -45,135 +45,22 @@
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr class="tb-row">
-                                <td>1</td>
-                                <td class="clickable-td" title="Click to view staff profile">
-                                    <div class="text-back-div">
-                                        <div class="image-div">
-                                            <img src="<?php echo $websiteUrl?>/all-images/images/avatar.jpg" alt="John Anderson" />
-                                        </div>
-                                        <div class="text-div">
-                                            <div class="first-class">John Anderson</div>
-                                            <div class="second-class">STF001</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="text-div">
-                                        <div>john.anderson@company.com</div>
-                                        <div>+234 803 123 4567</div>
-                                    </div>
-                                </td>
-                                <td>Administrator</td>
-                                <td>2023-12-12 12:00:00</td>
-                                <td><div class="status-div ACTIVE">ACTIVE</div></td>
-                                <td><button class="btn view-btn" onclick="_getForm({page: 'staffProfile', url: adminPortalMiddlewareUrl});">VIEW</button></td>
-                            </tr>
+                        <tbody id="staffContent">
+                            <script>
+                                _fetchStaffData();
+                            </script>
 
-                            <tr class="tb-row">
-                                <td>2</td>
-                                <td class="clickable-td" title="Click to view staff profile">
-                                    <div class="text-back-div">
-                                        <div class="image-div">
-                                            <img src="<?php echo $websiteUrl?>/all-images/images/avatar.jpg" alt="Sarah Williams" />
-                                        </div>
-                                        <div class="text-div">
-                                            <div class="first-class">Sarah Williams</div>
-                                            <div class="second-class">STF002</div>
-                                        </div>
+                            <tr>
+                                <td colspan="20">
+                                    <div class="content-loading-div">
+                                        <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="text-div">
-                                        <div>sarah.williams@company.com</div>
-                                        <div>+234 805 234 5678</div>
-                                    </div>
-                                </td>
-                                <td>Staff</td>
-                                <td>2023-12-12 08:56:00</td>
-                                <td><div class="status-div ACTIVE">ACTIVE</div></td>
-                                <td><button class="btn view-btn">VIEW</button></td>
-                            </tr>
-
-                            <tr class="tb-row">
-                                <td>3</td>
-                                <td class="clickable-td" title="Click to view staff profile">
-                                    <div class="text-back-div">
-                                        <div class="image-div">
-                                            <img src="<?php echo $websiteUrl?>/all-images/images/avatar.jpg" alt="Michael Johnson" />
-                                        </div>
-                                        <div class="text-div">
-                                            <div class="first-class">Michael Johnson</div>
-                                            <div class="second-class">STF003</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="text-div">
-                                        <div>michael.johnson@company.com</div>
-                                        <div>+234 806 345 6789</div>
-                                    </div>
-                                </td>
-                                <td>Accountant</td>
-                                <td>2023-12-12 10:09:00</td>
-                                <td><div class="status-div ACTIVE">ACTIVE</div></td>
-                                <td><button class="btn view-btn">VIEW</button></td>
-                            </tr>
-
-                            <tr class="tb-row">
-                                <td>4</td>
-                                <td class="clickable-td" title="Click to view staff profile">
-                                    <div class="text-back-div">
-                                        <div class="image-div">
-                                            <img src="<?php echo $websiteUrl?>/all-images/images/avatar.jpg" alt="Emily Brown" />
-                                        </div>
-                                        <div class="text-div">
-                                            <div class="first-class">Emily Brown</div>
-                                            <div class="second-class">STF004</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="text-div">
-                                        <div>emily.brown@company.com</div>
-                                        <div>+234 807 456 7890</div>
-                                    </div>
-                                </td>
-                                <td>Staff</td>
-                                <td>2023-12-12 11:23:00</td>
-                                <td><div class="status-div ACTIVE">ACTIVE</div></td>
-                                <td><button class="btn view-btn">VIEW</button></td>
-                            </tr>
-
-                            <tr class="tb-row">
-                                <td>5</td>
-                                <td class="clickable-td" title="Click to view staff profile">
-                                    <div class="text-back-div">
-                                        <div class="image-div">
-                                            <img src="<?php echo $websiteUrl?>/all-images/images/avatar.jpg" alt="David Wilson" />
-                                        </div>
-                                        <div class="text-div">
-                                            <div class="first-class">David Wilson</div>
-                                            <div class="second-class">STF005</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="text-div">
-                                        <div>david.wilson@company.com</div>
-                                        <div>+234 808 567 8901</div>
-                                    </div>
-                                </td>
-                                <td>Administrator</td>
-                                <td>2023-12-12 12:00:00</td>
-                                <td><div class="status-div ACTIVE">ACTIVE</div></td>
-                                <td><button class="btn view-btn">VIEW</button></td>
                             </tr>
                         </tbody>
                     </table>
                     <!-- Pagination -->
-                    <div id="staffPaginationControls" class="pagination-div"></div>
+                    <div id="staffContentPaginationControls" class="pagination-div"></div>
                 </div>
             </div>
         </div>
@@ -210,11 +97,20 @@
                     </div>
 
                     <div class="form-container">
-                        <div class="text_field_container" id="fullName_container">
+                        <div class="text_field_container" id="firstName_container">
                             <script>
                                 textField({
-                                    id: 'fullName',
-                                    title: 'Full Name'
+                                    id: 'firstName',
+                                    title: 'First Name'
+                                });
+                            </script>
+                        </div>
+
+                        <div class="text_field_container" id="lastName_container">
+                            <script>
+                                textField({
+                                    id: 'lastName',
+                                    title: 'Last Name'
                                 });
                             </script>
                         </div>
@@ -229,10 +125,10 @@
                             </script>
                         </div>
 
-                        <div class="text_field_container" id="mobileNumber_container">
+                        <div class="text_field_container" id="phoneNumber_container">
                             <script>
                                 textField({
-                                    id: 'mobileNumber',
+                                    id: 'phoneNumber',
                                     title: 'Phone Number',
                                     type: 'tel',
                                     onKeyPressFunction: 'isNumberCheck(event);'
@@ -284,6 +180,10 @@
 <?php } ?>
 
 <?php if ($page == 'staffProfile') { ?>
+    <script>
+        getEachStaffDetailsSession = JSON.parse(sessionStorage.getItem("getEachStaffDetailsSession"));
+    </script>
+
     <div class="user-profile-div" data-aos="fade-left" data-aos-duration="900">
         <div class="form-title-div">
             <div class="title-div">
@@ -301,7 +201,7 @@
             <div class="bg-img">
                 <div class="mini-profile">
                     <label>
-                        <div class="img-div" id="current_user_passport1">
+                        <div class="img-div" id="">
                             <img src="<?php echo $websiteUrl ?>/all-images/images/avatar.jpg" alt="Profile Image">
                         </div>
                     </label>
@@ -310,18 +210,30 @@
                         <div class="inner-text">
                             <div class="text-div">
                                 <div class="name" id="fullName">
-                                    Hon. Emmanuel Paul
+                                    <script>
+                                        $("#fullName").html(getEachStaffDetailsSession?.firstName + " " + getEachStaffDetailsSession?.lastName);
+                                    </script>
                                 </div>
 
                                 <div class="text">
                                     <div>
-                                        <div id="statusBtn" class="status-btn ACTIVE"><span id="statusName">ACTIVE</span></div>
+                                        <div id="statusBtn" class="status-btn"><span id="statusName"></span></div>
                                     </div>
                                     | LAST LOGIN DATE:
                                     <strong id="lastLoginTime">
-                                        2023-12-12 12:00:00
+                                        <script>
+                                            $("#lastLoginTime").html(getEachStaffDetailsSession?.lastLoginTime ? getEachStaffDetailsSession?.lastLoginTime : "00-00-00 00:00:00");
+                                        </script>
                                     </strong>
                                 </div>
+
+                                <script>
+                                    $(document).ready(function() {
+                                        const statusName = getEachStaffDetailsSession?.statusData?.statusName;
+                                        $("#statusName").html(statusName);
+                                        $("#statusBtn").addClass(statusName);
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -353,43 +265,39 @@
 
 <!-- For Staffs Modal Pages -->
 <?php if ($page == 'staffProfileDetails') { ?>
+
     <div class="user-in">
         <div class="title">STAFF BASIC INFORMATION</div>
 
         <div class="profile-segment-div">
-            <div class="text_field_container col-3" id="updateFirstName_container">
+            <div class="text_field_container col-1" id="updateFirstName_container">
                 <script>
                     textField({
                         id: 'updateFirstName',
                         title: 'First Name',
+                        value: getEachStaffDetailsSession?.firstName ?? ''
                     });
                 </script>
             </div>
 
-            <div class="text_field_container col-3" id="updateMiddleName_container">
-                <script>
-                    textField({
-                        id: 'updateMiddleName',
-                        title: 'Middle Name',
-                    });
-                </script>
-            </div>
-
-            <div class="text_field_container col-3" id="updateLastName_container">
+            <div class="text_field_container col-1" id="updateLastName_container">
                 <script>
                     textField({
                         id: 'updateLastName',
                         title: 'Last Name',
+                        value: getEachStaffDetailsSession?.lastName ?? ''
                     });
                 </script>
             </div>
 
-            <div class="text_field_container col-1" id="updateMobileNumber_container">
+            <div class="text_field_container col-1" id="updatePhoneNumber_container">
                 <script>
                     textField({
-                        id: 'updateMobileNumber',
+                        id: 'updatePhoneNumber',
                         title: 'Phone Number',
                         type: 'tel',
+                        value: getEachStaffDetailsSession?.phoneNumber ?? '',
+                        onKeyPressFunction: 'isNumberCheck(event);'
                     });
                 </script>
             </div>
@@ -400,38 +308,10 @@
                         id: 'updateEmailAddress',
                         title: 'Email Address',
                         type: 'email',
+                        value: getEachStaffDetailsSession?.emailAddress ?? ''
                     });
                 </script>
-            </div>
-
-            <div class="text_field_container col-1" id="updateGenderId_container">
-                <script>
-                    selectField({
-                        id: 'updateGenderId',
-                        title: 'Select Gender',
-                    });
-                    //_getSelectGender('updateGenderId');
-                </script>
-            </div>
-
-            <div class="text_field_container col-1" id="updateDateOfBirth_container">
-                <script>
-                    textField({
-                        id: 'updateDateOfBirth',
-                        title: 'Date Of Birth',
-                        type: 'date',
-                    });
-                </script>
-            </div>
-
-            <div class="text_field_container col-2" id="updateAddress_container">
-                <script>
-                    textField({
-                        id: 'updateAddress',
-                        title: 'Home Address',
-                    });
-                </script>
-            </div>
+            </div>            
         </div>
     </div>
 
@@ -443,7 +323,8 @@
                     textField({
                         id: 'staffId',
                         title: 'Staff ID',
-                        readonly: true
+                        readonly: true,
+                        value: getEachStaffDetailsSession?.staffId ?? ''
                     });
                 </script>
             </div>
@@ -453,7 +334,8 @@
                     textField({
                         id: 'createdTime',
                         title: 'Date Of Registration',
-                        readonly: true
+                        readonly: true,
+                        value: getEachStaffDetailsSession?.createdTime ?? ''
                     });
                 </script>
             </div>
@@ -463,7 +345,8 @@
                     textField({
                         id: 'lastLogin',
                         title: 'Last Login Date',
-                        readonly: true
+                        readonly: true,
+                        value: getEachStaffDetailsSession?.lastLoginTime ?? ''
                     });
                 </script>
             </div>
@@ -479,8 +362,10 @@
                     selectField({
                         id: 'updateRoleId',
                         title: 'Select Role',
+                        fieldValue: getEachStaffDetailsSession?.roleData?.roleId ?? '',
+                        fieldLabel: getEachStaffDetailsSession?.roleData?.roleName ?? ''
                     });
-                    //_getSelectRole('updateRoleId');
+                    _getSelectRole('updateRoleId');
                 </script>
             </div>
 
@@ -489,13 +374,15 @@
                     selectField({
                         id: 'updateStatusId',
                         title: 'Select Status',
+                        fieldValue: getEachStaffDetailsSession?.statusData?.statusId ?? '',
+                        fieldLabel: getEachStaffDetailsSession?.statusData?.statusName ?? ''
                     });
-                    //_getSelectStatusId('updateStatusId', '1,2');
+                    _getSelectStatusId('updateStatusId', '1,2');
                 </script>
             </div>
         </div>
         <div class="btn-div">
-            <button class="btn" title="UPDATE PROFILE" id="updateBtn" onclick=""> UPDATE PROFILE <i class="bi-check"></i></button>
+            <button class="btn" title="UPDATE PROFILE" id="updateBtn" onclick="_updateStaff();"> UPDATE PROFILE <i class="bi-check"></i></button>
         </div>
     </div>
 <?php } ?>
