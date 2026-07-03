@@ -13,19 +13,19 @@ try {
     }
 
     ////////////////// Variables //////////////////
-    $q          = trim($_GET['q'] ?? '');
+    $q = trim($_GET['q'] ?? '');
     $categoryId = trim($_GET['categoryId'] ?? '');
-    $statusId   = trim($_GET['statusId'] ?? '');
+    $statusId = trim($_GET['statusId'] ?? '');
 
     ////////////////// Build Filters //////////////////
     $filters = [];
-    $params  = [];
-    $types   = '';
+    $params = [];
+    $types = '';
 
     if (!empty($categoryId)) {
         $filters[] = "categoryId = ?";
-        $params[]  = $categoryId;
-        $types    .= 's';
+        $params[] = $categoryId;
+        $types .= 's';
     }
 
     if (!empty($statusId)) {
@@ -34,14 +34,14 @@ try {
         $filters[] = "statusId IN ($placeholders)";
         foreach ($statusArray as $s) {
             $params[] = trim($s);
-            $types   .= 's';
+            $types .= 's';
         }
     }
 
     if (!empty($q)) {
         $filters[] = "categoryName LIKE ?";
-        $params[]  = "%$q%";
-        $types    .= 's';
+        $params[] = "%$q%";
+        $types .= 's';
     }
 
     $whereClause = '';
@@ -55,20 +55,23 @@ try {
 
     if (empty($categories)) {
         throw new NotFoundException("No Record found");
-    } 
-    
-    foreach ($categories as &$cat) {
+    }
 
-        // Status Data
-        $statusDataQuery = "SELECT * FROM SETUP_STATUS_TAB WHERE statusId = ?";
-        $cat['statusData'] = selectQuery($conn, $statusDataQuery, "s", [$cat['statusId']])[0] ?? null;
+    foreach ($categories as &$categoryData) {
+        $statusId = $categoryData['statusId'];
+        $createdBy = $categoryData['createdBy'];
+        $updatedBy = $categoryData['updatedBy'];
 
-        // Created By
-        $createdBy = $cat['createdBy'];
-        $cat['createdBy'] = _action_performed_by($conn, $createdBy) ?? null;
-        // Updated By
-        $updatedBy = $cat['updatedBy'];
-        $cat['updatedBy'] = _action_performed_by($conn, $updatedBy) ?? null;
+
+        /// get statusData
+        $statusData = _get_status_details($conn, $statusId);
+        $categoryData['statusData'] = $statusData;
+        /// get createdByData
+        $createdByData = _action_performed_by($conn, $createdBy);
+        $categoryData['createdByData'] = $createdByData;
+        /// get updatedByData
+        $updatedByData = _action_performed_by($conn, $updatedBy);
+        $categoryData['updatedByData'] = $updatedByData;
     }
 
     $response = [
@@ -78,7 +81,7 @@ try {
         'allRecordCount' => count($categories),
         'data' => $categories
     ];
-    
+
 
 } catch (Throwable $e) {
     ErrorHandler::handle($e);

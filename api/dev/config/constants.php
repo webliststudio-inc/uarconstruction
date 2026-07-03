@@ -6,6 +6,7 @@ $appDescription = "Urban & Rural Construction Services is a leading construction
 ////////////////////////////////////////////////////////////////////////
 $userIpAddress = isset($_SERVER['HTTP_USERIPADDRESS']) ? $_SERVER['HTTP_USERIPADDRESS'] : null;
 $frontEndApiKey = isset($_SERVER['HTTP_APIKEY']) ? $_SERVER['HTTP_APIKEY'] : null;
+$userDeviceId = isset($_SERVER['HTTP_USERDEVICEID']) ? $_SERVER['HTTP_USERDEVICEID'] : null;
 ////////////////////////////////////////////////////////////////////////
 
 /// all constance
@@ -27,5 +28,10 @@ if ($frontEndApiKey != $backEndApiKey) {/// start if 1
 
 ///// check for userIpAddress security
 if (empty($userIpAddress)) {/// start if 1
+    $checkBasicSecurity = false;
+}
+
+///// check for userDeviceId security
+if (empty($userDeviceId)) {/// start if 1
     $checkBasicSecurity = false;
 }

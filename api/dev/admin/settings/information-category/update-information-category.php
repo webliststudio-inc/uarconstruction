@@ -13,9 +13,9 @@ try {
     }
 
     ////////////////// Variables //////////////////
-    $categoryId   = trim($_GET['categoryId'] ?? '');
-    $categoryName = trim($_POST['categoryName'] ?? '');
-    $statusId     = trim($_POST['statusId'] ?? '');
+    $categoryId = trim($_GET['categoryId'] ?? '');
+    $categoryName = trim($data['categoryName'] ?? '');
+    $statusId = trim($data['statusId'] ?? '');
 
     ////////////////// Validation //////////////////
     validateEmptyField($categoryName, 'CATEGORY NAME');
@@ -29,35 +29,38 @@ try {
     }
 
     ////////////////// Update Category //////////////////
-    $updateQuery = "
-        UPDATE INFORMATION_CATEGORY_TAB
+    $updateQuery = "UPDATE INFORMATION_CATEGORY_TAB
         SET categoryName = ?, statusId = ?, updatedBy = ?, updatedTime = NOW()
         WHERE categoryId = ?
     ";
     $updateParams = [$categoryName, $statusId, $loginStaffId, $categoryId];
-    insertQuery($conn, $updateQuery, "ssis", $updateParams);
+    updateQuery($conn, $updateQuery, "siss", $updateParams);
 
-    ////////////////// Fetch Updated Category //////////////////
-    $categoryQuery = "SELECT * FROM INFORMATION_CATEGORY_TAB WHERE categoryId = ?";
-    $categories = selectQuery($conn, $categoryQuery, "s", [$categoryId]);
+    ////////////////// Fetch Created Category //////////////////
+    $selectQuery = "SELECT * FROM INFORMATION_CATEGORY_TAB WHERE categoryId = ?";
+    $selectParams = [$categoryId];
+    $categoryData = selectQuery($conn, $selectQuery, "s", $selectParams)[0];
+    $statusId = $categoryData['statusId'];
+    $createdBy = $categoryData['createdBy'];
+    $updatedBy = $categoryData['updatedBy'];
 
-    foreach ($categories as &$category) {
-        // Status
-        $statusData = selectQuery($conn, "SELECT * FROM SETUP_STATUS_TAB WHERE statusId = ?", "s", [$category['statusId']]);
-        $category['statusData'] = $statusData[0] ?? null;
 
-        // Created By
-        $category['createdBy'] = _action_performed_by($conn, $category['createdBy']) ?? null;
-        // Updated By
-        $category['updatedBy'] = _action_performed_by($conn, $category['updatedBy']) ?? null;
-    }
+    /// get statusData
+    $statusData = _get_status_details($conn, $statusId);
+    $categoryData['statusData'] = $statusData;
+    /// get createdByData
+    $createdByData = _action_performed_by($conn, $createdBy);
+    $categoryData['createdByData'] = $createdByData;
+    /// get updatedByData
+    $updatedByData = _action_performed_by($conn, $updatedBy);
+    $categoryData['updatedByData'] = $updatedByData;
 
     ////////////////// Response //////////////////
     $response = [
         'response' => 200,
-        'success'  => true,
-        'message'  => "INFORMATION CATEGORY UPDATED SUCCESSFULLY!",
-        'data'     => $categories
+        'success' => true,
+        'message' => "INFORMATION CATEGORY UPDATED SUCCESSFULLY!",
+        'data' => $categoryData
     ];
 
 } catch (Throwable $e) {
