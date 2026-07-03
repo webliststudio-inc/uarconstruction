@@ -36,6 +36,16 @@
                         </div>
                     </div>
 
+                    <div class="user-managment-list" onclick="_getPage({page: 'informationCategory', url: adminPortalMiddlewareUrl});">
+                        <div class="inner-div">
+                            <div class="icon-div"><img src="<?php echo $websiteUrl ?>/all-images/images/blog.png" alt="Blog Category Configurations" /></div>
+                            <div class="text-div">
+                                <h3>Information Category Configurations</h3>
+                                <p>Information category configurations organize content, ensuring easy navigation and management.</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="user-managment-list" onclick="_getForm({page: 'systemSettings', url: adminPortalMiddlewareUrl});">
                         <div class="inner-div">
                             <div class="icon-div"><img src="<?php echo $websiteUrl ?>/all-images/images/blog.png" alt="Blog Category Configurations" /></div>

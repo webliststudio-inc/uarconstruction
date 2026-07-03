@@ -208,3 +208,28 @@ $(document).on("click", ".toggle-password", function () {
     icon.removeClass("bi-eye-slash-fill").addClass("bi-eye-fill");
   }
 });
+
+
+function _getSelectCategory(fieldId) {
+	try {
+		//// call endpoint //////
+		_callFetchEndPoints({
+			url: `admin/settings/information-category/fetch-information-category?statusId=1`,
+			accessKey: true,
+		})
+		.then((response) => {
+			for (let i = 0; i < response.data.length; i++) {
+				const id = response.data[i].categoryId;
+				const value = response.data[i].categoryName;
+				$('#searchList_'+ fieldId).append('<li onclick="_clickOption(\'searchList_' + fieldId + '\', \'' + id + '\', \'' + value + '\');">'+ value +'</li>');
+			}				
+		 })
+		.catch((error) => {
+			_staffValidationCheck(error.response);
+			console.error("Error:", error);
+		});
+	} catch (error) {
+		console.error("Error:", error);
+		_actionAlert('An unexpected error occurred. Please try again.', false);
+  	}
+}

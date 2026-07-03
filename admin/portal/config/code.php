@@ -21,6 +21,7 @@ switch ($action){
 		require_once('role-content.php');
 		require_once('pages-content.php');
 		require_once('page-details.php');
+		require_once('information-category-content.php');
 	break;
 
 	case 'get_form':
@@ -39,6 +40,31 @@ switch ($action){
 		require_once('role-content.php');
 		require_once('pages-content.php');
 		require_once('page-details.php');
+		require_once('information-category-content.php');
 	break;
+
+	case 'uploadBlogPix':
+		$newBlogPix = $_POST['newBlogPix'] ?? '';
+		$oldBlogPix = $_POST['oldBlogPix'] ?? '';
+		$blogPix = $_POST['blogPix'] ?? '';
+	
+		///// Validate Exam Logo /////
+		if (!empty($blogPix)) {
+    		$blogPix = preg_replace('#^data:image/\w+;base64,#i', '', $blogPix);
+			$blogPix = str_replace(' ', '+', $blogPix);
+			$blogPix = base64_decode($blogPix);
+		}
+		
+		//// Upload Exam Logo ////
+		$uploadBlogDir = "../../../uploaded_files/blog/";
+
+		//// Create Directory If Not Exists ////
+		if(!empty($newBlogPix)){
+			if($newBlogPix!=$oldBlogPix){
+				unlink($uploadBlogDir . $oldBlogPix);
+				file_put_contents($uploadBlogDir . $newBlogPix, $blogPix);
+			}
+		}
+    break;
 }
 ?>

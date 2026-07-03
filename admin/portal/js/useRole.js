@@ -159,7 +159,7 @@ function _fetchRolesData() {
 		_staffValidationCheck(error.response);
 		console.error("Error:", error);
 		if (error.status==0) {
-			_showFalseNotification({
+			_showEmptyState({
 				container: "#rolesContent",
 				message: "Check your internet connection and try again",
 			});
