@@ -90,7 +90,13 @@ switch ($action){
 		$txt .= "<?php \$seoKeywords='$seoKeywords';?>\n";
 		$txt .= "<?php \$seoDescription='$seoDescription';?>\n";
 		$txt .= "<?php \$pageSeoPix='$pageSeoPix';?>\n";
-		$txt .= "<?php include " . "'../$pageCategory" . "-details.php';?>";
+
+		//// include page details file ////
+		if ($pageCategory == 'portfolio'){
+			$txt .= "<?php include " . "'../../$pageCategory" . "_details.php';?>";
+		} else {
+			$txt .= "<?php include " . "'../$pageCategory" . "_details.php';?>";
+		}
 
 		/// check if old page url is empty to create new folder////
 		if (empty($oldPageUrl) || $oldPageUrl===null) {

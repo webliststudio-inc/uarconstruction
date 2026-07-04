@@ -2,14 +2,15 @@ let allowOverlayClose = false;
 
 function _getPage(options) {
 	const {
-        page = '',
+    page = '',
 		action='get_page',
-		url='',
+    url = '',
+    pageCategory = "", /// optional
 		pageContainer='page-content'
     } = options;
 
 		$("#"+pageContainer).html('<div class="ajax-loader"><img src="'+ websiteUrl +'/all-images/images/spinner.gif"/></div>').css({'display': 'flex','flex-direction': 'column','gap': '20px','align-items': 'center','align-items': 'center'}).fadeIn(500);
-		const dataString = "action=" + action + "&page=" + page;
+		const dataString = "action=" + action + "&page=" + page + "&pageCategory=" + pageCategory;
 		$.ajax({
 			type: "POST",
 			url: url,

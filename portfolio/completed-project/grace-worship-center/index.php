@@ -4,4 +4,4 @@
 <?php $seoKeywords='Grace Worship Center';?>
 <?php $seoDescription='Grace Worship Center';?>
 <?php $pageSeoPix='PAGE01520260704033449.jpg';?>
-<?php include '../portfolio-details.php';?>
+<?php include '../../portfolio_details.php';?>

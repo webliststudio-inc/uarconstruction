@@ -4,18 +4,18 @@
             <div class="title-div">
                 <ul>
                     <?php if ($pageCategory == 'SERVICE') { ?>
-                        <li class="active-li" title="PAGE CONTENT" id="pageContent" onclick="_getActivePagesTab({divid: 'pageContent', page: 'pageContent', url: adminPortalMiddlewareUrl});">PAGE CONTENT</li>
-                        <li title="UPLOAD PICTURE" id="picturePage" onclick="_getActivePagesTab({divid:'picturePage', page: 'picturePage', url: adminPortalMiddlewareUrl});">UPLOAD PICTURE</li>
+                        <li class="active-li" title="PAGE CONTENT" id="pageContent" onclick="_getActivePagesTab({divid: 'pageContent', page: 'pageContent', pageCategory: 'SERVICE', url: adminPortalMiddlewareUrl});">PAGE CONTENT</li>
+                        <li title="UPLOAD PICTURE" id="picturePage" onclick="_getActivePagesTab({divid:'picturePage', page: 'picturePage', pageCategory: 'SERVICE', url: adminPortalMiddlewareUrl});">UPLOAD PICTURE</li>
                     <?php } ?>
 
                     <?php if ($pageCategory == 'PORTFOLIO') { ?>
-                        <li class="active-li" title="PAGE CONTENT" id="pageContent" onclick="_getActivePagesTab({divid: 'pageContent', page: 'pageContent', url: adminPortalMiddlewareUrl});">PAGE CONTENT</li>
-                        <li title="UPLOAD PICTURE" id="picturePage" onclick="_getActivePagesTab({divid:'picturePage', page: 'picturePage', url: adminPortalMiddlewareUrl});">UPLOAD PICTURE</li>   
+                        <li class="active-li" title="PAGE CONTENT" id="pageContent" onclick="_getActivePagesTab({divid: 'pageContent', page: 'pageContent', pageCategory: 'PORTFOLIO', url: adminPortalMiddlewareUrl});">PAGE CONTENT</li>
+                        <li title="UPLOAD PICTURE" id="picturePage" onclick="_getActivePagesTab({divid:'picturePage', page: 'picturePage', pageCategory: 'PORTFOLIO', url: adminPortalMiddlewareUrl});">UPLOAD PICTURE</li>   
                     <?php } ?>
 
                     <?php if ($pageCategory == 'BLOG') { ?>
-                        <li class="active-li" title="PAGE CONTENT" id="pageContent" onclick="_getActivePagesTab({divid: 'pageContent', page: 'pageContent', url: adminPortalMiddlewareUrl});">PAGE CONTENT</li> 
-                        <li title="UPLOAD PICTURE" id="picturePage" onclick="_getActivePagesTab({divid:'picturePage', page: 'picturePage', url: adminPortalMiddlewareUrl});">UPLOAD PICTURE</li>
+                        <li class="active-li" title="PAGE CONTENT" id="pageContent" onclick="_getActivePagesTab({divid: 'pageContent', page: 'pageContent', pageCategory: 'BLOG', url: adminPortalMiddlewareUrl});">PAGE CONTENT</li> 
+                        <li title="UPLOAD PICTURE" id="picturePage" onclick="_getActivePagesTab({divid:'picturePage', page: 'picturePage', pageCategory: 'BLOG', url: adminPortalMiddlewareUrl});">UPLOAD PICTURE</li>
                     <?php } ?>
                 </ul>
 

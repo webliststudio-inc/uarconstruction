@@ -4,4 +4,4 @@
 <?php $seoKeywords='The Importance of Effective Project Planning';?>
 <?php $seoDescription='The Importance of Effective Project Planning';?>
 <?php $pageSeoPix='PAGE00520260703114244.jpg';?>
-<?php include '../blog-details.php';?>
+<?php include '../blog_details.php';?>

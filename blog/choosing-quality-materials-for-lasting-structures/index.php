@@ -4,4 +4,4 @@
 <?php $seoKeywords='Choosing Quality Materials for Lasting Structures';?>
 <?php $seoDescription='Choosing Quality Materials for Lasting Structures';?>
 <?php $pageSeoPix='PAGE00420260703113403.jpg';?>
-<?php include '../blog-details.php';?>
+<?php include '../blog_details.php';?>

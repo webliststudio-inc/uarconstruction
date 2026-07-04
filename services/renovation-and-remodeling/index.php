@@ -5,4 +5,4 @@
 <?php $seoDescription='Renovation & Remodeling';?>
 <?php $pageSeoPix='PAGE00820260704125916.jpg';?>
 <?php $pageContent='<p>Renovation &amp; Remodeling</p>';?>
-<?php include '../service-details.php';?>
+<?php include '../service_details.php';?>
