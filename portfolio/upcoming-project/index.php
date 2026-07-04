@@ -6,24 +6,24 @@
 
 <head>
     <?php include '../../meta.php' ?>   
-    <title><?php echo $appName ?> | Completed Construction Projects Across the USA</title>
+    <title><?php echo $appName ?> | Upcoming Construction Projects Across the USA</title>    
     <meta name="keywords"
-        content="<?php echo $appName ?> completed projects, completed construction projects USA, finished building projects, residential construction portfolio, commercial construction projects, completed renovations, infrastructure development projects, construction project gallery, successful construction projects, construction company portfolio USA, completed building works" />
+        content="<?php echo $appName ?> upcoming projects, upcoming construction projects USA, finished building projects, residential construction portfolio, commercial construction projects, current renovations, infrastructure development projects, construction project gallery, successful construction projects, construction company portfolio USA, current building works" />
     <meta name="description"
-        content="Discover our completed construction projects across the USA, featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction." />
+        content="Discover our upcoming construction projects across the USA, featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction." />
     <meta property="og:title"
-        content="<?php echo $appName ?> | Completed Construction Projects Across the USA" />
+        content="<?php echo $appName ?> | Upcoming Construction Projects Across the USA" />
     <meta property="og:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta property="og:description"
-        content="Explore our successfully completed construction projects including residential, commercial, renovation, and infrastructure developments across the USA." />
+        content="Explore our upcoming construction projects including residential, commercial, renovation, and infrastructure developments across the USA." />
     <meta name="twitter:title"
-        content="<?php echo $appName ?> | Completed Construction Projects Across the USA" />
+        content="<?php echo $appName ?> | Upcoming Construction Projects Across the USA" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta name="twitter:description"
-        content="Browse our completed construction projects showcasing quality craftsmanship, timely delivery, and excellence in residential, commercial, and infrastructure construction." />
+        content="Browse our upcoming construction projects showcasing quality craftsmanship, timely delivery, and excellence in residential, commercial, and infrastructure construction." />
 </head>
 
 <body>
@@ -39,15 +39,15 @@
                     <a href="<?php echo $websiteUrl ?>">
                         <li title="Portfolio">Portfolio <i class="bi-caret-right-fill"></i></li>
                     </a>
-                    <a href="<?php echo $websiteUrl ?>/completed-projects">
-                        <li title="Completed Projects">Completed Projects</li>
+                    <a href="<?php echo $websiteUrl ?>/upcoming-projects">
+                        <li title="Upcoming Projects">Upcoming Projects</li>
                     </a>
                 </ul>
             </div>
             <div class="text-content-div" data-aos="fade-in" data-aos-duration="900">
-                <h1 data-aos="fade-in" data-aos-duration="800"><span>Completed Projects</span></h1>  
+                <h1 data-aos="fade-in" data-aos-duration="800"><span>Upcoming Projects</span></h1>  
                 <p>
-                    Browse our completed construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction.
+                    Browse our upcoming construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction.
                 </p>
                 <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
@@ -89,17 +89,17 @@
 
                     <div class="left-div">
                         <div class="portfolio-back-div" id="portfolioContainer" data-aos="fade-up" data-aos-duration="900">
-                            <a href="<?php echo $websiteUrl ?>/portfolio/completed-projects/grace-worship-center">
+                            <a href="<?php echo $websiteUrl ?>/portfolio/upcoming-project/grace-worship-center">
                             <div class="portfolio-card" data-category="1">
-                                <div class="title COMPLETED">COMPLETED</div>
+                                <div class="title UPCOMING">UPCOMING</div>
                                 <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-1.jpeg"
-                                            alt="Grace Worship Center" />
+                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/corporate_office_development.jpeg"
+                                            alt="Corporate Office Development" />
                                 </div>
                                 <div class="card-content">
-                                    <h3 class="card-title" title="Grace Worship Center">Grace Worship Center</h3>
+                                    <h3 class="card-title" title="Corporate Office Development">Corporate Office Development</h3>
                                     <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>WORSHIP CENTER</span></div>
+                                        <div class="porfolio-type"><span>COMMERCIAL</span></div>
                                         <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
                                     </div>
                                 </div>
@@ -107,15 +107,15 @@
 
                             <a href="<?php echo $websiteUrl ?>/portfolio">
                             <div class="portfolio-card" data-category="2">
-                                <div class="title COMPLETED">COMPLETED</div>
+                                <div class="title UPCOMING">UPCOMING</div>
                                 <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-2.jpeg"
-                                        alt="Downtown Office Complex" />
+                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/grace_community_worship_center.jpeg"
+                                        alt="Grace Community Worship Center" />
                                 </div>
                                 <div class="card-content">
-                                    <h3 class="card-title" title="Downtown Office Complex">Downtown Office Complex</h3>
+                                    <h3 class="card-title" title="Grace Community Worship Center">Grace Community Worship Center</h3>   
                                     <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>COMMERCIAL</span></div>
+                                        <div class="porfolio-type"><span>WORSHIP CENTER</span></div>
                                         <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
                                     </div>
                                 </div>
@@ -123,15 +123,15 @@
 
                             <a href="<?php echo $websiteUrl ?>/portfolio"> 
                             <div class="portfolio-card" data-category="1">
-                                <div class="title COMPLETED">COMPLETED</div>
+                                <div class="title UPCOMING">UPCOMING</div>
                                 <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-6.jpeg"
-                                        alt="Kingdom Life Cathedral" />
+                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/reserve_oak_creek.jpeg"
+                                        alt="Reserve Oak Creek" />
                                 </div>
                                 <div class="card-content">
-                                    <h3 class="card-title" title="Kingdom Life Cathedral">Kingdom Life Cathedral</h3>
+                                    <h3 class="card-title" title="Reserve Oak Creek">Reserve Oak Creek</h3>
                                     <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>WORSHIP CENTER</span></div>
+                                        <div class="porfolio-type"><span>RESIDENTIAL</span></div>
                                         <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
                                     </div>
                                 </div>
@@ -139,47 +139,15 @@
 
                             <a href="<?php echo $websiteUrl ?>/portfolio/">
                             <div class="portfolio-card" data-category="1">
-                                <div class="title COMPLETED">COMPLETED</div>
+                                <div class="title UPCOMING">UPCOMING</div>
                                 <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-3.jpeg"
-                                            alt="Redeemer Assembly Church Complex" />
+                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/central_plaza_complex.jpeg"
+                                            alt="Central Plaza Complex" />
                                 </div>
                                 <div class="card-content">
-                                    <h3 class="card-title" title="Redeemer Assembly Church Complex">Redeemer Assembly Church Complex</h3>
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>WORSHIP CENTER</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
-
-                            <a href="<?php echo $websiteUrl ?>/portfolio"> 
-                            <div class="portfolio-card" data-category="2">
-                                <div class="title COMPLETED">COMPLETED</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-5.jpeg"
-                                        alt="CityGate Commercial Mall" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="CityGate Commercial Mall">CityGate Commercial Mall</h3>
+                                    <h3 class="card-title" title="Central Plaza Complex">Central Plaza Complex</h3>     
                                     <div class="portfolio-meta">
                                         <div class="porfolio-type"><span>COMMERCIAL</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
-
-                            <a href="<?php echo $websiteUrl ?>/portfolio">     
-                            <div class="portfolio-card" data-category="1">
-                                <div class="title COMPLETED">COMPLETED</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-4.jpeg"
-                                        alt="New Covenant Worship Center" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="New Covenant Worship Center">New Covenant Worship Center</h3>
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>WORSHIP CENTER</span></div>
                                         <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
                                     </div>
                                 </div>

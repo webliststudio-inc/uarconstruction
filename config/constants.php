@@ -64,10 +64,13 @@ $userDeviceId = getBrowserId();
 
     /// Pictures Paths ///
     var blogPixPath = websiteUrl + '/uploaded_files/blog'; /// For Blog Picture Path //
-
+    var servicePixPath = websiteUrl + '/uploaded_files/services'; /// For Services Picture Path //
+    var portfolioPixPath = websiteUrl + '/uploaded_files/portfolio'; /// For Portfolio Picture Path //
+    var pagesPixPath = websiteUrl + '/uploaded_files/pagePictures'; /// For Pages Pictures Path //
+    
     var pageCategory = {
-        services: 'services',
-        portfolio: 'portfolio',
-        blog: 'blog'
+        SERVICE: 'SERVICE',
+        PORTFOLIO: 'PORTFOLIO',
+        BLOG: 'BLOG'
     }
 </script>

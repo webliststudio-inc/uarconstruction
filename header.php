@@ -53,21 +53,21 @@
                         Portfolio <i class="bi-plus"></i>
                         <ul class="animated fadeIn">
                             <div class="sub-nav-div">
-                                <a class="nav-div" href="<?php echo $websiteUrl?>/portfolio/completed-projects" title="Completed Projects">
+                                <a class="nav-div" href="<?php echo $websiteUrl?>/portfolio/completed-project" title="Completed Projects">
                                     <div class="text-div">
                                         <li>Completed Projects</li>
                                         <p>Explore our completed projects.</p>
                                     </div>
                                 </a>
 
-                                <a class="nav-div" href="<?php echo $websiteUrl?>/portfolio/current-projects" title="Current Projects">
+                                <a class="nav-div" href="<?php echo $websiteUrl?>/portfolio/ongoing-project" title="Ongoing Projects">
                                     <div class="text-div">
-                                        <li>Current Projects</li>
-                                        <p>Explore our current projects.</p>
+                                        <li>Ongoing Projects</li>
+                                        <p>Explore our ongoing projects.</p>
                                     </div>
                                 </a>
 
-                                <a class="nav-div" href="<?php echo $websiteUrl?>/portfolio/upcoming-projects" title="Upcoming Projects">
+                                <a class="nav-div" href="<?php echo $websiteUrl?>/portfolio/upcoming-project" title="Upcoming Projects">
                                     <div class="text-div">
                                         <li>Upcoming Projects</li>
                                         <p>Discover what we’re building next.</p>
