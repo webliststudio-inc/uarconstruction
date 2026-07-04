@@ -4,4 +4,4 @@
 <?php $seoKeywords='Modern Office Complex';?>
 <?php $seoDescription='Modern Office Complex';?>
 <?php $pageSeoPix='PAGE01720260704034029.jpg';?>
-<?php include '../portfolio-details.php';?>
+<?php include '../../portfolio_details.php';?>

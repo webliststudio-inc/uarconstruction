@@ -4,5 +4,4 @@
 <?php $seoKeywords='Material Engineering';?>
 <?php $seoDescription='Material Engineering';?>
 <?php $pageSeoPix='PAGE00920260704010611.jpg';?>
-<?php $pageContent='<p>Material Engineering</p>';?>
 <?php include '../service_details.php';?>

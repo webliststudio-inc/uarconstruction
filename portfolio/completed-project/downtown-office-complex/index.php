@@ -4,4 +4,4 @@
 <?php $seoKeywords='Downtown Office Complex';?>
 <?php $seoDescription='Downtown Office Complex';?>
 <?php $pageSeoPix='PAGE01620260704033722.jpg';?>
-<?php include '../portfolio-details.php';?>
+<?php include '../../portfolio_details.php';?>
