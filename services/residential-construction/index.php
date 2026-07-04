@@ -5,4 +5,4 @@
 <?php $seoDescription='Residential Construction';?>
 <?php $pageSeoPix='PAGE00620260704122743.jpg';?>
 <?php $pageContent='<p>Residential Construction</p>';?>
-<?php include '../service-details.php';?>
+<?php include '../service_details.php';?>

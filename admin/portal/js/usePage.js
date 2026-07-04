@@ -2,12 +2,13 @@
 function _getActivePagesTab(props) {
 	const {
         page = '',
-        divid = '',
+		divid = '',
+		pageCategory = '', /// optional
 		pageContainer='getPagesDetails'
     } = props;
 	_getActivePagesTabLink(divid);
 	if(page){
-		_getPage({page: page, pageContainer: pageContainer,  url: adminPortalMiddlewareUrl});
+		_getPage({page: page, pageContainer: pageContainer, pageCategory: pageCategory, url: adminPortalMiddlewareUrl});
 	}
 }
 
