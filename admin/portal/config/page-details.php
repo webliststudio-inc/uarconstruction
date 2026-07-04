@@ -158,6 +158,7 @@
                             textField({
                                 id: 'location',
                                 title: 'Location',
+                                value: useEachPageSession?.location ?? ''
                             });
                         </script>
                     </div>

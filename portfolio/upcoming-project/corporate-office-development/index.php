@@ -4,4 +4,4 @@
 <?php $seoKeywords='Corporate Office Development';?>
 <?php $seoDescription='Corporate Office Development';?>
 <?php $pageSeoPix='PAGE01920260704034509.jpg';?>
-<?php include '../portfolio-details.php';?>
+<?php include '../../portfolio_details.php';?>

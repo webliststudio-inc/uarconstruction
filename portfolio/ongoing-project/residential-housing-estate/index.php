@@ -4,4 +4,4 @@
 <?php $seoKeywords='Residential Housing Estate';?>
 <?php $seoDescription='Residential Housing Estate';?>
 <?php $pageSeoPix='PAGE01820260704034250.jpg';?>
-<?php include '../portfolio-details.php';?>
+<?php include '../../portfolio_details.php';?>

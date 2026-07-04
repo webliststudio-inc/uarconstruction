@@ -4,4 +4,4 @@
 <?php $seoKeywords='Reserve Oak Creek';?>
 <?php $seoDescription='Reserve Oak Creek';?>
 <?php $pageSeoPix='PAGE02020260704034656.jpg';?>
-<?php include '../portfolio-details.php';?>
+<?php include '../../portfolio_details.php';?>

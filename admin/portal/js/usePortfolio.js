@@ -101,8 +101,8 @@ function _renderPortfolioData(data) {
 				<div class="text">UPDATED ON: <span>${_fetchFormatDate(item.updatedTime)}</span></div>
 				<div class="other-status ${item.statusData?.statusName}">${item.statusData?.statusName}</div>
 			</div>
-			<h2>${item.pageTitle}</h2>
-			<p>	${item.seoDescription}</p>  
+			<h2 title="${item.pageTitle}" onclick="_fetchEachPageContent('${item.pageCategory}', '${item.pageId}');">${item.pageTitle}</h2>
+			<p>${item.seoDescription}</p>  
 			<div class="bottom-content">
 				<div class="category"><span>${item.projectCategoryData?.projectCategoryName}</span></div>
 				<div class="location"><i class="bi bi-geo-alt"></i> <span>${item.location}</span></div>
