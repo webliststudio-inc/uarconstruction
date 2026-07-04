@@ -15,7 +15,7 @@
                 <input type="text" onkeyup="_filtersFaq(this.value);" placeholder="Search FAQ Here...">
                 <i class="bi bi-search"></i>
             </div>
-            <button class="btn" title="ADD NEW FAQ" onclick="_getForm({page: 'faqReg', url: adminPortalMiddlewareUrl});">
+            <button class="btn" title="ADD NEW FAQ" onclick="sessionStorage.removeItem('useEachFaqSession'); _getForm({page: 'faqReg', url: adminPortalMiddlewareUrl});">
                 <i class="bi-plus-square"></i> ADD NEW FAQ
             </button>
         </div>
