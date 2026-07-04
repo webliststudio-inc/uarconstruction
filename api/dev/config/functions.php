@@ -95,3 +95,30 @@ function _get_role_details($conn, $roleId)
     $getResult = selectQuery($conn, $getQuery, 's', $getParams);
     return ($getResult[0]);
 }
+
+/////// get CATEGORY details
+function _get_category_details($conn, $categoryId)
+{
+    $getQuery = "SELECT categoryId, categoryName FROM INFORMATION_CATEGORY_TAB WHERE categoryId = ?";
+    $getParams = [$categoryId];
+    $getResult = selectQuery($conn, $getQuery, 's', $getParams);
+    return ($getResult[0]);
+}
+
+// get PROJECT STAGE details
+function _get_project_stage_details($conn, $projectStageId)
+{
+    $getQuery = "SELECT projectStageId, projectStageName FROM SETUP_PROJECT_STAGES_TAB WHERE projectStageId = ?";
+    $getParams = [$projectStageId];
+    $getResult = selectQuery($conn, $getQuery, 's', $getParams);
+    return ($getResult[0]);
+}
+
+/// get PROJECT CATEGORY details
+function _get_project_category_details($conn, $projectCategoryId)
+{
+    $getQuery = "SELECT projectCategoryId, projectCategoryName FROM PROJECT_CATEGORY_TAB WHERE projectCategoryId = ?";
+    $getParams = [$projectCategoryId];
+    $getResult = selectQuery($conn, $getQuery, 's', $getParams);
+    return ($getResult[0]);
+}
