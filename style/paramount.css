@@ -167,14 +167,13 @@ a {
   font-size: 11px;
   background: none;
 }
-
 .text_field_container .searchPanel {
   height: auto;
   overflow: auto;
   background: #fff;
   border: #ccc 1px solid;
   position: relative;
-  z-index: 1800;
+ z-index: 99999;
   border-radius: 5px;
   display: none;
   flex-direction: column;
@@ -194,11 +193,7 @@ a {
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none !important;
-  -moz-transition: all 0.2s ease-in 02s;
   transition: all 0.2s ease-in 0.2s;
-  -webkit-transition: all 0.2s ease-in 0.2s;
-  -ms-transition: all 0.2s ease-in 0.2s;
-  -o-transition: all 0.2s ease-in 0.2s;
 }
 
 .text_field_container .searchPanel ul {

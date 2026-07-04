@@ -1,7 +1,7 @@
-<?php $publishId='BLOG00220250905010412';?>
-<?php $pageUrl='how-international-exams-open-doors-to-global-education-opportunities';?>
-<?php $pageTitle='How International Exams Open Doors to Global Education Opportunities';?>
-<?php $seoKeywords='International exams benefits, study abroad opportunities, global education pathways, international qualifications recognition, entrance exams for global universities, overseas education opportunities, standardized tests for study abroad, global career advancement through exams, international student mobility, education without borders';?>
-<?php $seoDescription='Discover how Interantional Exams is revolutionizing school administration for basic and secondary schools in Nigeria. From staff management to academic performance tracking, learn how this innovative platform is simplifying school operations';?>
-<?php $pageSeoPix='BLOG00220250905010412_202509050112_blog2.png';?>
-<?php include '../blogCategory_details.php';?>
+<?php $pageId='PAGE00320260703092204';?>
+<?php $pageUrl='top-construction-trends-for-modern-development';?>
+<?php $pageTitle='Top Construction Trends for Modern Development';?>
+<?php $seoKeywords='Construction Companies in Lagos, Construction Companies, Companies in Lagos';?>
+<?php $seoDescription='Explore the latest construction innovations, smart technologies, and sustainable practices shaping modern.';?>
+<?php $pageSeoPix='PAGE00320260703092204.jpg';?>
+<?php include '../blog-details.php';?>

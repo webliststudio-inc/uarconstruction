@@ -22,6 +22,7 @@ switch ($action){
 		require_once('pages-content.php');
 		require_once('page-details.php');
 		require_once('information-category-content.php');
+		require_once('project-category-content.php');
 	break;
 
 	case 'get_form':
@@ -41,30 +42,100 @@ switch ($action){
 		require_once('pages-content.php');
 		require_once('page-details.php');
 		require_once('information-category-content.php');
+		require_once('project-category-content.php');
 	break;
 
-	case 'uploadBlogPix':
-		$newBlogPix = $_POST['newBlogPix'] ?? '';
-		$oldBlogPix = $_POST['oldBlogPix'] ?? '';
-		$blogPix = $_POST['blogPix'] ?? '';
+	case 'uploadPagePix':
+		$pageCategory = $_POST['pageCategory'] ?? '';
+		$newSeoFlyer = $_POST['newSeoFlyer'] ?? '';
+		$seoFlyer = $_POST['seoFlyer'] ?? '';
 	
-		///// Validate Exam Logo /////
-		if (!empty($blogPix)) {
-    		$blogPix = preg_replace('#^data:image/\w+;base64,#i', '', $blogPix);
-			$blogPix = str_replace(' ', '+', $blogPix);
-			$blogPix = base64_decode($blogPix);
+		///// Validate SEO Flyer /////
+		if (!empty($seoFlyer)) {
+    		$seoFlyer = preg_replace('#^data:image/\w+;base64,#i', '', $seoFlyer);
+			$seoFlyer = str_replace(' ', '+', $seoFlyer);
+			$seoFlyer = base64_decode($seoFlyer);
 		}
 		
-		//// Upload Exam Logo ////
-		$uploadBlogDir = "../../../uploaded_files/blog/";
+		if ($pageCategory==="blog") {
+			$uploadPagesPictureDir = "../../../uploaded_files/blog/";
+		} else if ($pageCategory==="service") {
+			$uploadPagesPictureDir = "../../../uploaded_files/services/";
+		} else if ($pageCategory==="portfolio") {
+			$uploadPagesPictureDir = "../../../uploaded_files/portfolio/";
+		}
 
 		//// Create Directory If Not Exists ////
-		if(!empty($newBlogPix)){
-			if($newBlogPix!=$oldBlogPix){
-				unlink($uploadBlogDir . $oldBlogPix);
-				file_put_contents($uploadBlogDir . $newBlogPix, $blogPix);
-			}
+		if (!empty($newSeoFlyer) && !empty($seoFlyer)) {
+			file_put_contents($uploadPagesPictureDir . $newSeoFlyer, $seoFlyer);
 		}
     break;
+
+	case 'createPagesFolder':
+		$pageCategory = strtolower(trim($_POST['pageCategory']));
+		$pageId = trim($_POST['pageId']);
+		$pageUrl = trim(strtolower($_POST['pageUrl']));
+		$oldPageUrl = trim(strtolower($_POST['oldPageUrl']));
+		$pageTitle = trim($_POST['pageTitle']);
+		$seoKeywords = $_POST['seoKeywords'];
+		$seoDescription = $_POST['seoDescription'];
+		$newSeoFlyer = $_POST['newSeoFlyer'];
+		$projectStageName = $_POST['projectStageName'] ?? '';
+		$pageSeoPix = $newSeoFlyer;
+
+		// common text content
+		$txt .= "<?php \$pageId='$pageId';?>\n";
+		$txt .= "<?php \$pageUrl='$pageUrl';?>\n";
+		$txt .= "<?php \$pageTitle='$pageTitle';?>\n";
+		$txt .= "<?php \$seoKeywords='$seoKeywords';?>\n";
+		$txt .= "<?php \$seoDescription='$seoDescription';?>\n";
+		$txt .= "<?php \$pageSeoPix='$pageSeoPix';?>\n";
+		$txt .= "<?php include " . "'../$pageCategory" . "-details.php';?>";
+
+		/// check if old page url is empty to create new folder////
+		if (empty($oldPageUrl) || $oldPageUrl===null) {
+			////////// Create Page Folder //////////
+			if ($pageCategory == 'blog') {
+				mkdir('../../../blog/' . $pageUrl);
+				$myfile = fopen("../../../blog/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");
+			} else if ($pageCategory == 'service') {
+				mkdir('../../../services/' . $pageUrl);
+				$myfile = fopen("../../../services/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");
+			} else if ($pageCategory == 'portfolio') {
+				mkdir('../../../portfolio/'.$projectStageName.'/' . $pageUrl);
+				$myfile = fopen("../../../portfolio/".$projectStageName."/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");	
+			}
+			fwrite($myfile, $txt);
+			fclose($myfile);
+		} else {
+			if ($pageCategory == 'blog') {
+				//// delete file with folders ////
+				array_map('unlink', glob("../../../blog/$oldPageUrl/*.*"));
+				rmdir("../../../blog/$oldPageUrl");
+
+				//// recreate new file with folders ////
+				mkdir('../../../blog/' . $pageUrl);
+				$myfile = fopen("../../../blog/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");
+			} else if ($pageCategory == 'service') {
+				//// delete file with folders ////
+				array_map('unlink', glob("../../../services/$oldPageUrl/*.*"));
+				rmdir("../../../services/$oldPageUrl");
+
+				//// recreate new file with folders ////
+				mkdir('../../../services/' . $pageUrl);
+				$myfile = fopen("../../../services/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");
+			} else if ($pageCategory == 'portfolio') {
+				//// delete file with folders ////
+				array_map('unlink', glob("../../../portfolio/".$projectStageName."/$oldPageUrl/*.*"));
+				rmdir("../../../portfolio/".$projectStageName."/$oldPageUrl");
+
+				//// recreate new file with folders ////
+				mkdir('../../../portfolio/'.$projectStageName.'/' . $pageUrl);
+				$myfile = fopen("../../../portfolio/".$projectStageName."/" . $pageUrl . "/index.php", "w") or die("Unable to open file!");	
+			}
+			fwrite($myfile, $txt);
+			fclose($myfile);
+		}
+	break;
 }
 ?>

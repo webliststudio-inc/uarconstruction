@@ -6,24 +6,24 @@
 
 <head>
     <?php include '../../meta.php' ?>   
-    <title><?php echo $appName ?> | Current Construction Projects Across the USA</title>    
+    <title><?php echo $appName ?> | Ongoing Construction Projects Across the USA</title>    
     <meta name="keywords"
-        content="<?php echo $appName ?> current projects, current construction projects USA, finished building projects, residential construction portfolio, commercial construction projects, current renovations, infrastructure development projects, construction project gallery, successful construction projects, construction company portfolio USA, current building works" />
+        content="<?php echo $appName ?> Ongoing projects, Ongoing construction projects USA, finished building projects, residential construction portfolio, commercial construction projects, Ongoing renovations, infrastructure development projects, construction project gallery, successful construction projects, construction company portfolio USA, Ongoing building works" />
     <meta name="description"
-        content="Discover our current construction projects across the USA, featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction." />
+        content="Discover our ongoing construction projects across the USA, featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction." />
     <meta property="og:title"
-        content="<?php echo $appName ?> | Current Construction Projects Across the USA" />
+        content="<?php echo $appName ?> | Ongoing Construction Projects Across the USA" />
     <meta property="og:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta property="og:description"
-        content="Explore our current construction projects including residential, commercial, renovation, and infrastructure developments across the USA." />
+        content="Explore our ongoing construction projects including residential, commercial, renovation, and infrastructure developments across the USA." />
     <meta name="twitter:title"
-        content="<?php echo $appName ?> | Current Construction Projects Across the USA" />
+        content="<?php echo $appName ?> | Ongoing Construction Projects Across the USA" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta name="twitter:description"
-        content="Browse our current construction projects showcasing quality craftsmanship, timely delivery, and excellence in residential, commercial, and infrastructure construction." />
+        content="Browse our ongoing construction projects showcasing quality craftsmanship, timely delivery, and excellence in residential, commercial, and infrastructure construction." />
 </head>
 
 <body>
@@ -39,15 +39,15 @@
                     <a href="<?php echo $websiteUrl ?>">
                         <li title="Portfolio">Portfolio <i class="bi-caret-right-fill"></i></li>
                     </a>
-                    <a href="<?php echo $websiteUrl ?>/current-projects">
-                        <li title="Current Projects">Current Projects</li>
+                    <a href="<?php echo $websiteUrl ?>/Ongoing-projects">
+                        <li title="Ongoing Projects">Ongoing Projects</li>
                     </a>
                 </ul>
             </div>
             <div class="text-content-div" data-aos="fade-in" data-aos-duration="900">
-                <h1 data-aos="fade-in" data-aos-duration="800"><span>Current Projects</span></h1>  
+                <h1 data-aos="fade-in" data-aos-duration="800"><span>Ongoing Projects</span></h1>  
                 <p>
-                    Browse our current construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction.
+                    Browse our Ongoing construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction.
                 </p>
                 <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
@@ -89,11 +89,11 @@
 
                     <div class="left-div">
                         <div class="portfolio-back-div" id="portfolioContainer" data-aos="fade-up" data-aos-duration="900">
-                            <a href="<?php echo $websiteUrl ?>/portfolio/current-projects/modern-office-complex">
+                            <a href="<?php echo $websiteUrl ?>/portfolio/ongoing-project/modern-office-complex">
                             <div class="portfolio-card" data-category="1">
-                                <div class="title CURRENT">CURRENT</div>
+                                <div class="title Ongoing">Ongoing</div>
                                 <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/current-project-1.jpeg"
+                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/Ongoing-project-1.jpeg"
                                             alt="Modern Office Complex" />
                                 </div>
                                 <div class="card-content">
@@ -107,7 +107,7 @@
 
                             <a href="<?php echo $websiteUrl ?>">
                             <div class="portfolio-card" data-category="2">
-                                <div class="title CURRENT">CURRENT</div>
+                                <div class="title Ongoing">Ongoing</div>
                                 <div class="image-div">
                                     <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/morder-woship-center.jpeg"
                                         alt="Modern Worship Center" />
@@ -123,7 +123,7 @@
 
                             <a href="<?php echo $websiteUrl ?>"> 
                             <div class="portfolio-card" data-category="1">
-                                <div class="title CURRENT">CURRENT</div>
+                                <div class="title Ongoing">Ongoing</div>
                                 <div class="image-div">
                                     <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/residential_housing_estate.jpeg"
                                         alt="Kingdom Life Cathedral" />
@@ -139,7 +139,7 @@
 
                             <a href="<?php echo $websiteUrl ?>">
                             <div class="portfolio-card" data-category="1">
-                                <div class="title CURRENT">CURRENT</div>
+                                <div class="title Ongoing">Ongoing</div>
                                 <div class="image-div">
                                     <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/commercial_shopping_plaza.jpeg"
                                             alt="Commercial Shopping Plaza" />

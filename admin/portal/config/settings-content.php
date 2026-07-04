@@ -26,7 +26,7 @@
 
             <div class="inner-table-content">
                 <div class="user-managment-back-div" data-aos="fade-in" data-aos-duration="1500">
-                    <div class="user-managment-list" onclick="_getPage({page: 'userConfiguration', url: adminPortalMiddlewareUrl});">
+                    <div class="user-managment-list" title="User Role Configurations" onclick="_getPage({page: 'userConfiguration', url: adminPortalMiddlewareUrl});">
                         <div class="inner-div">
                             <div class="icon-div"><img src="<?php echo $websiteUrl ?>/all-images/images/authorization.png" alt="User Role Configurations" /></div>
                             <div class="text-div">
@@ -36,7 +36,7 @@
                         </div>
                     </div>
 
-                    <div class="user-managment-list" onclick="_getPage({page: 'informationCategory', url: adminPortalMiddlewareUrl});">
+                    <div class="user-managment-list" title="Information Category Configurations" onclick="_getPage({page: 'informationCategory', url: adminPortalMiddlewareUrl});">
                         <div class="inner-div">
                             <div class="icon-div"><img src="<?php echo $websiteUrl ?>/all-images/images/blog.png" alt="Blog Category Configurations" /></div>
                             <div class="text-div">
@@ -46,7 +46,17 @@
                         </div>
                     </div>
 
-                    <div class="user-managment-list" onclick="_getForm({page: 'systemSettings', url: adminPortalMiddlewareUrl});">
+                    <div class="user-managment-list" title="Project Category Configurations" onclick="_getPage({page: 'projectCategory', url: adminPortalMiddlewareUrl});">
+                        <div class="inner-div">
+                            <div class="icon-div"><img src="<?php echo $websiteUrl ?>/all-images/images/blog.png" alt="Project Category Configurations" /></div>
+                            <div class="text-div">
+                                <h3>Project Category Configurations</h3>
+                                <p>Project category configurations, ensuring organized project management.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="user-managment-list" title="System Configurations" onclick="_getForm({page: 'systemSettings', url: adminPortalMiddlewareUrl});">
                         <div class="inner-div">
                             <div class="icon-div"><img src="<?php echo $websiteUrl ?>/all-images/images/blog.png" alt="Blog Category Configurations" /></div>
                             <div class="text-div">
@@ -56,7 +66,7 @@
                         </div>
                     </div>
 
-                    <div class="user-managment-list" onclick="_getForm({page: 'changePassword', url: adminPortalMiddlewareUrl});">
+                    <div class="user-managment-list" title="Change Password" onclick="_getForm({page: 'changePassword', url: adminPortalMiddlewareUrl});">
                         <div class="inner-div">
                             <div class="icon-div"><img src="<?php echo $websiteUrl ?>/all-images/images/status.png" alt="User Status Configurations" /></div>
                             <div class="text-div">

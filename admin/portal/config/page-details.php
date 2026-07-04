@@ -1,15 +1,62 @@
 <?php if ($page == 'pageContent') { ?>
+    <script>
+        useEachPageSession = JSON.parse(sessionStorage.getItem("useEachPageSession"));
+    </script>
+
     <div class="page-form-div animated fadeIn">
         <div class="page-title">SEO CONTENT</div>
         <div class="form-div ">
             <div class="form-input-div">
+                <?php if ($pageCategory == 'BLOG') { ?>
+                    <div class="text_field_container" id="categoryId_container">
+                        <script>
+                            selectField({
+                                id: 'categoryId',
+                                title: 'Select Blog Category',
+                                fieldValue: useEachPageSession?.categoryData?.categoryId ?? '',
+                                fieldLabel: useEachPageSession?.categoryData?.categoryName ?? ''
+                            });
+                            _getSelectCategory('categoryId');
+                        </script>
+                    </div>
+                <?php } ?>
+
+                <?php if ($pageCategory == 'PORTFOLIO') { ?>
+                    <div class="text_field_container" id="projectStageId_container">
+                        <script>
+                            selectField({
+                                id: 'projectStageId',
+                                title: 'Select Project Stage',
+                                fieldValue: useEachPageSession?.projectStageData?.projectStageId ?? '',
+                                fieldLabel: useEachPageSession?.projectStageData?.projectStageName ?? ''
+                            });
+                            _getSelectProjectStages('projectStageId');
+                        </script>
+                    </div>
+                <?php } ?>
+
+                <?php if ($pageCategory == 'PORTFOLIO') { ?>
+                    <div class="text_field_container" id="projectCategoryId_container">
+                        <script>
+                            selectField({
+                                id: 'projectCategoryId',
+                                title: 'Select Project Category',
+                                fieldValue: useEachPageSession?.projectCategoryData?.projectCategoryId ?? '',
+                                fieldLabel: useEachPageSession?.projectCategoryData?.projectCategoryName ?? ''
+                            });
+                            _getSelectProjectCategories('projectCategoryId');
+                        </script>
+                    </div>
+                <?php } ?>
+
                 <div class="text-field-wrapper">
                     <div class="title">PAGE URL</div>
                     <div class="text_field_container" id="pageUrl_container">
                         <script>
                             textField({
                                 id: 'pageUrl',
-                                title: 'Page Url'
+                                title: 'Page Url',
+                                value: useEachPageSession?.pageUrl ?? ''
                             });
                         </script>
                     </div>
@@ -21,7 +68,8 @@
                         <script>
                             textField({
                                 id: 'pageTitles',
-                                title: 'Page Title'
+                                title: 'Page Title',
+                                value: useEachPageSession?.pageTitle ?? ''
                             });
                         </script>
                     </div>
@@ -34,7 +82,8 @@
                             textField({
                                 id: 'seoKeywords',
                                 title: 'Seo Keywords',
-                                type: 'textarea'
+                                type: 'textarea',
+                                value: useEachPageSession?.seoKeywords ?? ''
                             });
                         </script>
                     </div>
@@ -47,7 +96,9 @@
                             textField({
                                 id: 'seoDescription',
                                 title: 'Seo Descriptions',
-                                type: 'textarea'
+                                type: 'textarea',
+                                maxlength: 167,
+                                value: useEachPageSession?.seoDescription ?? ''
                             });
                         </script>
                     </div>
@@ -56,9 +107,21 @@
 
             <div class="picture-div">
                 <label>
-                    <div class="pix-div"><img id="seoFlyerPreviewPix" src="<?php echo $websiteUrl ?>/all-images/images/sample.jpg" /></div>
+                    <div class="pix-div" id="issueBorder"><img id="seoFlyerPreviewPix" src="<?php echo $websiteUrl ?>/all-images/images/sample.jpg" /></div>
                     <input type="file" id="seoFlyer" style="display:none" accept=".jpg, .jpeg, .png, .gif, .bmp, .tiff, .webp, .svg, .avif" onchange="seoFlyerPreview.UpdatePreview(this);" />
                 </label>
+                <div class="issue-text" id="issues_seoFlyer"></div>
+
+                <script>
+                    $(document).ready(function () {
+                        const pageCategory = "<?php echo $pageCategory; ?>";
+                        const pixPath = pageCategory === 'BLOG' ? blogPixPath : pageCategory === 'SERVICE' ? servicePixPath : portfolioPixPath;
+                        const fetchSeoFlyer = useEachPageSession?.seoFlyer;
+                        const seoFlyerUrl = fetchSeoFlyer ? pixPath + "/" + fetchSeoFlyer + '?t=' + new Date().getTime() : "<?php echo $websiteUrl ?>/all-images/images/sample.jpg";
+
+                        $("#seoFlyerPreviewPix").attr("src", seoFlyerUrl).attr("alt", useEachPageSession?.pageTitle);
+                    });
+                </script>
             </div>
         </div>
     </div>
@@ -68,9 +131,18 @@
         <div class="form-div content-form">
             <script src="<?php echo $websiteUrl ?>/admin/portal/js/TextEditor.js" referrerpolicy="origin"></script>
             <script>
-                tinymce.init({
-                    selector: '#pageContentEditor', // change this value according to your HTML
-                    plugins: "link, image, table"
+                $(document).ready(function () {
+                    tinymce.init({
+                        selector: '#pageContentEditor', // change this value according to your HTML
+                        plugins: "link image table",
+                        setup: function (editor) {
+                            editor.on('init', function () {
+                                setTimeout(function () {
+                                    editor.setContent(useEachPageSession?.pageContent ?? '');
+                                }, 300);
+                            });
+                        }
+                    });
                 });
             </script>
 
@@ -79,8 +151,33 @@
                 <div class="issueText" id="issue_pageContentEditor"></div>
             </div>
 
+            <?php if ($pageCategory == 'PORTFOLIO') { ?>
+                <div class="text-field-wrapper">
+                    <div class="text_field_container" id="location_container">
+                        <script>
+                            textField({
+                                id: 'location',
+                                title: 'Location',
+                            });
+                        </script>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <div class="text_field_container" id="statusId_container">
+                <script>
+                    selectField({
+                        id: 'statusId',
+                        title: 'Select Status',
+                        fieldValue: useEachPageSession?.statusData?.statusId ?? '',
+                        fieldLabel: useEachPageSession?.statusData?.statusName ?? ''
+                    });
+                    _getSelectStatusId('statusId', '1,2');
+                </script>
+            </div>
+
             <div class="btn-div">
-                <button class="btn" id="saveBtn" title="Save Page" onclick=""><i class="bi-save"></i> SAVE</button>
+                <button class="btn" id="saveBtn" title="Save Page" onclick="_createOrUpdatePage('<?php echo $pageCategory; ?>');"><i class="bi-save"></i> SAVE</button>
             </div>
         </div>
     </div>
