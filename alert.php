@@ -102,13 +102,13 @@
             <div class="div">
                 <li onclick="_openLi('portfolio')"><i class="bi bi-image"></i>Portfolio<i class="bi-plus" id="side-expand"></i></li>
                 <div class="sub-li" id="portfolio-sub-li">
-                    <a href="<?php echo $websiteUrl ?>/portfolio/completed-projects" title="Completed Projects">
+                    <a href="<?php echo $websiteUrl ?>/portfolio/completed-project" title="Completed Projects">
 			        <li>Completed Projects</li></a>
 
-                    <a href="<?php echo $websiteUrl ?>/portfolio/current-projects" title="Current Projects">
-			        <li>Current Projects</li></a>
+                    <a href="<?php echo $websiteUrl ?>/portfolio/ongoing-project" title="Ongoing Projects">
+			        <li>Ongoing Projects</li></a>
 
-                    <a href="<?php echo $websiteUrl ?>/portfolio/upcoming-projects" title="Upcoming Projects">
+                    <a href="<?php echo $websiteUrl ?>/portfolio/upcoming-project" title="Upcoming Projects">
 			        <li>Upcoming Projects</li></a>
                 </div>
             </div>

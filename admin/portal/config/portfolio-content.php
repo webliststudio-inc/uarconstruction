@@ -15,7 +15,7 @@
                 <input type="text" onkeyup="_filtersPortfolio(this.value);" placeholder="Search Portfolio Here...">   
                 <i class="bi bi-search"></i>
             </div>
-            <button class="btn" title="ADD NEW PORTFOLIO" onclick="_getForm({page: 'portfolioReg', url: adminPortalMiddlewareUrl});">
+            <button class="btn" title="ADD NEW PORTFOLIO" onclick="sessionStorage.removeItem('useEachPageSession'); _getForm({page: 'editPagesForm', pageCategory: 'PORTFOLIO', url: adminPortalMiddlewareUrl});">
                 <i class="bi-plus-square"></i> ADD NEW PORTFOLIO
             </button>
         </div>
@@ -31,106 +31,15 @@
             </div>
 
             <div class="inner-table-content">
-                <div class="grid-div-wrapper" id="portfolioPageContent">    
-                    <div class="grid-div">
-                        <div class="btn-div">
-                            <button class="btn active-btn" onclick="">EDIT</button>
-                            <button class="btn" onclick="_getForm({page: 'editPagesForm', pageCategory: 'portfolio', url: adminPortalMiddlewareUrl});">EDIT PAGE DETAILS</button>
-                        </div>
+                <div class="grid-div-wrapper" id="portfolioPageContent">   
+                    <script>_fetchPortfolioData();</script> 
 
-                        <div class="status-div COMPLETED">COMPLETED</div>
-                        <div class="img-div">
-                            <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-1.jpeg" alt="Grace Worship Center" />
-                        </div>
-                        <div class="text-div">
-                            <div class="text-in">
-                                <div class="text">UPDATED ON: <span>JUN 26, 2026</span></div>
-                                <div class="other-status ACTIVE">ACTIVE</div>
-                            </div>
-                            <h2>Grace Worship Center</h2>
-                            <p>Grace Worship Center is a beautiful and modern worship center located in the heart...</p>  
-                            <div class="bottom-content">
-                                <div class="category"><span>WORSHIP CENTER</span></div>
-                                <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid-div">
-                        <div class="btn-div">
-                            <button class="btn active-btn" onclick="">EDIT</button>
-                            <button class="btn" onclick="">EDIT PAGE DETAILS</button>
-                        </div>
-
-                        <div class="status-div CURRENT">CURRENT</div>
-                        <div class="img-div">
-                            <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/current-project-1.jpeg" alt="Modern Office Complex" />
-                        </div>
-                        <div class="text-div">
-                            <div class="text-in">
-                                <div class="text">UPDATED ON: <span>JUN 26, 2026</span></div>
-                                <div class="other-status ACTIVE">ACTIVE</div>
-                            </div>
-                            <h2>Modern Office Complex</h2>
-                            <p>Modern Office Complex is a beautiful, modern and efficient office complex located in the heart...</p>
-                            <div class="bottom-content">
-                                <div class="category"><span>COMMERCIAL</span></div>
-                                <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid-div">
-                        <div class="btn-div">
-                            <button class="btn active-btn" onclick="">EDIT</button>
-                            <button class="btn" onclick="">EDIT PAGE DETAILS</button>
-                        </div>
-
-                        <div class="status-div UPCOMING">UPCOMING</div>
-                        <div class="img-div">
-                            <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/central_plaza_complex.jpeg" alt="Central Plaza Complex" />
-                        </div>
-                        <div class="text-div">
-                            <div class="text-in">
-                                <div class="text">UPDATED ON: <span>JUN 26, 2026</span></div>
-                                <div class="other-status ACTIVE">ACTIVE</div>
-                            </div>
-                            <h2>Central Plaza Complex</h2>
-                            <p>Central Plaza Complex is a beautiful, modern worship complex located in the heart...</p>  
-                            <div class="bottom-content">
-                                <div class="category"><span>COMMERCIAL</span></div>
-                                <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid-div">
-                        <div class="btn-div">
-                            <button class="btn active-btn" onclick="">EDIT</button>
-                            <button class="btn" onclick="">EDIT PAGE DETAILS</button>
-                        </div>
-
-                        <div class="status-div COMPLETED">COMPLETED</div>
-                        <div class="img-div">
-                            <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-5.jpeg"
-                                    alt="CityGate Commercial Mall" />
-                        </div>
-                        <div class="text-div">
-                            <div class="text-in">
-                                <div class="text">UPDATED ON: <span>JUN 26, 2026</span></div>
-                                <div class="other-status SUSPENDED">SUSPENDED</div>
-                            </div>
-                            <h2>CityGate Commercial Mall</h2>
-                            <p>CityGate Commercial Mall is a beautiful, modern and efficient commercial mall located in the heart..</p>
-                            <div class="bottom-content">
-                                <div class="category"><span>COMMERCIAL</span></div>
-                                <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                            </div>
-                        </div>
+                    <div class="content-loading-div">
+                        <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                     </div>
                 </div>
                 <!-- Pagination -->
-                <div id="serviceContentPaginationControls" class="pagination-div"></div>
+                <div id="portfolioContentPaginationControls" class="pagination-div"></div>
             </div>
         </div>
     </div>
