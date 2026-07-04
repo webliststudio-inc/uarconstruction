@@ -41,3 +41,4 @@
 <script src="<?php echo $websiteUrl?>/admin/portal/js/useBlog.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
 <script src="<?php echo $websiteUrl?>/admin/portal/js/usePortfolio.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
 <script src="<?php echo $websiteUrl?>/admin/portal/js/useProjectCategory.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl?>/admin/portal/js/useFaq.js?v=<?php echo $codeVersion?>" type="text/javascript"></script>
