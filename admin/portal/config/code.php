@@ -71,6 +71,30 @@ switch ($action){
 		}
     break;
 
+	case 'uploadPagePictures':
+		$pagePixNames=$_POST['pagePixNames'];
+
+		if($pagePixNames!=''){
+			$myArray = explode(',', $pagePixNames);
+				$i=0;
+				foreach($myArray as $picture){
+					move_uploaded_file($_FILES["pagePixArr"]["tmp_name"][$i], '../../../uploaded_files/pagePictures/' . $picture);
+					$i++;
+				}
+		}
+	break;
+
+	case 'deleteOldPagePictures':
+		$oldPagePix=$_POST['oldPagePix'];
+
+		$uploadDir = "../../../uploaded_files/pagePictures/";
+
+		// Delete old image only if it's not the default
+		if (!empty($oldPagePix) && file_exists($uploadDir . $oldPagePix)) {
+			unlink($uploadDir . $oldPagePix);
+		}
+	break;
+
 	case 'createPagesFolder':
 		$pageCategory = strtolower(trim($_POST['pageCategory']));
 		$pageId = trim($_POST['pageId']);

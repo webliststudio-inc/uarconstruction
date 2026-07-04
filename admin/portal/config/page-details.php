@@ -190,27 +190,39 @@
         <div class="form-div form-picture-div">
             <div class="picture-back-div">
                 <div id="fetchPagePicture">
-                    <div class="picture-div">
-                        <div class="icon-div" title="Delete Picture" id="deleteBtn_${item.sn}" onclick="_deletePagePicture('${item.publishId}','${item.sn}');"><i class="bi-trash"></i></div>
-                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-1.jpeg" alt="Grace Worship Center" />
-                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            const picturesArray = useEachPageSession?.pagePicturesData ?? [];
+                            let pixHtml = '';
 
-                    <div class="picture-div">
-                        <div class="icon-div" title="Delete Picture" id="deleteBtn_${item.sn}" onclick="_deletePagePicture('${item.publishId}','${item.sn}');"><i class="bi-trash"></i></div>
-                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-7.jpeg" alt="Grace Worship Center" />
-                    </div>
+                            for (let item of picturesArray) {
+                                pixHtml += `
+                                    <div class="picture-div" id="pictureDiv_${item.sn}">
+                                        <div class="icon-div"
+                                            title="Delete Picture"
+                                            id="deleteBtn_${item.sn}"
+                                            onclick="_deletePagePicture('${item.pageId}','${item.sn}');">
+                                            <i class="bi-trash"></i>
+                                        </div>
+                                        <img src="${pagesPixPath}/${item.pagePix + '?t=' + new Date().getTime()}" alt="${useEachPageSession?.pageTitle ?? ''}" />
+                                    </div>
+                                `;
+                            }
+                            $('#fetchPagePicture').html(pixHtml);
+                        });
+                    </script>
+                </div>
 
-                    <!-- Upload button is permanent -->
-                    <div class="picture-div select-pix-div">
-                        <label>
-                            <div class="pix-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/default.png" />
-                            </div>
-                            <input type="file" id="pictures" name="pictures[]" multiple
-                                accept=".jpg, .JPG, .png, .PNG, .jpeg, .JPEG"
-                                onchange="" style="display:none;" />
-                        </label>
-                    </div>
+                <!-- Upload button is permanent -->
+                <div class="picture-div select-pix-div">
+                    <label>
+                        <div class="pix-div">
+                            <img src="<?php echo $websiteUrl ?>/all-images/images/default.png" />
+                        </div>
+                        <input type="file" id="pagePixArr" name="pagePixArr[]" multiple
+                            accept=".jpg, .jpeg, .png, .gif, .bmp, .tiff, .webp, .svg, .avif"
+                            onchange="_savePagePictures('<?php echo $pageCategory; ?>');" style="display:none;" />
+                    </label>
                 </div>
             </div>
         </div>

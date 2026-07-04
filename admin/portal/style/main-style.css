@@ -1932,6 +1932,12 @@ main {
 	gap: 15px;
 }
 
+.faq-back-div .SUSPEND{
+	background: var(--sub-body-color);
+	border: 1px solid var(--sub-body-color);
+	filter: grayscale(100%);
+}
+
 .faq-back-div .title-div .num{
 	height:45px;
 	width:40px;
