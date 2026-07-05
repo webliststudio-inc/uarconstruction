@@ -21,7 +21,6 @@
 
 <body>
     <?php include '../../header.php' ?>
-
     <section class="other-pages" data-aos="fade-in" data-aos-duration="900">
         <div class="other-pages-back-div">
             <div class="top-title">
@@ -38,7 +37,6 @@
 
             <div class="text-content-div">
                 <h1 id="pageTitle">Loading...</h1>
-
                 <div class="count">
                     <i class="bi-person"></i> By: 
                     <span><strong id="createdByName">Loading...</strong></span>
@@ -50,29 +48,11 @@
                     <span><strong id="viewCount">Loading...</strong></span>
                     &nbsp;|&nbsp;
                     <i class="bi-clock"></i> Reading Time: 
-                    <span><strong id="blogRead">5 Minutes Read</strong></span>
+                    <span><strong id="pageContentRead">Loading...</strong></span>
                 </div>
-
                 <p class="intro" id="seoDescription">Loading...</p>
             </div>
         </div>
-        <script>
-            $(document).ready(function () {
-                function calculateReadTime(text) {
-                    let wordsPerMinute = 200;
-                    let words = $.trim(text).split(/\s+/).length;
-                    let minutes = Math.ceil(words / wordsPerMinute);
-                    return minutes + " min read";
-                }
-                // FULL BLOG CONTENT (not SEO description)
-                let fuontent = $(".main-pages-content-div").text();
-                if (fuontent.trim().length > 0) {
-                    $("#blogRead").text(calculateReadTime(fuontent));
-                } else {
-                    $("#blogRead").text("1 min read");
-                }
-            });
-        </script>
     </section>
 
     <section class="other-pages-main-section">
@@ -82,7 +62,7 @@
                     <div class="left-div">
                         <div class="page-list-back-div">
                             <div class="main-picture-back-div">
-                                <div class="main-picture-div" id="blogPreviewPix">
+                                <div class="main-picture-div" id="pagesPreviewPix">
                                     <img id="seoFlyer" src="<?php echo $websiteUrl ?>/all-images/images/defaultPage.png" alt="<?php echo $pageTitle?>" />
                                 </div>
 

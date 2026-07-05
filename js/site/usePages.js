@@ -347,20 +347,27 @@ function _getEachPageDetails(options) {
 			$('#updatedTime').html(_fetchFormatDate(updatedTime));
 			$('#viewCount').html(viewCount);
 			$('#seoFlyer').attr('src', (pixPath) + '/' + seoFlyer);
-
+			updateReadingTime();
+			
 			const picturesArray = data?.pagePicturesData ?? [];
 			let pixHtml = '';
 
 			for (let item of picturesArray) {
 				pixHtml += `
 					<div class="each-img-div" title="Click to Preview" id="img${item.sn}"
-						onclick="_viewPreviewImage('img${item.sn}', 'blogPreviewPix')">
+						onclick="_viewPreviewImage('img${item.sn}', 'pagesPreviewPix')">
 						<img src="${pagesPixPath}/${item.pagePix}"
 						alt="${pageTitle}" />
 					</div>
 				`;
 			}
 			$('#fetchPagePictures').html(pixHtml);
+			if (picturesArray.length>0) {
+				$('.bottom-img-div').show();
+				_slideImages();
+			} else {
+				$(".bottom-img-div").hide();
+			}
 		})
 		.catch((error) => {
 			console.error("Error:", error);
