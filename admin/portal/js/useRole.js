@@ -160,13 +160,13 @@ function _fetchRolesData() {
 		console.error("Error:", error);
 		if (error.status==0) {
 			_showEmptyState({
-				container: "#rolesContent",
+				container: "rolesContent",
 				message: "Check your internet connection and try again",
 			});
 			_callAjaxError(() => _fetchRolesData(), error.message);
 		} else {
 			showFalseNotification({
-				container: "#rolesContent",
+				container: "rolesContent",
 				message: error.message,
 				button: `
 					<button class="btn" title="ADD NEW ROLE" onclick="sessionStorage.removeItem('getEachRoleDetails'); _getForm({page: 'roleReg', url: adminPortalMiddlewareUrl});">

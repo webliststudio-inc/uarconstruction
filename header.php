@@ -16,7 +16,7 @@
             </div>
 
             <div class="btn-container">
-                <button class="btn" title="Request an Estimate">Request an Estimate <i
+                <button class="btn" title="Get In Touch">Get In Touch <i
                         class="bi bi-arrow-right-short"></i></button>
             </div>
         </div>
@@ -47,7 +47,7 @@
                     </li>
                 </a>
 
-                <a href="#" title="Portfolio">
+                <a href="<?php echo $websiteUrl?>/portfolio" title="Portfolio">
                     <li id="expand-li"
                         class="<?php if (strstr($websiteAutoUrl, "$websiteUrl/portfolio")) {?> active <?php }?>">
                         Portfolio <i class="bi-plus"></i>

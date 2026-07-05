@@ -14,21 +14,21 @@ function _fetchBlogData() {
 			console.error("Error:", error);
 			if (error.status==0) {
 				_showEmptyState({
-					container: "#blogPageContent",
+					container: "blogPageContent",
 					message: "Check your internet connection and try again",
-					paginationContainer: "#blogContentPaginationControls",
+					paginationContainer: "blogContentPaginationControls",
 				});
 				_callAjaxError(() => _fetchBlogData(), error.message); // retry if needed
 			} else {
 				_showEmptyState({
-					container: "#blogPageContent",
+					container: "blogPageContent",
 					message: error.message,
 					button: `
 						<button class="btn" title="ADD NEW BLOG" onclick="sessionStorage.removeItem('useEachBlogSession'); _getForm({page: 'blogReg', url: adminPortalLocalUrl});">
 							<i class="bi-plus-square"></i> ADD NEW BLOG
 						</button>
 					`,
-					paginationContainer: "#blogContentPaginationControls",
+					paginationContainer: "blogContentPaginationControls",
 				});
 			}
 		});

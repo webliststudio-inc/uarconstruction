@@ -36,7 +36,7 @@
                     <a href="<?php echo $websiteUrl ?>">
                         <li title="Home">Home <i class="bi-caret-right-fill"></i></li>
                     </a>
-                    <a href="<?php echo $websiteUrl ?>/blog">
+                    <a href="<?php echo $websiteUrl ?>/faq">
                         <li title="Frequently Asked Questions">Frequently Asked Questions</li>
                     </a>
                 </ul>
@@ -59,7 +59,7 @@
                         <div class="div-in">
                             <h3>SEARCH</h3>
                             <div class="text_field_container">
-                                <input class="text_field" id="searchContent" onkeyup="filters('Content');" type="text" placeholder="" />
+                                <input class="text_field" id="searchContent" onkeyup="_filtersPages(this.value, 'faqPageContent', 'faq-title');" type="text" placeholder="" />
                                 <div class="placeholder">Type Here To Search</div>
                             </div>
                         </div>
@@ -68,71 +68,27 @@
                             <h3>TAG LIST</h3>
 
                             <ul id="catId">
-                                <li title="Construction Tips" onclick="">
-                                Construction Tips
-                                </li>
-                                <li title="Renovation Ideas" onclick="">
-                                    Renovation Ideas
-                                </li>
-                                <li title="Architecture Insights" onclick="">
-                                    Architecture Insights
-                                </li>
-                                <li title="General" onclick="">
-                                    General
-                                </li>
+                                <script>
+                                    _fetchCategoryList('FAQ', 'faqPageContent');
+                                </script>
+
+                                <div class="content-loading-div">
+                                    <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
+                                </div>
                             </ul>
                         </div>
                     </div>
 
                     <div class="left-div">
-                        <div class="general-faq-div" id="pageContent">
-                            <div class="faq-title" id="faq1">
-                                <div class="inner-title-div" onclick="_collapse('faq1')">
-                                    <h2>What services does your construction company offer?</h2>
+                        <div class="general-faq-div" id="faqPageContent">
+                            <script>
+                                _getFaqList({
+                                    pageContainer: "faqPageContent"
+                                })
+                            </script>
 
-                                    <div class="expand-div" id="faq1num">
-                                        &nbsp;<i class="bi-plus"></i>&nbsp;
-                                    </div>
-                                </div>
-                                <div class="faq-answer-div" id="faq1answer" style="display: none;">
-                                    <p>
-                                        We provide a full range of construction services including residential building, commercial construction,
-                                        renovations, remodeling, project management, and infrastructure development across the USA.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="faq-title" id="faq2">
-                                <div class="inner-title-div" onclick="_collapse('faq2')">
-                                    <h2>What types of construction projects do you handle?</h2>
-
-                                    <div class="expand-div" id="faq2num">
-                                        &nbsp;<i class="bi-plus"></i>&nbsp;
-                                    </div>
-                                </div>
-                                <div class="faq-answer-div" id="faq2answer" style="display: none;">
-                                    <p>
-                                        We specialize in residential, commercial, urban, and rural construction projects,
-                                        including new builds, renovations, remodeling, and infrastructure development.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="faq-title" id="faq3">
-                                <div class="inner-title-div" onclick="_collapse('faq3')">
-                                    <h2>How long does a construction project take to complete?</h2>
-
-                                    <div class="expand-div" id="faq3num">
-                                        &nbsp;<i class="bi-plus"></i>&nbsp;
-                                    </div>
-                                </div>
-                                <div class="faq-answer-div" id="faq3answer" style="display: none;">
-                                    <p>
-                                        Project timelines vary depending on size, complexity, and site conditions. After
-                                        evaluating your project, we provide a detailed schedule with estimated
-                                        completion dates.
-                                    </p>
-                                </div>
+                            <div class="content-loading-div">
+                                <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                             </div>
                         </div>
                     </div>

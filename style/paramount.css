@@ -832,6 +832,7 @@ a {
   justify-content: center;
   gap: 10px;
   color: var(--primary-color);
+  border: 1px solid rgba(204, 204, 204, 0.3);
 }
 
 .empty-state-div .btn {
