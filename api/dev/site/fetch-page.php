@@ -11,8 +11,32 @@ try {
     $pageId = trim($_GET['pageId'] ?? '');
     $pageCategory = trim($_GET['pageCategory'] ?? ''); //// can be BLOG, PORTFOLIO, SERVICE
     $limit = trim($_GET['limit'] ?? '');
+    $projectStageId = trim($_GET['projectStageId'] ?? '');
+    $projectCategoryId = trim($_GET['projectCategoryId'] ?? '');
+    $categoryId = trim($_GET['categoryId'] ?? '');
     ////////////////// Validation //////////////////
     validateEmptyField($pageCategory, 'PAGE CATEGORY');
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// update viewCount for each page
+    if (!empty($pageId)) {
+        //// check if the userDeviceId has already viewed the page on PAGES_VIEWS_TAB
+        $selectQuery = "SELECT * FROM PAGES_VIEWS_TAB WHERE pageId = ? AND userDeviceId = ?";
+        $selectParams = [$pageId, $userDeviceId];
+        $viewData = selectQuery($conn, $selectQuery, "ss", $selectParams);
+        if (empty($viewData)) {
+            //// insert a new record in PAGES_VIEWS_TAB
+            $insertQuery = "INSERT INTO PAGES_VIEWS_TAB (pageId, userDeviceId, updatedTime) VALUES (?, ?, NOW())";
+            $insertParams = [$pageId, $userDeviceId];
+            insertQuery($conn, $insertQuery, "ss", $insertParams);
+            //// update the viewCount in PAGES_TAB
+            $updateQuery = "UPDATE PAGES_TAB SET viewCount = viewCount + 1 WHERE pageId = ?";
+            $updateParams = [$pageId];
+            updateQuery($conn, $updateQuery, "s", $updateParams);
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     $conditions = [];
     $params = [];
@@ -21,6 +45,21 @@ try {
     if (!empty($pageId)) {
         $conditions[] = "pageId = ?";
         $params[] = $pageId;
+        $types .= "s";
+    }
+    if (!empty($projectStageId)) {
+        $conditions[] = "projectStageId = ?";
+        $params[] = $projectStageId;
+        $types .= "s";
+    }
+    if (!empty($projectCategoryId)) {
+        $conditions[] = "projectCategoryId = ?";
+        $params[] = $projectCategoryId;
+        $types .= "s";
+    }
+    if (!empty($categoryId)) {
+        $conditions[] = "categoryId = ?";
+        $params[] = $categoryId;
         $types .= "s";
     }
 
@@ -61,7 +100,6 @@ try {
     if (empty($allPageData)) {
         throw new NotFoundException("No page found with the provided PAGE ID.");
     }
-
 
 
     foreach ($allPageData as &$pageData) {
