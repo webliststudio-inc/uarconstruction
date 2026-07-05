@@ -60,11 +60,6 @@
                             <span class="top-title">WHAT WE DO</span>
                             <h2>Multi-Disciplined Engineering <span>Services</span></h2>
                         </div>
-                        <div class="btn-div">
-                            <a href="#">
-                                <button class="btn" title="Request an Estimate">Request an Estimate <i
-                                        class="bi-arrow-right"></i></button></a>
-                        </div>
                     </div>
 
                     <div class="service-back-div" id="allServicePageContent">

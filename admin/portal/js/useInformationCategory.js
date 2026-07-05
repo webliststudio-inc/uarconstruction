@@ -109,15 +109,15 @@ function _fetchInfoCategoryData() {
 		console.error("Error:", error);
 		if (error.status==0) {
 			_showEmptyState({
-				container: "#infoCategoryContent",
+				container: "infoCategoryContent",
 				message: "Check your internet connection and try again",
 				colspan: 20,
-				paginationContainer: "#infoCategoryContentPaginationControls",
+				paginationContainer: "infoCategoryContentPaginationControls",
 			});
 			_callAjaxError(() => _fetchInfoCategoryData(), error.message);
 		} else {
 			_showEmptyState({
-				container: "#infoCategoryContent",
+				container: "infoCategoryContent",
 				message: error.message,
 				colspan: 20,
 				button: `
@@ -125,7 +125,7 @@ function _fetchInfoCategoryData() {
 						<i class="bi-plus-square"></i> ADD NEW INFORMATION CATEGORY
 					</button>
 				`,
-				paginationContainer: "#infoCategoryContentPaginationControls",
+				paginationContainer: "infoCategoryContentPaginationControls",
 			});
 		}
 	});

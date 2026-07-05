@@ -1,34 +1,33 @@
-<?php include '../../config/constants.php'; ?>
-<?php include '../../config/functions.php'; ?>
+<?php include '../config/constants.php'; ?>
+<?php include '../config/functions.php'; ?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http: //www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <?php include '../../meta.php' ?>   
-    <title><?php echo $appName ?> | Completed Construction Projects Across the USA</title>
+    <?php include '../meta.php' ?>
+    <title><?php echo $appName ?> | Construction Portfolio Across the USA</title>
     <meta name="keywords"
-        content="<?php echo $appName ?> completed projects, completed construction projects USA, finished building projects, residential construction portfolio, commercial construction projects, completed renovations, infrastructure development projects, construction project gallery, successful construction projects, construction company portfolio USA, completed building works" />
+        content="<?php echo $appName ?> portfolio, construction portfolio USA, completed construction projects, residential construction portfolio, commercial construction portfolio, renovation projects, infrastructure projects, building project gallery, construction company portfolio, successful construction projects, custom home builder USA, general contractor portfolio" />
     <meta name="description"
-        content="Discover our completed construction projects across the USA, featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction." />
+        content="Explore our construction portfolio featuring completed residential homes, commercial buildings, renovations, infrastructure developments, and quality construction projects delivered across the USA." />
     <meta property="og:title"
-        content="<?php echo $appName ?> | Completed Construction Projects Across the USA" />
+        content="<?php echo $appName ?> | Construction Portfolio Across the USA" />
     <meta property="og:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta property="og:description"
-        content="Explore our successfully completed construction projects including residential, commercial, renovation, and infrastructure developments across the USA." />
+        content="Browse our portfolio of completed construction projects, showcasing excellence in residential, commercial, renovation, and infrastructure development across the USA." />
     <meta name="twitter:title"
-        content="<?php echo $appName ?> | Completed Construction Projects Across the USA" />
+        content="<?php echo $appName ?> | Construction Portfolio Across the USA" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image"
         content="<?php echo $websiteUrl ?>/all-images/plugin-pix/uarconstruction.jpg" />
     <meta name="twitter:description"
-        content="Browse our completed construction projects showcasing quality craftsmanship, timely delivery, and excellence in residential, commercial, and infrastructure construction." />
+        content="Discover our portfolio of completed construction projects, highlighting quality craftsmanship, innovative design, and successful project delivery across the USA." />
 </head>
 
 <body>
-    <?php include '../../header.php' ?>
-
+    <?php include '../header.php' ?>
     <section class="other-pages" data-aos="fade-in" data-aos-duration="900">
         <div class="other-pages-back-div">
             <div class="top-title">
@@ -36,18 +35,15 @@
                     <a href="<?php echo $websiteUrl ?>">
                         <li title="Home">Home <i class="bi-caret-right-fill"></i></li>
                     </a>
-                    <a href="<?php echo $websiteUrl ?>">
+                    <a href="<?php echo $websiteUrl ?>/portfolio">
                         <li title="Portfolio">Portfolio <i class="bi-caret-right-fill"></i></li>
-                    </a>
-                    <a href="<?php echo $websiteUrl ?>/completed-projects">
-                        <li title="Completed Projects">Completed Projects</li>
                     </a>
                 </ul>
             </div>
             <div class="text-content-div" data-aos="fade-in" data-aos-duration="900">
-                <h1 data-aos="fade-in" data-aos-duration="800"><span>Completed Projects</span></h1>  
+                <h1 data-aos="fade-in" data-aos-duration="800"><span>Construction Portfolio</span></h1>  
                 <p>
-                    Browse our completed construction projects featuring residential homes, commercial developments, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction.
+                    Browse our construction portfolio featuring residential homes, commercial buildings, renovations, infrastructure works, and successfully delivered building solutions by Urban and Rural Construction.
                 </p>
                 <?php $callclass->_otherPagesBtn($websiteUrl); ?>
             </div>
@@ -62,7 +58,7 @@
                         <div class="div-in">
                             <h3>SEARCH</h3>
                             <div class="text_field_container">
-                                <input class="text_field" id="searchContent" onkeyup="_filtersPages(this.value, 'completedProjectContainer', 'portfolio-card');" type="text" placeholder="" />
+                                <input class="text_field" id="searchContent" onkeyup="_filtersPages(this.value, 'allProjectContainer', 'portfolio-card');" type="text" placeholder="" />
                                 <div class="placeholder">Type Here To Search</div>
                             </div>
                         </div>
@@ -72,7 +68,21 @@
 
                             <ul id="projectCategoryId">
                                 <script>
-                                    _fetchProjectCategoryList('PORTFOLIO', 'completedProjectContainer', 'PS003');
+                                    _fetchProjectCategoryList('PORTFOLIO', 'allProjectContainer', '');
+                                </script>
+
+                                <div class="content-loading-div">
+                                    <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
+                                </div>
+                            </ul>
+                        </div>
+
+                        <div class="div-in">
+                            <h3>PROJECT STAGES</h3>
+
+                            <ul id="projectStageId">
+                                <script>
+                                    _fetchProjectStageList('PORTFOLIO', 'allProjectContainer');
                                 </script>
 
                                 <div class="content-loading-div">
@@ -83,12 +93,11 @@
                     </div>
 
                     <div class="left-div">
-                        <div class="portfolio-back-div" id="completedProjectContainer" data-aos="fade-up" data-aos-duration="900">
+                        <div class="portfolio-back-div" id="allProjectContainer" data-aos="fade-up" data-aos-duration="900">
                             <script>
                                 _getPageList({
                                     pageCategory: "PORTFOLIO",
-                                    pageContainer: "completedProjectContainer",
-                                    projectStageId: "PS003"
+                                    pageContainer: "allProjectContainer",
                                 })
                             </script>
 
@@ -100,10 +109,8 @@
                 </div>
             </div>
         </section>
-
         <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
-
-        <?php include '../../footer.php' ?>
+        <?php include '../footer.php' ?>
     </section>
 </body>
 

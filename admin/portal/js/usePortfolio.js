@@ -64,21 +64,21 @@ function _fetchPortfolioData() {
 			console.error("Error:", error);
 			if (error.status==0) {
 				_showEmptyState({
-					container: "#portfolioPageContent",
+					container: "portfolioPageContent",
 					message: "Check your internet connection and try again",
-					paginationContainer: "#portfolioContentPaginationControls",
+					paginationContainer: "portfolioContentPaginationControls",
 				});
 				_callAjaxError(() => _fetchPortfolioData(), error.message); // retry if needed
 			} else {
 				_showEmptyState({
-					container: "#portfolioPageContent",
+					container: "portfolioPageContent",
 					message: error.message,
 					button: `
 						<button class="btn" title="ADD NEW PORTFOLIO" onclick="sessionStorage.removeItem('useEachPageSession'); _getForm({page: 'editPagesForm', pageCategory: 'PORTFOLIO', url: adminPortalMiddlewareUrl});">
 							<i class="bi-plus-square"></i> ADD NEW PORTFOLIO
 						</button>
 					`,
-					paginationContainer: "#portfolioContentPaginationControls",
+					paginationContainer: "portfolioContentPaginationControls",
 				});
 			}
 		});

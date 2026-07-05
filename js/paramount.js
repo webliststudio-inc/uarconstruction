@@ -465,9 +465,9 @@ function _showEmptyState(props) {
     `;
   }
 
-  $(container).html(content);
+  $(`#${container}`).html(content);
 
-  if (paginationContainer) {
-    $(paginationContainer).empty().hide();
+  if (`#${paginationContainer}`) {
+    $(`#${paginationContainer}`).empty().hide();
   }
 }

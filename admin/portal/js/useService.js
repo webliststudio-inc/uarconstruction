@@ -14,21 +14,21 @@ function _fetchServiceData() {
 			console.error("Error:", error);
 			if (error.status==0) {
 				_showEmptyState({
-					container: "#servicePageContent",
+					container: "servicePageContent",
 					message: "Check your internet connection and try again",
-					paginationContainer: "#serviceContentPaginationControls",
+					paginationContainer: "serviceContentPaginationControls",
 				});
 				_callAjaxError(() => _fetchServiceData(), error.message); // retry if needed
 			} else {
 				_showEmptyState({
-					container: "#servicePageContent",
+					container: "servicePageContent",
 					message: error.message,
 					button: `
 						<button class="btn" title="ADD NEW SERVICE" onclick="sessionStorage.removeItem('useEachPageSession'); _getForm({page: 'editPagesForm', pageCategory: 'SERVICE', url: adminPortalMiddlewareUrl});">
 							<i class="bi-plus-square"></i> ADD NEW SERVICE
 						</button>
 					`,
-					paginationContainer: "#serviceContentPaginationControls",
+					paginationContainer: "serviceContentPaginationControls",
 				});
 			}
 		});

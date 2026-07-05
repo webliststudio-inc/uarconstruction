@@ -36,17 +36,17 @@
                         engineering solutions for our communities.</p>
 
                     <div class="btn-div">
-                        <a href="<?php echo $websiteUrl ?>">
-                            <button class="btn" title="Request an Estimate">Request an Estimate <i
+                        <a href="<?php echo $websiteUrl ?>/contact-us">
+                            <button class="btn" title="Get In Touch">Get In Touch <i
                                     class="bi bi-arrow-right-short"></i></button>
                         </a>
 
-                        <a href="<?php echo $websiteUrl ?>">
+                        <a href="<?php echo $websiteUrl ?>/contact-us">
                             <button class="btn contact-btn" title="Contact Us">Contact Us <i
                                     class="bi bi-telephone-inbound-fill"></i></button>
                         </a>
 
-                        <a href="<?php echo $websiteUrl ?>">
+                        <a href="<?php echo $websiteUrl ?>/portfolio">
                             <button class="btn" title="View Projects">View Projects <i
                                     class="bi bi-eye-fill"></i></button>
                         </a>
@@ -159,59 +159,20 @@
                             </div>
                         </div>
 
-                        <div class="faq-toggle-back">
-                            <div class="faq-toggle" id="faq1">
-                                <div class="title-text" onclick="_collapse('faq1')">
-                                    <div class="quest-text-div">
-                                        <div class="icon-div"><i class="bi-question"></i></div>
-                                        <h3>What types of construction projects do you handle?</h3>
-                                    </div>
-                                    <div class="expand-div" id="faq1num">
-                                        <i class="bi bi-plus"></i>
-                                    </div>
-                                </div>
-                                <div class="answer-div" id="faq1answer" style="display: none;">
-                                    <p>We specialize in residential, commercial, urban, and rural construction projects,
-                                        including new builds, renovations, remodeling, and infrastructure development.
-                                    </p>
-                                </div>
-                            </div>
+                        <div class="faq-toggle-back" id="indexFaqPageContent">
+                            <script>
+                                _getFaqList({
+                                    limit: 3,
+                                    pageContainer: "indexFaqPageContent"
+                                })
+                            </script>
 
-                            <div class="faq-toggle" id="faq2">
-                                <div class="title-text" onclick="_collapse('faq2')">
-                                    <div class="quest-text-div">
-                                        <div class="icon-div"><i class="bi-question"></i></div>
-                                        <h3>How long does a construction project take to complete?</h3>
-                                    </div>
-                                    <div class="expand-div" id="faq2num">
-                                        <i class="bi bi-plus"></i>
-                                    </div>
-                                </div>
-                                <div class="answer-div" id="faq2answer" style="display: none;">
-                                    <p>Project timelines vary depending on size, complexity, and site conditions. After
-                                        evaluating your project, we provide a detailed schedule with estimated
-                                        completion dates.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-toggle" id="faq3">
-                                <div class="title-text" onclick="_collapse('faq3')">
-                                    <div class="quest-text-div">
-                                        <div class="icon-div"><i class="bi-question"></i></div>
-                                        <h3>Do you provide free project consultations and estimates?</h3>
-                                    </div>
-                                    <div class="expand-div" id="faq3num">
-                                        <i class="bi bi-plus"></i>
-                                    </div>
-                                </div>
-                                <div class="answer-div" id="faq3answer" style="display: none;">
-                                    <p>Yes. We offer free consultations and project estimates to help clients understand
-                                        costs, timelines, and the best construction solutions for their needs.</p>
-                                </div>
+                            <div class="content-loading-div">
+                                <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                             </div>
                         </div>
 
-                        <a href="<?php echo $websiteUrl ?>" title="Read More FAQ">
+                        <a href="<?php echo $websiteUrl ?>/faq" title="Read More FAQ">
                             <button class="btn" title="Read More FAQ">Read More <i
                                     class="bi-arrow-right"></i></button></a>
                     </div>
