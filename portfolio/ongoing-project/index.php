@@ -62,7 +62,7 @@
                         <div class="div-in">
                             <h3>SEARCH</h3>
                             <div class="text_field_container">
-                                <input class="text_field" id="searchContent" onkeyup="filters('Content');" type="text" placeholder="" />
+                                <input class="text_field" id="searchContent" onkeyup="_filtersPages(this.value, 'ongoingProjectContainer', 'portfolio-card');" type="text" placeholder="" />
                                 <div class="placeholder">Type Here To Search</div>
                             </div>
                         </div>
@@ -88,70 +88,17 @@
                     </div>
 
                     <div class="left-div">
-                        <div class="portfolio-back-div" id="portfolioContainer" data-aos="fade-up" data-aos-duration="900">
-                            <a href="<?php echo $websiteUrl ?>/portfolio/ongoing-project/modern-office-complex">
-                            <div class="portfolio-card" data-category="1">
-                                <div class="title Ongoing">Ongoing</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/Ongoing-project-1.jpeg"
-                                            alt="Modern Office Complex" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="Modern Office Complex">Modern Office Complex</h3>
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>COMMERCIAL</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
+                        <div class="portfolio-back-div" id="ongoingProjectContainer" data-aos="fade-up" data-aos-duration="900">
+                            <script>
+                                _getPageList({
+                                    pageCategory: "PORTFOLIO",
+                                    pageContainer: "ongoingProjectContainer"
+                                })
+                            </script>
 
-                            <a href="<?php echo $websiteUrl ?>">
-                            <div class="portfolio-card" data-category="2">
-                                <div class="title Ongoing">Ongoing</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/morder-woship-center.jpeg"
-                                        alt="Modern Worship Center" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="Modern Worship Center">Modern Worship Center</h3> 
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>WORSHIP CENTER</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
-
-                            <a href="<?php echo $websiteUrl ?>"> 
-                            <div class="portfolio-card" data-category="1">
-                                <div class="title Ongoing">Ongoing</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/residential_housing_estate.jpeg"
-                                        alt="Kingdom Life Cathedral" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="Residential Housing Estate">Residential Housing Estate</h3>
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>RESIDENTIAL</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
-
-                            <a href="<?php echo $websiteUrl ?>">
-                            <div class="portfolio-card" data-category="1">
-                                <div class="title Ongoing">Ongoing</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/commercial_shopping_plaza.jpeg"
-                                            alt="Commercial Shopping Plaza" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="Commercial Shopping Plaza">Commercial Shopping Plaza</h3>
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>COMMERCIAL</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
+                            <div class="content-loading-div">
+                                <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -67,110 +67,17 @@
                         </div>
                     </div>
 
-                    <div class="service-back-div">
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-1.jpeg"
-                                    alt="Commercial Construction" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <a href="<?php echo $websiteUrl ?>/services/commercial-construction">
-                            <div class="text-div">
-                                <h3>Commercial Construction</h3>
-                                <p>Delivering innovative and efficient commercial building solutions for businesses of
-                                    all sizes.</p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div></a>
-                        </div>
+                    <div class="service-back-div" id="allServicePageContent">
+                        <script>
+                            _getPageList({
+                                pageCategory: "SERVICE",
+                                pageContainer: "allServicePageContent"
+                            })
+                        </script>
 
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-2.jpeg"
-                                    alt="Residential Construction" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Residential Construction</h3>
-                                <p>Building modern, durable and beautiful homes tailored to your lifestyle and needs.
-                                </p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
+                        <div class="content-loading-div">
+                            <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                         </div>
-
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-3.jpeg"
-                                    alt="Road Construction" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Road & Infrastructure</h3>
-                                <p>Construction of durable roads, bridges, and essential infrastructure for urban and
-                                    rural development.</p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-4.jpeg"
-                                    alt="Renovation Services" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Renovation & Remodeling</h3>
-                                <p>Transforming old structures into modern, functional and visually appealing spaces.
-                                </p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-5.jpeg"
-                                    alt="Material Engineering" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Material Engineering</h3>
-                                <p>Providing advanced construction materials for stronger, safer and longer-lasting
-                                    structures.</p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-6.jpeg"
-                                    alt="Project Management" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Project Management</h3>
-                                <p>End-to-end planning, coordination and execution of construction projects with
-                                    precision.</p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
