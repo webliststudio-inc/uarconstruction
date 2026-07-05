@@ -337,9 +337,7 @@ function _savePagePicturesCallback(formData, pageCategory) {
 	useEachPageSession = JSON.parse(sessionStorage.getItem("useEachPageSession"));
 	const pageId = useEachPageSession?.pageId;
 	try {
-		$("#getPagesDetails").html('<div class="ajax-loader"><img src="' + websiteUrl + '/all-images/images/spinner.gif"/></div>')
-			.css({ display: "flex", "flex-direction": "column", gap: "20px", "align-items": "center" })
-			.fadeIn(500);
+		_showLoader("Uploading Pictures!. Please wait...");
 		
 		// send files + publishId to backend
 		_callFileEndPoints({
@@ -358,6 +356,7 @@ function _savePagePicturesCallback(formData, pageCategory) {
 			console.error("Error:", error);
 			if (error.status==0) {
 				_callAjaxError(() => _savePagePicturesCallback(formData, pageCategory), error.message); // retry if needed
+				_hideLoader();
 			} else {
 				_showCustomConfirm({
 					title: "Unable to Upload Pictures",
@@ -366,11 +365,13 @@ function _savePagePicturesCallback(formData, pageCategory) {
 					trueActionBtnText: "OK",
 					closeOnOverlayClick: true,
 				});
+				_hideLoader();
 			}
 		});
 	} catch (error) {
 		console.error("Error:", error);
 		_callCatchError(() => _savePagePicturesCallback(formData, pageCategory));
+		_hideLoader();
 	}
 }
 
@@ -385,7 +386,8 @@ function _uploadPagePictures(formData, pagePixNames, message, pageCategory, page
         formData,
         expectJson: false,
     })
-    .then(() => {
+	.then(() => {
+		_hideLoader();
         _showCustomConfirm({
 			callback: () => {
 				_fetchEachPageContent(pageCategory, pageId);

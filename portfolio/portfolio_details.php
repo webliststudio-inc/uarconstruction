@@ -50,7 +50,7 @@
                 <div class="page-back-div">
                     <div class="left-div">
                         <div class="main-picture-back-div">
-                            <div class="main-picture-div" id="blogPreviewPix">
+                            <div class="main-picture-div" id="pagesPreviewPix">
                                 <img id="seoFlyer" src="<?php echo $websiteUrl ?>/all-images/images/defaultPage.png" alt="<?php echo $pageTitle?>" />
                             </div>
 
