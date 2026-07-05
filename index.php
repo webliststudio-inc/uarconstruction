@@ -76,111 +76,18 @@
                         </div>
                     </div>
 
-                    <div class="service-back-div">
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-1.jpeg"
-                                    alt="Commercial Construction" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                             <a href="<?php echo $websiteUrl ?>/services/commercial-construction">
-                            <div class="text-div">
-                                <h3>Commercial Construction</h3>
-                                <p>Delivering innovative and efficient commercial building solutions for businesses of
-                                    all sizes.</p>
-                                   
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div></a>
-                        </div>
+                    <div class="service-back-div" id="indexServicePageContent">
+                        <script>
+                            _getPageList({
+                                pageCategory: "SERVICE",
+                                limit: 6,
+                                pageContainer: "indexServicePageContent"
+                            })
+                        </script>
 
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-2.jpeg"
-                                    alt="Residential Construction" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Residential Construction</h3>
-                                <p>Building modern, durable and beautiful homes tailored to your lifestyle and needs.
-                                </p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
+                        <div class="content-loading-div">
+                            <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                         </div>
-
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-3.jpeg"
-                                    alt="Road Construction" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Road & Infrastructure</h3>
-                                <p>Construction of durable roads, bridges, and essential infrastructure for urban and
-                                    rural development.</p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-4.jpeg"
-                                    alt="Renovation Services" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Renovation & Remodeling</h3>
-                                <p>Transforming old structures into modern, functional and visually appealing spaces.
-                                </p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-5.jpeg"
-                                    alt="Material Engineering" />
-                            </div>
-                            <div class="icon-div">
-                               <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Material Engineering</h3>
-                                <p>Providing advanced construction materials for stronger, safer and longer-lasting
-                                    structures.</p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="service-div" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="image-div">
-                                <img src="<?php echo $websiteUrl ?>/uploaded_files/services/service-6.jpeg"
-                                    alt="Project Management" />
-                            </div>
-                            <div class="icon-div">
-                                <img src="<?php echo $websiteUrl ?>/all-images/images/icon.png"
-                                    alt="<?php echo $appName ?> Icon" />
-                            </div>
-                            <div class="text-div">
-                                <h3>Project Management</h3>
-                                <p>End-to-end planning, coordination and execution of construction projects with
-                                    precision.</p>
-                                <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -205,68 +112,32 @@
                     </div>
 
                     <div class="project-back-div">
-                        <div class="left-container">
-                            <div class="project-div" data-aos="fade-in" data-aos-duration="800">
-                                <div class="title">Completed</div>
-                                <div class="img-div">
-                                     <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-1.jpeg" alt="Grace Worship Center" />
-                                </div>
+                        <div class="left-container" id="indexPortfolioListContainer">
+                            <script>
+                                _getPageList({
+                                    pageCategory: "PORTFOLIO",
+                                    limit: 1,
+                                    pageContainer: "indexPortfolioListContainer"
+                                })
+                            </script>
 
-                                <div class="text-div">
-                                    <div class="div-in">
-                                        <h2>Grace Worship Center</h2>
-                                        <p>Construction of a modern worship facility featuring a spacious auditorium,
-                                            administrative offices, and community gathering spaces.</p>
-                                        <a href="">
-                                            <button class="btn" title="Grace Worship Center">READ MORE <i
-                                                    class="bi-arrow-right"></i></button></a>
-                                    </div>
-                                </div>
+                            <div class="content-loading-div">
+                                <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                             </div>
                         </div>
 
                         <div class="right-container">
-                            <div class="project-image-wrapper">
-                                <div class="project-image">
-                                    <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-2.jpeg"
-                                        alt="Downtown Office Complex" />
-                                    </div>
-                                </div>
+                            <div class="project-image-wrapper" id="indexRightPortfolioListContainer">
+                                <script>
+                                    _getPageList({
+                                        pageCategory: "PORTFOLIO",
+                                        limit: 6,
+                                        pageContainer: "indexRightPortfolioListContainer"
+                                    })
+                                </script>   
 
-                                <div class="project-image">
-                                    <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-6.jpeg"
-                                        alt="Kingdom Life Cathedral" />
-                                    </div>
-                                </div>
-
-                                <div class="project-image">
-                                    <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-3.jpeg"
-                                            alt="Redeemer Assembly Church Complex" />
-                                    </div>
-                                </div>
-
-                                <div class="project-image">
-                                    <div class="img-div">
-                                         <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-5.jpeg"
-                                        alt="CityGate Commercial Mall" />
-                                    </div>
-                                </div>
-
-                                <div class="project-image">
-                                    <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-4.jpeg"
-                                        alt="New Covenant Worship Center" />
-                                    </div>
-                                </div>
-
-                                <div class="project-image">
-                                    <div class="img-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/portfolio-7.jpeg"
-                                        alt="New Covenant Worship Center" />
-                                    </div>
+                                <div class="content-loading-div">
+                                    <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                                 </div>
                             </div>
                         </div>
@@ -371,86 +242,17 @@
                         </div>
                     </div>
 
-                    <div class="blog-back-div">
-                        <div class="blog-div" data-aos="fade-in" data-aos-duration="1000">
-                            <div class="blog-inner-div">
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/blog/blog-1.jpeg"
-                                        alt="Top Construction Trends for Modern Development" />
-                                </div>
+                    <div class="blog-back-div" id="indexBlogPageContainer">
+                        <script>
+                            _getPageList({
+                                pageCategory: "BLOG",
+                                limit: 3,
+                                pageContainer: "indexBlogPageContainer"
+                            })
+                        </script>   
 
-                                <div class="text-div">
-                                    <div class="count">
-                                        <i class="bi-calendar3"></i> June 3, 2026
-                                        <span>|</span>
-                                        <i class="bi-eye-fill"></i> 1,250 VIEWS
-                                    </div>
-
-                                    <h3>Top Construction Trends for Modern Development</h3>
-                                    <p>Explore the latest construction innovations, smart technologies, and sustainable
-                                        practices shaping modern...</p>
-
-                                    <a href="<?php echo $websiteUrl?>/blog/top-construction-trends-for-modern-development" title="Top Construction Trends for Modern Development">   
-                                        <button class="btn" title="Read More">  
-                                            Read More <i class="bi-arrow-right"></i>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog-div" data-aos="fade-in" data-aos-duration="1000">
-                            <div class="blog-inner-div">
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/blog/blog-2.jpeg"
-                                        alt="Choosing Quality Materials for Lasting Structures" />
-                                </div>
-
-                                <div class="text-div">
-                                    <div class="count">
-                                        <i class="bi-calendar3"></i> May 28, 2026
-                                        <span>|</span>
-                                        <i class="bi-eye-fill"></i> 980 VIEWS
-                                    </div>
-
-                                    <h3>Choosing Quality Materials for Lasting Structures</h3>
-                                    <p>Learn how selecting durable, high-quality materials can improve safety,
-                                        performance, and project longevity...</p>
-
-                                    <a href="#" title="Choosing Quality Materials for Lasting Structures">
-                                        <button class="btn">
-                                            Read More <i class="bi-arrow-right"></i>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog-div" data-aos="fade-in" data-aos-duration="1000">
-                            <div class="blog-inner-div">
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/blog/blog-3.jpeg"
-                                        alt="The Importance of Effective Project Planning" />
-                                </div>
-
-                                <div class="text-div">
-                                    <div class="count">
-                                        <i class="bi-calendar3"></i> May 15, 2026
-                                        <span>|</span>
-                                        <i class="bi-eye-fill"></i> 1,540 VIEWS
-                                    </div>
-
-                                    <h3>The Importance of Effective Project Planning</h3>
-                                    <p>Discover how proper planning helps control costs, reduce delays, and ensure
-                                        successful project delivery...</p>
-
-                                    <a href="#" title="The Importance of Effective Project Planning">
-                                        <button class="btn">
-                                            Read More <i class="bi-arrow-right"></i>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="content-loading-div">
+                            <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                         </div>
                     </div>
                 </div>

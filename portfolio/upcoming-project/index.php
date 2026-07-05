@@ -62,7 +62,7 @@
                         <div class="div-in">
                             <h3>SEARCH</h3>
                             <div class="text_field_container">
-                                <input class="text_field" id="searchContent" onkeyup="filters('Content');" type="text" placeholder="" />
+                                <input class="text_field" id="searchContent" onkeyup="_filtersPages(this.value, 'upcomingProjectContainer', 'portfolio-card');" type="text" placeholder="" />
                                 <div class="placeholder">Type Here To Search</div>
                             </div>
                         </div>
@@ -88,70 +88,17 @@
                     </div>
 
                     <div class="left-div">
-                        <div class="portfolio-back-div" id="portfolioContainer" data-aos="fade-up" data-aos-duration="900">
-                            <a href="<?php echo $websiteUrl ?>/portfolio/upcoming-project/grace-worship-center">
-                            <div class="portfolio-card" data-category="1">
-                                <div class="title UPCOMING">UPCOMING</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/corporate_office_development.jpeg"
-                                            alt="Corporate Office Development" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="Corporate Office Development">Corporate Office Development</h3>
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>COMMERCIAL</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
+                        <div class="portfolio-back-div" id="upcomingProjectContainer" data-aos="fade-up" data-aos-duration="900">
+                            <script>
+                                _getPageList({
+                                    pageCategory: "PORTFOLIO",
+                                    pageContainer: "upcomingProjectContainer"
+                                })
+                            </script>
 
-                            <a href="<?php echo $websiteUrl ?>/portfolio">
-                            <div class="portfolio-card" data-category="2">
-                                <div class="title UPCOMING">UPCOMING</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/grace_community_worship_center.jpeg"
-                                        alt="Grace Community Worship Center" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="Grace Community Worship Center">Grace Community Worship Center</h3>   
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>WORSHIP CENTER</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
-
-                            <a href="<?php echo $websiteUrl ?>/portfolio"> 
-                            <div class="portfolio-card" data-category="1">
-                                <div class="title UPCOMING">UPCOMING</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/reserve_oak_creek.jpeg"
-                                        alt="Reserve Oak Creek" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="Reserve Oak Creek">Reserve Oak Creek</h3>
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>RESIDENTIAL</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
-
-                            <a href="<?php echo $websiteUrl ?>/portfolio/">
-                            <div class="portfolio-card" data-category="1">
-                                <div class="title UPCOMING">UPCOMING</div>
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/portfolio/central_plaza_complex.jpeg"
-                                            alt="Central Plaza Complex" />
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-title" title="Central Plaza Complex">Central Plaza Complex</h3>     
-                                    <div class="portfolio-meta">
-                                        <div class="porfolio-type"><span>COMMERCIAL</span></div>
-                                        <div class="location"><i class="bi bi-geo-alt"></i> <span>Texas, USA</span></div>
-                                    </div>
-                                </div>
-                            </div></a>
+                            <div class="content-loading-div">
+                                <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
+                            </div>
                         </div>
                     </div>
                 </div>
