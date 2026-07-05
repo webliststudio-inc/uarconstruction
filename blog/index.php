@@ -60,7 +60,7 @@
                         <div class="div-in">
                             <h3>SEARCH</h3>
                             <div class="text_field_container">
-                                <input class="text_field" id="searchContent" onkeyup="filters('Content');" type="text" placeholder="" />
+                                <input class="text_field" id="searchContent" onkeyup="_filtersPages(this.value, 'pageMainBlogPageContainer', 'main-blog-div');" type="text" placeholder="" />
                                 <div class="placeholder">Type Here To Search</div>
                             </div>
                         </div>
@@ -83,58 +83,18 @@
                     </div>
 
                     <div class="left-div">
-                        <div class="page-list-back-div" id="pageContent">
-                            <a href="<?php echo $websiteUrl?>/blog/top-construction-trends-for-modern-development" title="Top Construction Trends for Modern Development">   
-                                <div class="main-blog-div">
-                                    <div class="top-text">General</div>
-                                    <div class="image-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/blog/blog-1.jpeg"
-                                        alt="Top Construction Trends for Modern Development" />
-                                    </div>
-                                    <div class="text-content-div">
-                                        <h2>Top Construction Trends for Modern Development</h2>
-                                        <div class="count">
-                                            <i class="bi-calendar3"></i> June 05, 2026
-                                            <span> | </span>
-                                            <i class="bi-eye"></i> 1,245 VIEWS
-                                        </div>
-                                        <p>
-                                            Learn the essential steps involved in building a modern residential home, from initial planning and site preparation to foundation work, structural development, and finishing touches. This guide walks you through each phase of the construction process, including architectural design, material selection...
-                                        </p>
-                                        <div>
-                                            <button class="btn" title="Read More">
-                                                Read More <i class="bi-arrow-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                        <div class="page-list-back-div" id="pageMainBlogPageContainer">
+                            <script>
+                                _getPageList({
+                                    pageCategory: "BLOG",
+                                    limit: 3,
+                                    pageContainer: "pageMainBlogPageContainer"
+                                })
+                            </script>   
 
-                            <a href="<?php echo $websiteUrl?>/blog/top-construction-trends-for-modern-development" title="Choosing Quality Materials for Lasting Structures">   
-                                <div class="main-blog-div">
-                                    <div class="top-text">General</div>
-                                    <div class="image-div">
-                                        <img src="<?php echo $websiteUrl?>/uploaded_files/blog/blog-2.jpeg"
-                                        alt="Choosing Quality Materials for Lasting Structures" />
-                                    </div>
-                                    <div class="text-content-div">
-                                        <h2>Choosing Quality Materials for Lasting Structures</h2>
-                                        <div class="count">
-                                            <i class="bi-calendar3"></i> June 05, 2026
-                                            <span> | </span>
-                                            <i class="bi-eye"></i> 1,245 VIEWS
-                                        </div>
-                                        <p>
-                                            Learn the importance of choosing high-quality construction materials for durable and long-lasting structures, and how they directly impact the strength, safety, and overall performance of your project. This guide provides practical tips on selecting the right materials for different types of construction...
-                                        </p>
-                                        <div>
-                                            <button class="btn" title="Read More">
-                                                Read More <i class="bi-arrow-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="content-loading-div">
+                                <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -151,86 +111,16 @@
                         </div>
                     </div>
 
-                    <div class="blog-back-div">
-                        <div class="blog-div" data-aos="fade-in" data-aos-duration="1000">
-                            <div class="blog-inner-div">
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/blog/blog-1.jpeg"
-                                        alt="Top Construction Trends for Modern Development" />
-                                </div>
+                    <div class="blog-back-div" id="allRelatedBlogPageContainer">
+                        <script>
+                            _getPageList({
+                                pageCategory: "BLOG",
+                                pageContainer: "allRelatedBlogPageContainer"
+                            })
+                        </script>   
 
-                                <div class="text-div">
-                                    <div class="count">
-                                        <i class="bi-calendar3"></i> June 3, 2026
-                                        <span>|</span>
-                                        <i class="bi-eye-fill"></i> 1,250 VIEWS
-                                    </div>
-
-                                    <h3>Top Construction Trends for Modern Development</h3>
-                                    <p>Explore the latest construction innovations, smart technologies, and sustainable
-                                        practices shaping modern...</p>
-
-                                    <a href="#" title="Top Construction Trends for Modern Development">
-                                        <button class="btn">
-                                            Read More <i class="bi-arrow-right"></i>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog-div" data-aos="fade-in" data-aos-duration="1000">
-                            <div class="blog-inner-div">
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/blog/blog-2.jpeg"
-                                        alt="Choosing Quality Materials for Lasting Structures" />
-                                </div>
-
-                                <div class="text-div">
-                                    <div class="count">
-                                        <i class="bi-calendar3"></i> May 28, 2026
-                                        <span>|</span>
-                                        <i class="bi-eye-fill"></i> 980 VIEWS
-                                    </div>
-
-                                    <h3>Choosing Quality Materials for Lasting Structures</h3>
-                                    <p>Learn how selecting durable, high-quality materials can improve safety,
-                                        performance, and project longevity...</p>
-
-                                    <a href="#" title="Choosing Quality Materials for Lasting Structures">
-                                        <button class="btn">
-                                            Read More <i class="bi-arrow-right"></i>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog-div" data-aos="fade-in" data-aos-duration="1000">
-                            <div class="blog-inner-div">
-                                <div class="image-div">
-                                    <img src="<?php echo $websiteUrl?>/uploaded_files/blog/blog-3.jpeg"
-                                        alt="The Importance of Effective Project Planning" />
-                                </div>
-
-                                <div class="text-div">
-                                    <div class="count">
-                                        <i class="bi-calendar3"></i> May 15, 2026
-                                        <span>|</span>
-                                        <i class="bi-eye-fill"></i> 1,540 VIEWS
-                                    </div>
-
-                                    <h3>The Importance of Effective Project Planning</h3>
-                                    <p>Discover how proper planning helps control costs, reduce delays, and ensure
-                                        successful project delivery...</p>
-
-                                    <a href="#" title="The Importance of Effective Project Planning">
-                                        <button class="btn">
-                                            Read More <i class="bi-arrow-right"></i>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="content-loading-div">
+                            <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                         </div>
                     </div>
                 </div>

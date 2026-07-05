@@ -1048,6 +1048,21 @@ header .header-div-in .mobile-btn:hover{
 	z-index: 100;
 }
 
+.project-back-div .project-div .COMPLETED{
+	background: var(--active-color);
+	color: var(--text-white);
+}
+
+.project-back-div .project-div .ONGOING{
+  	background: rgba(241, 157, 67, 0.9);
+    color: var(--text-white);
+}
+
+.project-back-div .project-div .UPCOMING{
+  	background: rgba(7, 65, 141, 0.9);
+	color: var(--text-white);
+}
+
 .project-back-div .project-div .text-div{
 	position: absolute;
   width: 100%;
@@ -2183,6 +2198,10 @@ header .header-div-in .mobile-btn:hover{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.page-back-div .left-div .page-list-back-div a{
+  width: 100%;
 }
 
 .page-back-div .left-div .page-list-back-div .main-blog-div {
