@@ -172,16 +172,16 @@ function _fetchStaffData() {
 			console.error("Error:", error);
 			if (error.status==0) {
 				_showEmptyState({
-					container: "#staffContent",
+					container: "staffContent",
 					message: "Check your internet connection and try again",
                     colspan: 20,
-					paginationContainer: "#staffContentPaginationControls",
+					paginationContainer: "staffContentPaginationControls",
 				});
 
 				_callAjaxError(() => _fetchStaffData(), error.message); // retry if needed
 			} else {
 				_showEmptyState({
-					container: "#staffContent",
+					container: "staffContent",
 					message: error.message,
                     colspan: 20,
 					button: `
@@ -189,7 +189,7 @@ function _fetchStaffData() {
 							<i class="bi-plus-square"></i> ADD NEW STAFF
 						</button>
 					`,
-					paginationContainer: "#staffContentPaginationControls",
+					paginationContainer: "staffContentPaginationControls",
 				});
 			}
 		});

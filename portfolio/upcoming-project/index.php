@@ -70,19 +70,14 @@
                         <div class="div-in">
                             <h3>CATEGORY LIST</h3>
 
-                            <ul id="catId">
-                                <li title="Worship Centers" onclick="">
-                                    Worship Centers
-                                </li>
-                                <li title="Commercial" onclick="">
-                                    Commercial
-                                </li>
-                                <li title="Residential" onclick="">
-                                    Residential
-                                </li>
-                                <li title="Infrastructure" onclick="">
-                                    Infrastructure
-                                </li>
+                            <ul id="projectCategoryId">
+                                <script>
+                                    _fetchProjectCategoryList('PORTFOLIO', 'upcomingProjectContainer', 'PS001');
+                                </script>
+
+                                <div class="content-loading-div">
+                                    <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
+                                </div>
                             </ul>
                         </div>
                     </div>
@@ -92,7 +87,8 @@
                             <script>
                                 _getPageList({
                                     pageCategory: "PORTFOLIO",
-                                    pageContainer: "upcomingProjectContainer"
+                                    pageContainer: "upcomingProjectContainer",
+                                    projectStageId: "PS001"
                                 })
                             </script>
 

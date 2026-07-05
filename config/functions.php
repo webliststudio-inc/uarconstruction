@@ -3,12 +3,12 @@ class allClass
 {
     function _otherPagesBtn($websiteUrl) { ?>
         <div class="other-pages-btn-div">
-            <a href="<?php echo $websiteUrl ?>">
-                <button class="btn" title="Request an Estimate">Request an Estimate <i
+            <a href="<?php echo $websiteUrl ?>/contact-us">
+                <button class="btn" title="Get In Touch">Get In Touch <i
                         class="bi bi-arrow-right-short"></i></button>
             </a>
 
-            <a href="<?php echo $websiteUrl ?>">
+            <a href="<?php echo $websiteUrl ?>/contact-us">
                 <button class="btn contact-btn" title="Contact Us">Contact Us <i
                         class="bi bi-telephone-inbound-fill"></i></button>
             </a>

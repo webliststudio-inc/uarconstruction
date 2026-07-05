@@ -63,8 +63,8 @@
                         </div>
                         <div class="btn-div">
                             <a href="#">
-                                <button class="btn" title="Request an Estimate">Request an Estimate <i
-                                        class="bi-arrow-right"></i></button></a>
+                                <button class="btn" title="Get In Touch">Get In Touch <i
+                                        class="bi bi-arrow-right-short"></i></button></a>
                         </div>
                     </div>
 

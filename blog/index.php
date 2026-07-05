@@ -60,7 +60,7 @@
                         <div class="div-in">
                             <h3>SEARCH</h3>
                             <div class="text_field_container">
-                                <input class="text_field" id="searchContent" onkeyup="_filtersPages(this.value, 'pageMainBlogPageContainer', 'main-blog-div');" type="text" placeholder="" />
+                                <input class="text_field" id="searchContent" onkeyup="_filtersBlog(this.value);" type="text" placeholder="" />
                                 <div class="placeholder">Type Here To Search</div>
                             </div>
                         </div>
@@ -69,15 +69,13 @@
                             <h3>TAG LIST</h3>
 
                             <ul id="catId">
-                                <li title="Construction Tips" onclick="">
-                                Construction Tips
-                                </li>
-                                <li title="General" onclick="">
-                                    General
-                                </li>
-                                <li title="Architecture Insights" onclick="">
-                                    Architecture Insights
-                                </li>
+                                <script>
+                                    _fetchCategoryList('BLOG', 'pageMainBlogPageContainer,allRelatedBlogPageContainer');
+                                </script>
+                                
+                                <div class="content-loading-div">
+                                    <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
+                                </div>
                             </ul>
                         </div>
                     </div>

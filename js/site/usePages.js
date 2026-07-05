@@ -4,12 +4,15 @@ function _getPageList(options) {
         pageCategory = "",
         limit = '',
         pageId = '',
-		pageContainer=''
+		pageContainer = '',
+		projectStageId = '',
+		categoryId = '',
+		projectCategoryId = ''
     } = options;
 	try {
 		//// call endpoint //////
 		_callFetchEndPoints({
-			url: `site/fetch-page?pageCategory=${pageCategory}&pageId=${pageId}&limit=${limit||''}`,
+			url: `site/fetch-page?pageCategory=${pageCategory}&pageId=${pageId}&limit=${limit||''}&projectStageId=${projectStageId||''}&categoryId=${categoryId||''}&projectCategoryId=${projectCategoryId||''}`,
 		})
 		.then((response) => {
 			_pageListDisplay(response?.data, pageContainer);
@@ -17,17 +20,22 @@ function _getPageList(options) {
 		 .catch((error) => {
 			console.error("Error:", error);
 			if (error.status==0) {
-				$(`#${pageContainer}`).html(`
-				<div class="false-notification-div">
-					<p>Check your internet connection and try again</p>
-				</div>
-			`);
+				_showEmptyState({
+					container: pageContainer,
+					message: "Check your internet connection and try again",
+				});
 			} else {
-				$(`#${pageContainer}`).html(`
-					<div class="false-notification-div">
-						<p>${error.message}</p>
-					</div>
-				`);
+				if (error.status==404) {
+					_showEmptyState({
+						container: pageContainer,
+						message: "No data found",
+					});
+				} else {
+					_showEmptyState({
+						container: pageContainer,
+						message: error.message,
+					});
+				}
 			}
 		});
 	} catch (error) {
@@ -61,9 +69,12 @@ function _pageListDisplay(data, pageContainer) {
 	if (pageContainer=='relatedPageBlogContent') {
 	    _pageRelatedBlogData(data, pageContainer);   
 	}
-	if (pageContainer=='completedProjectContainer' || pageContainer=='ongoingProjectContainer' || pageContainer=='upcomingProjectContainer') {
+	if (pageContainer=='completedProjectContainer' || pageContainer=='ongoingProjectContainer' || pageContainer=='upcomingProjectContainer' || pageContainer=='allProjectContainer') {
 	    _pageCompletedProjectData(data, pageContainer);   
-    }
+	}
+	if (pageContainer=='footerServiceList') {
+	    _footerServicesListData(data, pageContainer);   
+	}
 }
 
 /// Initialize Fetch Service List ///
@@ -189,7 +200,7 @@ function _pageRelatedPortfolioData(data, pageContainer) {
 function _indexBlogData(data, pageContainer) {
 	const content = data.map((item) => {
 	return `
-	<div class="blog-div" data-aos="fade-in" data-aos-duration="1000">
+	<div class="blog-div">
 		<div class="blog-inner-div">
 			<div class="image-div">
 				<img src="${blogPixPath}/${item.seoFlyer}"
@@ -225,7 +236,7 @@ function _pageMainBlogData(data, pageContainer) {
 	return `
 	<a href="${websiteUrl}/blog/${item.pageUrl}" title="${item.pageTitle}">
 		<div class="main-blog-div">
-			<div class="top-text">General</div>
+			<div class="top-text">${item.categoryData?.categoryName}</div>
 			<div class="image-div">
 				<img src="${blogPixPath}/${item.seoFlyer}"
 				alt="${item.pageTitle}" />
@@ -296,6 +307,18 @@ function _pageCompletedProjectData(data, pageContainer) {
 					</div>
 				</div>
 			</div>
+		</a>
+	`;
+  }).join("");
+  $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Footer Services List ///
+function _footerServicesListData(data, pageContainer) {
+	const content = data.map((item) => {
+	return `
+		<a href="${websiteUrl}/services/${item.pageUrl}" title="${item.pageTitle}">
+			<li>${item.pageTitle}</li>
 		</a>
 	`;
   }).join("");
@@ -384,10 +407,305 @@ function _getEachPageDetails(options) {
 
 //// Filter Pages Data ////
 function _filtersPages(value, pageContainer, container) {
-  $(`#${pageContainer} .${container}`).each(function () {
-    var text = $(this).text();
-    text.toLowerCase().indexOf(value.toLowerCase()) > -1
-      ? $(this).show()
-      : $(this).hide();
-  });
+    value = value.trim().toLowerCase();
+    const $container = $(`#${pageContainer}`);
+    // Cache the original HTML once
+    if (!$container.data('originalHtml')) {
+        $container.data('originalHtml', $container.html());
+    }
+    // Restore the original content when search is cleared
+    if (value === '') {
+        $container.html($container.data('originalHtml'));
+        return;
+    }
+    let visibleCount = 0;
+    $container.find(`.${container}`).each(function () {
+        const text = $(this).text().toLowerCase();
+        if (text.includes(value)) {
+            $(this).show();
+            visibleCount++;
+        } else {
+            $(this).hide();
+        }
+    });
+    if (visibleCount === 0) {
+        _showEmptyState({
+            container: pageContainer,
+            message: "No Record found!!!",
+        });
+    }
+}
+
+//// Filter Pages Data ////
+function _filtersBlog(value) {
+    value = value.trim().toLowerCase();
+    const containers = [
+        {
+            container: 'pageMainBlogPageContainer',
+            items: '.main-blog-div'
+        },
+        {
+            container: 'allRelatedBlogPageContainer',
+            items: '.blog-div'
+        }
+    ];
+
+    containers.forEach(({ container, items }) => {
+        const $container = $(`#${container}`);
+        // Cache the original HTML only after the blog items have loaded
+        if (
+            !$container.data('originalHtml') &&
+            $container.find(items).length > 0
+        ) {
+            $container.data('originalHtml', $container.html());
+        }
+        // Restore the original content when search is cleared
+        if (value === '') {
+            if ($container.data('originalHtml')) {
+                $container.html($container.data('originalHtml'));
+            }
+            return;
+        }
+        let visibleCount = 0;
+        // Filter items
+        $container.find(items).each(function () {
+            const text = $(this).text().toLowerCase();
+            if (text.includes(value)) {
+                $(this).show();
+                visibleCount++;
+            } else {
+                $(this).hide();
+            }
+        });
+        // Show empty state if no records found
+        if (visibleCount === 0) {
+            _showEmptyState({
+                container: container,
+                message: "No Record found!!!",
+            });
+        }
+    });
+}
+
+/// Fetch Faq List ///
+function _getFaqList(options) {
+    const {
+        pageContainer = "",
+		limit = '',
+		categoryId = ''
+    } = options;
+	try {
+		//// call endpoint //////
+		_callFetchEndPoints({
+			url: `site/fetch-faq?limit=${limit}&categoryId=${categoryId||''}`,
+		})
+		.then((response) => {
+			_faqListDisplay(response?.data, pageContainer);
+		 })
+		 .catch((error) => {
+			console.error("Error:", error);
+			if (error.status==0) {
+				_showEmptyState({
+					container: pageContainer,
+					message: "Check your internet connection and try again",
+				});
+			} else {
+				_showEmptyState({
+					container: pageContainer,
+					message: error.message,
+				});
+			}
+		});
+	} catch (error) {
+		console.error("Error:", error);
+  	}
+}
+
+//// Display Faq List ////
+function _faqListDisplay(data, pageContainer) {
+    if (pageContainer=='indexFaqPageContent') {
+	    _indexFaqData(data, pageContainer);
+	}
+	if (pageContainer=='faqPageContent') {
+	    _faqData(data, pageContainer);
+	}
+}
+
+/// Initialize Fetch Faq List ///
+function _indexFaqData(data, pageContainer) {
+	const content = data.map((item, index) => {
+    return `
+      	<div class="faq-toggle" id="faq${index+1}">
+			<div class="title-text" onclick="_collapse('faq${index+1}')">
+				<div class="quest-text-div">
+					<div class="icon-div"><i class="bi-question"></i></div>
+					<h3>${item.faqQuestion}</h3>
+				</div>
+				<div class="expand-div" id="faq${index+1}num">
+					<i class="bi bi-plus"></i>
+				</div>
+			</div>
+			<div class="answer-div" id="faq${index+1}answer" style="display: none;">
+				<p>${item.faqAnswer}</p>
+			</div>
+		</div>
+    `;
+  }).join("");
+  $(`#${pageContainer}`).html(content);
+}
+
+/// Initialize Fetch Faq List ///
+function _faqData(data, pageContainer) {
+	const content = data.map((item, index) => {
+    return `
+      	<div class="faq-title" id="faq${index+1}">
+			<div class="inner-title-div" onclick="_collapse('faq${index+1}')">
+				<h2>${item.faqQuestion}</h2>
+
+				<div class="expand-div" id="faq${index+1}num">
+					&nbsp;<i class="bi-plus"></i>&nbsp;
+				</div>
+			</div>
+			<div class="faq-answer-div" id="faq${index+1}answer" style="display: none;">
+				<p>
+					${item.faqAnswer}
+				</p>
+			</div>
+		</div>
+    `;
+  }).join("");
+  $(`#${pageContainer}`).html(content);
+}
+
+/// Fetch Category List ///
+function _fetchCategoryList(pageCategory, pageContainer) {
+	try {
+		//// call endpoint //////
+		_callFetchEndPoints({
+			url: `site/fetch-information-category`,
+		})
+		.then((response) => {
+                let text = '';
+                for (let i = 0; i < response.data.length; i++) {
+                    const categoryId = response.data[i].categoryId;
+                    const value = response.data[i].categoryName;
+                    text += `<li title="${value}" onclick="_fetchTabPagesData('${pageCategory}', '${pageContainer}',  '', '${categoryId}', '');">${value}</li>`;
+				}
+        		$('#catId').html(text);
+		 })
+		.catch((error) => {
+			console.error("Error:", error);
+			if (error.status==0) {
+				_showEmptyState({
+					container: 'catId',
+					message: "Check your internet connection and try again",
+				});
+			} else {
+				_showEmptyState({
+					container: 'catId',
+					message: error.message,
+				});
+			}
+		});
+	} catch (error) {
+		console.error("Error:", error);
+  	}
+}
+
+/// Fetch Project Category List ///
+function _fetchProjectCategoryList(pageCategory, pageContainer, projectStageId) {
+	try {
+		//// call endpoint //////
+		_callFetchEndPoints({
+			url: `site/fetch-project-category`,
+		})
+		.then((response) => {
+                let text = '';
+                for (let i = 0; i < response.data.length; i++) {
+                    const projectCategoryId = response.data[i].projectCategoryId;
+                    const value = response.data[i].projectCategoryName;
+                    text += `<li title="${value}" onclick="_fetchTabPagesData('${pageCategory}', '${pageContainer}', '${projectStageId}', '', '${projectCategoryId}');">${value}</li>`;
+				}
+        		$('#projectCategoryId').html(text);
+		 })
+		.catch((error) => {
+			console.error("Error:", error);
+			if (error.status==0) {
+				_showEmptyState({
+					container: 'projectCategoryId',
+					message: "Check your internet connection and try again",
+				});
+			} else {
+				_showEmptyState({
+					container: 'projectCategoryId',
+					message: error.message,
+				});
+			}
+		});
+	} catch (error) {
+		console.error("Error:", error);
+  	}
+}
+
+/// Fetch Project Stage List ///
+function _fetchProjectStageList(pageCategory, pageContainer) {
+	try {
+		//// call endpoint //////
+		_callFetchEndPoints({
+			url: `site/fetch-project-stages`,
+		})
+		.then((response) => {
+                let text = '';
+                for (let i = 0; i < response.data.length; i++) {
+                    const projectStageId = response.data[i].projectStageId;
+                    const value = response.data[i].projectStageName;
+                    text += `<li title="${value}" onclick="_fetchTabPagesData('${pageCategory}', '${pageContainer}', '${projectStageId}', '', '');">${value}</li>`;
+				}
+        		$('#projectStageId').html(text);
+		 })
+		.catch((error) => {
+			console.error("Error:", error);
+			if (error.status==0) {
+				_showEmptyState({
+					container: 'projectStageId',
+					message: "Check your internet connection and try again",
+				});
+			} else {
+				_showEmptyState({
+					container: 'projectStageId',
+					message: error.message,
+				});
+			}
+		});
+	} catch (error) {
+		console.error("Error:", error);
+  	}
+}
+
+//// Fetch Tab Pages Data ///
+function _fetchTabPagesData(pageCategory, pageContainers, projectStageId, categoryId, projectCategoryId) {
+    pageContainers.split(',').forEach(function(pageContainer){
+        pageContainer = pageContainer.trim();
+
+        $(`#${pageContainer}`).html(`
+            <div class="content-loading-div">
+                <img src="${websiteUrl}/all-images/images/spinner.gif" alt="Loading" />
+            </div>
+        `);
+
+        if (pageCategory == 'FAQ') {
+            _getFaqList({
+                pageContainer: pageContainer,
+                categoryId: categoryId
+            });
+        } else {
+            _getPageList({
+                pageCategory: pageCategory,
+                pageContainer: pageContainer,
+                projectStageId: projectStageId,
+                categoryId: categoryId,
+                projectCategoryId: projectCategoryId
+            });
+        }
+    });
 }

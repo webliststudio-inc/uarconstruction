@@ -106,14 +106,14 @@ function _fetchFaqData() {
 			console.error("Error:", error);
 			if (error.status==0) {
 				_showFalseNotification({
-					container: "#faqPageContent",
+					container: "faqPageContent",
 					message: "Check your internet connection and try again",
 				});
 
 				_callAjaxError(() => _fetchFaqData(), error.message); // retry if needed
 			} else {
 				_showEmptyState({
-					container: "#faqPageContent",
+					container: "faqPageContent",
 					message: error.message,
 					button: `
 						<button class="btn" title="ADD NEW FAQ" onclick="sessionStorage.removeItem('useEachFaqSession'); _getForm({page: 'faqReg', url: adminPortalMiddlewareUrl});">

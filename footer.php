@@ -7,7 +7,7 @@
 
         <div class="right-content">
             <h2>Have any questions or want to discuss your project?</h2>
-            <a href="<?php echo $websiteUrl?>" title="Contact Us">
+            <a href="<?php echo $websiteUrl?>/contact-us" title="Contact Us">
                 <button class="btn">Contact Us <i class="bi bi-telephone-inbound-fill"></i></button>
             </a>
         </div>
@@ -40,22 +40,14 @@
 
             <div class="segment-div">
                 <h3>Our Services</h3>
-                <ul>
-                    <a href="<?php echo $websiteUrl?>/services/commercial-construction" title="Commercial Constrcution">
-                        <li>Commercial Constrcution</li>
-                    </a>
-                    <a href="<?php echo $websiteUrl?>" title="Residential Constrcution">
-                        <li>Residential Constrcution</li>
-                    </a>
-                    <a href="<?php echo $websiteUrl?>" title="Material Engineering">
-                        <li>Material Engineering</li>
-                    </a>
-                    <a href="<?php echo $websiteUrl?>" title="Project Management">
-                        <li>Project Management</li>
-                    </a>
-                    <a href="<?php echo $websiteUrl?>" title="Renovation and Remodeling">
-                        <li>Renovation and Remodeling</li>
-                    </a>
+                <ul id="footerServiceList">
+                    <script>
+                        _getPageList({
+                            pageCategory: "SERVICE",
+                            limit: 5,
+                            pageContainer: "footerServiceList"
+                        })
+                    </script>
                 </ul>
             </div>
 
