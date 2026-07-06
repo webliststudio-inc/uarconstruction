@@ -25,17 +25,10 @@ function _getPageList(options) {
 					message: "Check your internet connection and try again",
 				});
 			} else {
-				if (error.status==404) {
-					_showEmptyState({
-						container: pageContainer,
-						message: "No data found",
-					});
-				} else {
-					_showEmptyState({
-						container: pageContainer,
-						message: error.message,
-					});
-				}
+				_showEmptyState({
+					container: pageContainer,
+					message: error.message,
+				});
 			}
 		});
 	} catch (error) {

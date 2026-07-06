@@ -134,3 +134,37 @@ function _getSelectStatusId(fieldId, statusIds) {
 		_actionAlert('An unexpected error occurred. Please try again.', false);
   }
 }
+
+
+function _fetchDashboardStatistics() {
+		try {
+			//// call endpoint //////
+			_callFetchEndPoints({
+				url: `admin/dashboard/dashboad-statistics`,
+        accessKey: true,
+			})
+			.then((response) => {
+        _staffValidationCheck(response.response);
+					const data = response?.data[0];
+
+					const totalActiveStaffCount = data.totalActiveStaffCount;
+					const totalActiveServiceCount = data.totalActiveServiceCount;
+					const totalActivePortfolioCount = data.totalActivePortfolioCount;
+					const totalActiveBlogCount = data.totalActiveBlogCount;
+					const totalActiveFaqCount = data.totalActiveFaqCount;
+					const totalActiveReviewCount = data.totalActiveReviewCount;
+
+					$('#totalActiveStaffCount').html(totalActiveStaffCount);
+					$('#totalActiveServiceCount').html(totalActiveServiceCount);
+					$('#totalActivePortfolioCount').html(totalActivePortfolioCount);
+					$('#totalActiveBlogCount').html(totalActiveBlogCount);
+					$('#totalActiveFaqCount, #sideFaqCount').html(totalActiveFaqCount);
+          $('#totalActiveReviewCount').html(totalActiveReviewCount);
+			})
+			.catch((error) => {
+				console.error("Error:", error);
+			});
+		} catch (error) {
+			console.error("Error:", error);
+		}
+}

@@ -118,7 +118,7 @@ function _initFetchPortfolioData(data) {
     _renderPortfolioData,
     "portfolioContentPaginationControls",
     "portfolioPageContent",
-    10
+    8
   );
   __paginatorHandlers["portfolioContentPaginationControls"] = paginator;
   paginator.renderPage();

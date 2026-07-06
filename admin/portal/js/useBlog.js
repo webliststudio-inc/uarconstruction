@@ -67,7 +67,7 @@ function _initFetchBlogData(data) {
     _renderBlogData,
     "blogContentPaginationControls",
     "blogPageContent",
-    10
+    8
   );
   __paginatorHandlers["blogContentPaginationControls"] = paginator;
   paginator.renderPage();

@@ -26,7 +26,7 @@
             <div class="content-title">
                 <div class="title">
                     <i class="bi bi-journal"></i>
-                    <p>Blog Posts</p>
+                    <p>Blog</p>
                 </div>
             </div>
 

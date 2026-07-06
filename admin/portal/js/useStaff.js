@@ -339,7 +339,7 @@ function _saveUpdateStaffCallback(formData) {
 			callback: () => {
 				let getEachStaffDetailsSession =response?.data;
 				sessionStorage.setItem("getEachStaffDetailsSession", JSON.stringify(getEachStaffDetailsSession));
-                _showLoader("Updating staff profile... Please wait...");
+                _showLoader("Please wait while we load the staff profile...");
 				_getForm({page: 'staffProfile', url: adminPortalMiddlewareUrl});
 				_getActivePage({page:'adminPage', divid:'adminPage'});
 

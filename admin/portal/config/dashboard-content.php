@@ -28,213 +28,117 @@
 
     <div class="main-content-div" data-aos="fade-in" data-aos-duration="1500">
         <div class="dashboard-wrapper">
-            <div class="statistics-back-div">
-                <div class="statistics-div" id="adminPage" title="Administrators" onclick="_getActivePage({page:'adminPage', divid:'adminPage'});">
-                    <div class="statistics-inner-div">
-                        <div class="statistics-text">
-                            <p>Administrators</p>
-                            <span>Total Administrators</span>
-                            <h2 id="totalAdminCount">10</h2>
-                        </div>
-                        <div class="statistics-icon pending">
-                            <i class="bi bi-people"></i>
+            <div class="left-container">
+                <div class="statistics-back-div">
+                    <div class="statistics-div" id="adminPage" title="Administrators" onclick="_getActivePage({page:'adminPage', divid:'adminPage'});">
+                        <div class="statistics-inner-div">
+                            <div class="statistics-text">
+                                <p>Administrators</p>
+                                <span>Total Administrators</span>
+                                <h2 id="totalActiveStaffCount">0</h2>
+                            </div>
+                            <div class="statistics-icon pending">
+                                <i class="bi bi-people"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="statistics-div" id="servicePage" title="Services" onclick="_getActivePage({page:'servicePage', divid:'servicePage'});">
-                    <div class="statistics-inner-div">
-                        <div class="statistics-text">
-                            <p>Services</p>
-                            <span>Total Construction Services</span>
-                            <h2 id="totalServiceCount">10</h2>
-                        </div>
-                        <div class="statistics-icon upcoming">
-                           <i class="bi bi-stack"></i>
+                    <div class="statistics-div" id="servicePage" title="Services" onclick="_getActivePage({page:'servicePage', divid:'servicePage'});">
+                        <div class="statistics-inner-div">
+                            <div class="statistics-text">
+                                <p>Services</p>
+                                <span>Total Construction Services</span>
+                                <h2 id="totalActiveServiceCount">0</h2>
+                            </div>
+                            <div class="statistics-icon upcoming">
+                            <i class="bi bi-stack"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="statistics-div" id="portfolioPage" title="Portfolio" onclick="_getActivePage({page:'portfolioPage', divid:'portfolioPage'});">
-                    <div class="statistics-inner-div">
-                        <div class="statistics-text">
-                            <p>Portfolio</p>
-                            <span>Completed Portfolio Items</span>
-                            <h2 id="totalPortfolioCount">100</h2>
-                        </div>
-                        <div class="statistics-icon pending">
-                            <i class="bi bi-images"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="statistics-div" id="blogsPage" title="Blog" onclick="_getActivePage({page:'blogPage', divid:'blogPage'});">
-                    <div class="statistics-inner-div">
-                        <div class="statistics-text">
-                            <p>Blog</p>
-                            <span>Published Articles</span>
-                            <h2 id="totalBlogCount">20</h2>
-                        </div>
-                        <div class="statistics-icon upcoming">
-                            <i class="bi bi-journal-text"></i>
+                    <div class="statistics-div" id="portfolioPage" title="Portfolio" onclick="_getActivePage({page:'portfolioPage', divid:'portfolioPage'});">
+                        <div class="statistics-inner-div">
+                            <div class="statistics-text">
+                                <p>Portfolio</p>
+                                <span>Completed Portfolio Items</span>
+                                <h2 id="totalActivePortfolioCount">0</h2>
+                            </div>
+                            <div class="statistics-icon pending">
+                                <i class="bi bi-images"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    
+                    <div class="statistics-div" id="blogsPage" title="Blog" onclick="_getActivePage({page:'blogPage', divid:'blogPage'});">
+                        <div class="statistics-inner-div">
+                            <div class="statistics-text">
+                                <p>Blog</p>
+                                <span>Published Articles</span>
+                                <h2 id="totalActiveBlogCount">0</h2>
+                            </div>
+                            <div class="statistics-icon upcoming">
+                                <i class="bi bi-journal-text"></i>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="statistics-div" id="faqPage" title="Frequently Asked Questions" onclick="_getActivePage({page:'faqPage', divid:'faqPage'});">
-                    <div class="statistics-inner-div">
-                        <div class="statistics-text">
-                            <p>FAQ</p>
-                            <span> Frequently Asked Questions (FAQs)</span>
-                            <h2 id="totalFAQaqCount">4</h2>
-                        </div>
-                        <div class="statistics-icon pending">
-                            <i class="bi bi-patch-question"></i>
+                    <div class="statistics-div" id="faqPage" title="Frequently Asked Questions" onclick="_getActivePage({page:'faqPage', divid:'faqPage'});">
+                        <div class="statistics-inner-div">
+                            <div class="statistics-text">
+                                <p>FAQ</p>
+                                <span> Frequently Asked Questions (FAQs)</span>
+                                <h2 id="totalActiveFaqCount">0</h2>
+                            </div>
+                            <div class="statistics-icon pending">
+                                <i class="bi bi-patch-question"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="statistics-div" id="reviewPage" title="Reviews" onclick="_getActivePage({page:'reviewPage', divid:'reviewPage'});">
-                    <div class="statistics-inner-div">
-                        <div class="statistics-text">
-                            <p>Review</p>
-                            <span> Reviews</span>
-                            <h2 id="totalReviewCount">10</h2>
-                        </div>
-                        <div class="statistics-icon completed">
-                            <i class="bi bi-chat-text"></i>
+                    <div class="statistics-div" id="reviewPage" title="Reviews" onclick="_getActivePage({page:'reviewPage', divid:'reviewPage'});">
+                        <div class="statistics-inner-div">
+                            <div class="statistics-text">
+                                <p>Review</p>
+                                <span> Reviews</span>
+                                <h2 id="totalActiveReviewCount">0</h2>
+                            </div>
+                            <div class="statistics-icon completed">
+                                <i class="bi bi-chat-text"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="dashboard-statistics-wrapper">
-                <div class="left-contaioner">
-                    <div class="main-content-div dash-main-content-div">
+            <div class="right-container">
+                <div class="recent-review-wrapper">
+                    <div class="main-content-div dash-main-content-div" data-aos="fade-in" data-aos-duration="1500">
                         <div class="tables-content-div">
                             <div class="content-title">
                                 <div class="title">
                                     <i class="bi bi-chat-text"></i>
-                                    <p>Recent Reviews</p>
+                                    <p>Recent Pending Reviews</p>
                                 </div>
+
+                                <button class="btn btn-view" title="View All" onclick="_getActivePage({page:'reviewPage', divid:'reviewPage'});">
+                                    VIEW ALL
+                                </button>
                             </div>
 
                             <div class="inner-table-content">
-                                <div class="table-div animated fadeIn">
-                                    <table class="table" cellspacing="0" style="width:100%" id="fetchAllSubscriptions">
-                                        <thead>
-                                            <tr class="tb-col">
-                                                <th>sn</th>
-                                                <th>Review Id</th>
-                                                <th>Fullname</th>
-                                                <th>Email Address</th>
-                                                <th>Phone Number</th>
-                                                <th>Review</th>
-                                                <th>Date</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
+                                <div class="review-back-div" id="fetchDashboardReviews">
+                                    <script>
+                                        _getReviewList({
+                                            pageContainer: 'fetchDashboardReviews',
+                                            crFlag: 'REVIEW',
+                                            limit: 2,
+                                            statusId: 3,
+                                        });
+                                    </script>
 
-                                        <tbody>
-
-                                            <tr class="tb-row">
-                                                <td>1</td>
-                                                <td>REV02020261029115106</td>
-                                                <td class="clickable-td" title="Click to view review Details">
-                                                    <div class="text-back-div">
-                                                        <div class="text-div">
-                                                            <div class="first-class">JOHNSON AGIDA</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>johnson.agida@example.com</td>
-                                                <td>+2348012345678</td>
-                                                <td>Good Service</td>
-                                                <td>2026-03-01</td>
-                                                <td>
-                                                    <div class="status-div ACTIVE">ACTIVE</div>
-                                                </td>
-                                                <td>
-                                                    <button class="btn view-btn" title="Activate Review">
-                                                        ACTIVATE
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="tb-row">
-                                                <td>1</td>
-                                                <td>REV02020261029115106</td>
-                                                <td class="clickable-td" title="Click to view review Details">
-                                                    <div class="text-back-div">
-                                                        <div class="text-div">
-                                                            <div class="first-class">JOHNSON AGIDA</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>johnson.agida@example.com</td>
-                                                <td>+2348012345678</td>
-                                                <td>Good Service</td>
-                                                <td>2026-03-01</td>
-                                                <td>
-                                                    <div class="status-div ACTIVE">ACTIVE</div>
-                                                </td>
-                                                <td>
-                                                    <button class="btn view-btn" title="Activate Review">
-                                                        ACTIVATE
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="tb-row">
-                                                <td>1</td>
-                                                <td>REV02020261029115106</td>
-                                                <td class="clickable-td" title="Click to view review Details">
-                                                    <div class="text-back-div">
-                                                        <div class="text-div">
-                                                            <div class="first-class">JOHNSON AGIDA</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>johnson.agida@example.com</td>
-                                                <td>+2348012345678</td>
-                                                <td>Good Service</td>
-                                                <td>2026-03-01</td>
-                                                <td>
-                                                    <div class="status-div PENDING">PENDING</div>
-                                                </td>
-                                                <td>
-                                                    <button class="btn view-btn" title="Activate Review">
-                                                        PENDING
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="tb-row">
-                                                <td>1</td>
-                                                <td>REV02020261029115106</td>
-                                                <td class="clickable-td" title="Click to view review Details">
-                                                    <div class="text-back-div">
-                                                        <div class="text-div">
-                                                            <div class="first-class">JOHNSON AGIDA</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>johnson.agida@example.com</td>
-                                                <td>+2348012345678</td>
-                                                <td>Good Service</td>
-                                                <td>2026-03-01</td>
-                                                <td>
-                                                    <div class="status-div ACTIVE">ACTIVE</div>
-                                                </td>
-                                                <td>
-                                                    <button class="btn view-btn" title="Activate Review">
-                                                        ACTIVATE
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="content-loading-div">
+                                        <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -243,6 +147,9 @@
             </div>
         </div>
     </div>
+    <script>
+        _fetchDashboardStatistics();
+    </script>
 <?php } ?>
 
 <?php if ($page == 'logoutConfirmForm') { ?>

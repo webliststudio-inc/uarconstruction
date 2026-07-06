@@ -120,20 +120,20 @@
                                 </script>
                             </div>
 
-                            <div class="text_field_container" id="email_container">
+                            <div class="text_field_container" id="emailAddress_container">
                                 <script>
                                     textField({
-                                        id: 'email',
+                                        id: 'emailAddress',
                                         title: 'Email Address',
                                         type: 'email'
                                     });
                                 </script>
                             </div>
 
-                            <div class="text_field_container" id="inquiryPhoneNumber_container">
+                            <div class="text_field_container" id="phoneNumber_container">
                                 <script>
                                     textField({
-                                        id: 'inquiryPhoneNumber',
+                                        id: 'phoneNumber',
                                         title: 'Enter Your Phone Number',
                                         type: 'tel',
                                         onKeyPressFunction: 'isNumberCheck(event);'
@@ -162,7 +162,7 @@
                                 </script>
                             </div>
 
-                            <button class="btn" id="submitBtn" title="Send Mail" onclick="">Send Mail <i class="bi-send-check"></i></button>
+                            <button class="btn" id="submitBtn" title="Send Mail" onclick="_submitReview('CONTACT')">Send Mail <i class="bi-send-check"></i></button>
                         </div>
                     </div>
                 </div>
