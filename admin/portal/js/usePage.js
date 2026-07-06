@@ -87,8 +87,8 @@ function _createOrUpdatePage(pageCategory){
 		const pageTitle = $('#pageTitles').val()?.trim();
 		const pageUrl = $('#pageUrl').val()?.trim();
 		const seoKeywords = $('#seoKeywords').val()?.trim();
-		const seoDescription = $('#seoDescription').val()?.trim();
-		const pageContent = $('#pageContentEditor').val()?.trim();
+		const seoDescription = $('#seoDescription').val()?.trim().replace(/['’]/g, '');
+		const pageContent = $('#pageContentEditor').val()?.trim().replace(/['’]/g, '');
 		const location = $('#location').val()?.trim();
 		const statusId = $('#statusId').val()?.trim();
 		const seoFlyer = $("#seoFlyer").prop("files")[0];
