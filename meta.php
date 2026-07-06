@@ -17,14 +17,14 @@
 <script src="<?php echo $websiteUrl ?>/js/paramount.js?v=<?php echo $codeVersion ?>"></script>
 <script src="<?php echo $websiteUrl ?>/js/scripts.js?v=<?php echo $codeVersion ?>"></script>
 <script src="<?php echo $websiteUrl ?>/js/textfield-selectfield.js?v=<?php echo $codeVersion ?>"></script>
-<script src="<?php echo $websiteUrl ?>/js/aos.js"></script>
+<script src="<?php echo $websiteUrl ?>/js/aos.js?v=<?php echo $codeVersion ?>"></script>
 
 <link href="<?php echo $websiteUrl ?>/slide-property/product-carousel/carousel.css" rel="stylesheet" type="text/css" />
-<script src="<?php echo $websiteUrl ?>/slide-property/product-carousel/carousel.js" type="text/javascript"></script>
+<script src="<?php echo $websiteUrl ?>/slide-property/product-carousel/carousel.js?v=<?php echo $codeVersion ?>" type="text/javascript"></script>
 
 <link href="<?php echo $websiteUrl ?>/slide-property/engine/style.css" rel="stylesheet" type="text/css" />
-<script src="<?php echo $websiteUrl ?>/js/site/usePages.js"></script>
-<script src="<?php echo $websiteUrl ?>/js/site/useReview.js"></script>
+<script src="<?php echo $websiteUrl ?>/js/site/usePages.js?v=<?php echo $codeVersion ?>"></script>
+<script src="<?php echo $websiteUrl ?>/js/site/useReview.js?v=<?php echo $codeVersion ?>"></script>
 
 
 <meta property="og:type" content="Website" />
