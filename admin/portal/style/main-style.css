@@ -397,7 +397,7 @@ main {
 
 .dashboard-wrapper .right-container .recent-review-wrapper{
 	width: 100%;
-	min-height: 400px;
+	min-height: 480px;
 }
 
 .review-back-div{
@@ -2365,6 +2365,10 @@ main {
 	width: 100%;
 	min-height: 200px;
 	border: 1px solid rgba(215, 215, 215, .6);
+}
+
+.dash-table-content-div {
+	min-height: 480px !important;
 }
 
 .tables-content-div .content-title {
