@@ -105,7 +105,7 @@
                         </div>
 
                         <div class="btn-div">
-                            <a href="#">
+                            <a href="<?php echo $websiteUrl ?>/portfolio">
                                 <button class="btn" title="Explore All Projects">Explore All Projects <i
                                         class="bi-arrow-right"></i></button></a>
                         </div>

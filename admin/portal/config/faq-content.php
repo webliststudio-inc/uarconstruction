@@ -26,7 +26,7 @@
             <div class="content-title">
                 <div class="title">
                     <i class="bi bi-patch-question"></i>
-                    <p>FAQ</p>
+                    <p>Frequently Asked Questions</p>
                 </div>
             </div>
 

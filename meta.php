@@ -24,6 +24,8 @@
 
 <link href="<?php echo $websiteUrl ?>/slide-property/engine/style.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo $websiteUrl ?>/js/site/usePages.js"></script>
+<script src="<?php echo $websiteUrl ?>/js/site/useReview.js"></script>
+
 
 <meta property="og:type" content="Website" />
 <meta property="og:site_name" content="<?php echo $appName ?>">

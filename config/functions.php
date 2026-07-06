@@ -146,178 +146,15 @@ class allClass
                             <h2>What Our Client Says About <span>Us</span></h2>
                         </div>
                         <div class="btn-div">
-                            <button class="btn" title="Submit Your Review">Submit Your Review <i
+                            <button class="btn" title="Submit Your Review" onclick="_getForm({page: 'reviewForm', url: siteMiddlewareUrl})">Submit Your Review <i
                                     class="bi bi-chat-quote"></i></button>
                         </div>
                     </div>
 
                     <div class="cg-carousel">
                         <div class="cg-carousel__container" id="js-carousel_1">
-                            <div class="cg-carousel__track js-carousel__track">
-                                <div class="cg-carousel__slide js-carousel__slide" data-aos="fade-left"
-                                    data-aos-duration="1200">
-                                    <div class="main-testimonial">
-                                        <div class="img-back-div">
-                                            <div class="img-div">
-                                                <img src="all-images/images/avatar.png" alt="testimonial" />
-                                            </div>
-
-                                            <div class="icon">
-                                                <i class="bi-quote"></i>
-                                            </div>
-                                        </div>
-
-                                        <p>
-                                            The team delivered exactly what we needed on time and exceeded our
-                                            expectations in terms of quality. Their professionalism and attention to
-                                            detail made the entire process smooth and stress-free from start to finish.
-                                        </p>
-
-                                        <div class="bottom-div">
-                                            <div class="star-div">
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                            </div>
-
-                                            <h5>Michael A.</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="cg-carousel__slide js-carousel__slide" data-aos="fade-left"
-                                    data-aos-duration="1200">
-                                    <div class="main-testimonial">
-                                        <div class="img-back-div">
-                                            <div class="img-div">
-                                                <img src="all-images/images/avatar.png" alt="testimonial" />
-                                            </div>
-
-                                            <div class="icon">
-                                                <i class="bi-quote"></i>
-                                            </div>
-                                        </div>
-
-                                        <p>
-                                            I’m very satisfied with their service from beginning to end. They
-                                            communicated clearly, handled everything professionally, and ensured the
-                                            project was completed without any issues or delays.
-                                        </p>
-
-                                        <div class="bottom-div">
-                                            <div class="star-div">
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                            </div>
-
-                                            <h5>Sarah K.</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="cg-carousel__slide js-carousel__slide" data-aos="fade-left"
-                                    data-aos-duration="1200">
-                                    <div class="main-testimonial">
-                                        <div class="img-back-div">
-                                            <div class="img-div">
-                                                <img src="all-images/images/avatar.png" alt="testimonial" />
-                                            </div>
-
-                                            <div class="icon">
-                                                <i class="bi-quote"></i>
-                                            </div>
-                                        </div>
-
-                                        <p>
-                                            Excellent execution and great communication throughout the entire project.
-                                            They understood our requirements perfectly and delivered a result that was
-                                            even better than we imagined.
-                                        </p>
-
-                                        <div class="bottom-div">
-                                            <div class="star-div">
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                            </div>
-
-                                            <h5>David O.</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="cg-carousel__slide js-carousel__slide" data-aos="fade-left"
-                                    data-aos-duration="1200">
-                                    <div class="main-testimonial">
-                                        <div class="img-back-div">
-                                            <div class="img-div">
-                                                <img src="all-images/images/avatar.png" alt="testimonial" />
-                                            </div>
-
-                                            <div class="icon">
-                                                <i class="bi-quote"></i>
-                                            </div>
-                                        </div>
-
-                                        <p>
-                                            They took the time to fully understand our needs and delivered a
-                                            high-quality result that reflects true professionalism. We are very
-                                            impressed with their consistency and dedication.
-                                        </p>
-
-                                        <div class="bottom-div">
-                                            <div class="star-div">
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                            </div>
-
-                                            <h5>Grace T.</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="cg-carousel__slide js-carousel__slide" data-aos="fade-left"
-                                    data-aos-duration="1200">
-                                    <div class="main-testimonial">
-                                        <div class="img-back-div">
-                                            <div class="img-div">
-                                                <img src="all-images/images/avatar.png" alt="testimonial" />
-                                            </div>
-
-                                            <div class="icon">
-                                                <i class="bi-quote"></i>
-                                            </div>
-                                        </div>
-
-                                        <p>
-                                            Very reliable and highly skilled team. They maintained excellent
-                                            communication throughout the project and ensured everything was delivered on
-                                            time with outstanding quality.
-                                        </p>
-
-                                        <div class="bottom-div">
-                                            <div class="star-div">
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                                <i class="bi-star-fill"></i>
-                                            </div>
-
-                                            <h5>James E.</h5>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="cg-carousel__track js-carousel__track" id="fetchSiteReviews">
+                                <script>_fetchSiteReviews();</script>
                             </div>
                         </div>
                     </div>
@@ -345,7 +182,6 @@ class allClass
 
                 }
             });
-            _call_carousel('1')
             </script>
         </section>
     <?php }

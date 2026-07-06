@@ -28,47 +28,29 @@
             </div>
 
             <div class="inner-table-content">
-                <div class="other-pg-back-div">
-                    <div class="testimony-back-div" id="pageContent">
-                        <div class="testimony-div">
-                            <div class="details">
-                                <div class="text">
-                                    <h3>Hon. Emmanuel Paul</h3>
-                                    <div class="info">
-                                        <div>
-                                            <p>Email: <span>emmanuelpaul@uarconstruction.com</span></p>
-                                            <p>Phone: <span>+2348034567890</span></p>
-                                        </div>
-                                        <button class="status-btn ACTIVE">ACTIVE</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn" onclick="_getForm({page: 'updateReview', url: adminPortalMiddlewareUrl});">VIEW DETAILS</button>
-                        </div>
+                <div class="review-back-div" id="fetchPageReviewContent">
+                    <script>
+                        _getReviewList({
+                            pageContainer: 'fetchPageReviewContent',
+                            crFlag: 'REVIEW',
+                            paginationContainer: 'reviewPaginationControls',
+                        });
+                    </script>
 
-                        <div class="testimony-div">
-                            <div class="details">
-                                <div class="text">
-                                    <h3>John Doe</h3>
-                                    <div class="info">
-                                        <div>
-                                            <p>Email: <span>john.de@uarconstruction.com</span></p>
-                                            <p>Phone: <span>+2348034567890</span></p>
-                                        </div>
-                                        <button class="status-btn PENDING">PENDING</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn" onclick="">VIEW DETAILS</button>
-                        </div>
+                    <div class="content-loading-div">
+                        <img src="<?php echo $websiteUrl ?>/all-images/images/spinner.gif" alt="Loading" />
                     </div>
                 </div>
+                <!-- Pagination -->
+                <div id="reviewPaginationControls" class="pagination-div"></div>
             </div>
         </div>
     </div>
 <?php } ?>
 
 <?php if ($page == 'updateReview') { ?>
+    <script>getEachReviewDetailsSession = JSON.parse(sessionStorage.getItem("getEachReviewDetailsSession"));</script>
+    
     <div class="slide-form-div" data-aos="fade-left" data-aos-duration="900">
         <div class="form-title-div">
             <div class="title-div">
@@ -85,7 +67,7 @@
         <!-- /////////// Title ////////////////////////////// -->
         <div class="container-back-div">
             <div class="form-notification">
-                <p>You are about to update this testimony. Please confirm the form below with accurate details to successfully update testimony.
+                <p>You are about to update this review. Please confirm the form below with accurate details to successfully update review.
                 </p>
             </div>
 
@@ -94,7 +76,7 @@
                     <div class="content-title">
                         <div class="title">
                             <i class="bi bi-chat-left-text"></i>
-                            <p>Update testimony here</p>
+                            <p>Update review</p>
                         </div>
                     </div>
 
@@ -109,7 +91,7 @@
                                 </div>
 
                                 <div class="inner-table-content">
-                                    <span id="fullName">Hon. Emmanuel Paul</span>
+                                    <span id="fullName"><script>$("#fullName").html(getEachReviewDetailsSession?.fullName);</script></span>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +106,7 @@
                                 </div>
 
                                 <div class="inner-table-content">
-                                    <span id="mobileNumber">09123456789</span>
+                                    <span id="phoneNumber"><script>$("#phoneNumber").html(getEachReviewDetailsSession?.phoneNumber);</script></span>
                                 </div>
                             </div>
                         </div>
@@ -134,12 +116,12 @@
                                 <div class="content-title">
                                     <div class="title">
                                         <i class="bi bi-chat-left-quote"></i>
-                                        <p>Testimony</p>
+                                        <p>Review</p>
                                     </div>
                                 </div>
 
                                 <div class="inner-table-content">
-                                <span id="testimony">This is a a good company. I recommend it to everyone.</span> 
+                                <span id="message"><script>$("#message").html(getEachReviewDetailsSession?.message);</script></span> 
                                 </div>
                             </div>
                         </div>
@@ -149,15 +131,17 @@
                                 selectField({
                                     id: 'statusId',
                                     title: 'Select Status',
+                                    fieldValue: getEachReviewDetailsSession?.statusData?.statusId ?? '',
+                                    fieldLabel: getEachReviewDetailsSession?.statusData?.statusName ?? ''   
                                 });
-                               // _getSelectStatusId('statusId', '1,2');
+                               _getSelectStatusId('statusId', '1,2');
                             </script>
                         </div>
                     </div>
                 </div>
 
                 <div class="btn-div">
-                    <button class="btn" title="SUBMIT" id="updateBtn" onclick=""> <i class="bi-check"></i> SUBMIT </button>
+                    <button class="btn" title="SUBMIT" id="updateBtn" onclick="_updateReview()"> <i class="bi-check"></i> SUBMIT </button>
                 </div>
             </div>
         </div>

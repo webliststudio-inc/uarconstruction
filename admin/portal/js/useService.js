@@ -64,7 +64,7 @@ function _initFetchServiceData(data) {
     _renderServiceData,
     "serviceContentPaginationControls",
     "servicePageContent",
-    10
+    8
   );
   __paginatorHandlers["serviceContentPaginationControls"] = paginator;
   paginator.renderPage();
