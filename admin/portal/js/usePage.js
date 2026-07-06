@@ -84,11 +84,11 @@ function _createOrUpdatePage(pageCategory){
 		const categoryId = $('#categoryId').val()?.trim();
 		const projectStageId = $('#projectStageId').val()?.trim();
 		const projectCategoryId = $('#projectCategoryId').val()?.trim();
-		const pageTitle = $('#pageTitles').val()?.trim();
+		const pageTitle = $('#pageTitles').val()?.trim().replace(/['’]/g, '');
 		const pageUrl = $('#pageUrl').val()?.trim();
 		const seoKeywords = $('#seoKeywords').val()?.trim();
-		const seoDescription = $('#seoDescription').val()?.trim();
-		const pageContent = $('#pageContentEditor').val()?.trim();
+		const seoDescription = $('#seoDescription').val()?.trim().replace(/['’]/g, '');
+		const pageContent = $('#pageContentEditor').val()?.trim().replace(/['’]/g, '');
 		const location = $('#location').val()?.trim();
 		const statusId = $('#statusId').val()?.trim();
 		const seoFlyer = $("#seoFlyer").prop("files")[0];
