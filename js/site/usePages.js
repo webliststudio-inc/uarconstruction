@@ -85,7 +85,9 @@ function _indexServicesData(data, pageContainer) {
                 <a href="${websiteUrl}/services/${item.pageUrl}">
             <div class="text-div">
                 <h3>${item.pageTitle}</h3>
-                <p>${item.seoDescription}</p>
+                <p>${item?.seoDescription.substring(0, 129)}
+					${item?.seoDescription.length > 129 ? '...' : ''}
+				</p>
                     
                 <button class="btn">Read More <i class="bi bi-arrow-right-short"></i></button>
             </div></a>
@@ -131,7 +133,10 @@ function _indexPortfolioData(data, pageContainer = "indexPortfolioListContainer"
 			<div class="text-div">
 				<div class="div-in">
 					<h2>${item.pageTitle}</h2>
-					<p>${item.seoDescription}</p>
+					<p>
+						${item?.seoDescription.substring(0, 200)}
+						${item?.seoDescription.length > 200 ? '...' : ''}
+					</p>
 					<a href="${websiteUrl}/portfolio/${projectStageName}/${item.pageUrl}">
 						<button class="btn" title="${item.pageTitle}">READ MORE <i class="bi bi-arrow-right-short"></i></button></a>
 				</div>
@@ -208,7 +213,10 @@ function _indexBlogData(data, pageContainer) {
 				</div>
 
 				<h3>${item.pageTitle}</h3>
-				<p>${item.seoDescription}</p>
+				<p>
+					${item?.seoDescription.substring(0, 80)}
+					${item?.seoDescription.length > 80 ? '...' : ''}
+				</p>
 
 				<a href="${websiteUrl}/blog/${item.pageUrl}">
 					<button class="btn" title="${item.pageTitle}">  
