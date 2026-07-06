@@ -93,10 +93,9 @@
             </div>
 
             <div class="div">
-                <li onclick="_openLi('service')"><i class="bi bi-bricks"></i> Services <i class="bi-plus" id="side-expand"></i></li>
-                <div class="sub-li" id="service-sub-li">
-
-                </div>
+                <a href="<?php echo $websiteUrl; ?>/services" title="Services">
+                    <li <?php if ($page == 'services') { ?> id="active-li" <?php } ?>><i class="bi bi-bricks"></i> Services</li>
+                </a>
             </div>
 
             <div class="div">

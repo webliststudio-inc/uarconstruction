@@ -113,7 +113,7 @@
             <div class="right-container">
                 <div class="recent-review-wrapper">
                     <div class="main-content-div dash-main-content-div" data-aos="fade-in" data-aos-duration="1500">
-                        <div class="tables-content-div">
+                        <div class="tables-content-div dash-table-content-div">
                             <div class="content-title">
                                 <div class="title">
                                     <i class="bi bi-chat-text"></i>

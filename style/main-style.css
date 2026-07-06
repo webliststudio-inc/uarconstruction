@@ -3685,6 +3685,27 @@ header .header-div-in .mobile-btn:hover{
 .slide-form-div .container-back-div .btn-div .delete-btn{
     background: var(--close-color);
 }
+
+@media all and (max-width: 560px) {
+  .slide-form-div {
+    min-width: 100%;
+		min-height: 100%;
+    max-height: 100%;
+    border-radius: 0px;
+  }
+  .main-content-div {
+    width: calc(100% - 30px);
+    padding: 15px;
+  }
+  .slide-form-div .container-back-div .btn-div {
+    width: calc(100% - 30px);
+    padding: 0px 15px;
+  }
+  .slide-form-div .container-back-div .btn-div .btn {
+    width: 100%;
+  }
+}
+
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .form-container {
   width: calc(100% - 40px);
