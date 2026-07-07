@@ -111,7 +111,7 @@
                         </div>
                     </div>
 
-                    <div class="project-back-div">
+                    <div id="project-back-div">
                         <div class="left-container" id="indexPortfolioListContainer">
                             <script>
                                 _getPageList({

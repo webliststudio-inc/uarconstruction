@@ -16,8 +16,9 @@
             </div>
 
             <div class="btn-container">
+                <a href="<?php echo $websiteUrl?>/contact-us" title="Contact Us">
                 <button class="btn" title="Get In Touch">Get In Touch <i
-                        class="bi bi-arrow-right-short"></i></button>
+                        class="bi bi-arrow-right-short"></i></button></a>
             </div>
         </div>
     </div>
