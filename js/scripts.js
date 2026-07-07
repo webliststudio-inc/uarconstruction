@@ -231,4 +231,18 @@ function _countStatistics() {
     }
   });
 }
+//// Review Section
+$(document).ready(function () {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('review') === 'true') {
+        $('html, body').animate({
+            scrollTop: $('#review-section').offset().top
+        }, 800, function () {
+            _getForm({
+                page: 'reviewForm',
+                url: siteMiddlewareUrl
+            });
+        });
+    }
+});
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

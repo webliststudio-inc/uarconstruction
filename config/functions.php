@@ -137,7 +137,7 @@ class allClass
     <?php }
 
     public function _testimonialSection($websiteUrl, $extraClass = '') { ?>
-        <section class="body-div <?= !empty($extraClass) ? ' '.$extraClass : ''; ?>">
+        <section id="review-section" class="body-div <?= !empty($extraClass) ? ' '.$extraClass : ''; ?>">
             <div class="body-div-in">
                 <div class="main-pages-back-div">
                     <div class="title-div testimony-title" data-aos="fade-in" data-aos-duration="1200">
