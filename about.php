@@ -118,8 +118,6 @@
 
         <?php $callclass->_testimonialSection($websiteUrl, ' net-bg-tl'); ?>
 
-        <?php $callclass->_statisticsSection($websiteUrl); ?>
-
         <?php include 'footer.php' ?>
     </section>
 </body>

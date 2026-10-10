@@ -59,9 +59,9 @@
                             <i class="bi bi-geo-alt-fill"></i>
                         </div>
                         <div class="text-div">
-                            13180 Westpark Drive <br>
-                            Ste 201 B/D <br>
-                            Houston, TX 77082 USA
+                            13180 Westpark Dr.<br>
+                            Ste: 201B <br>
+                            Houston TX 77082
                         </div>
                     </div>
 
@@ -70,7 +70,7 @@
                             <i class="bi bi-telephone-inbound-fill"></i>
                         </div>
                         <div class="text-div">
-                            <a href="tel:+880 278 367 367" title="Phone Number">+1 (832) 288-5625</a>
+                            <a href="tel:(832) 288-5625" title="Phone Number">(832) 288-5625</a>
                         </div>
                     </div>
 

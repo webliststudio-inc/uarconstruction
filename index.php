@@ -220,8 +220,6 @@
             </div>
         </section>
 
-        <?php $callclass->_statisticsSection($websiteUrl); ?>
-        
         <?php include 'footer.php' ?>
     </section>
 </body>

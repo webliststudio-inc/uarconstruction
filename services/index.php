@@ -80,8 +80,6 @@
 
         <?php $callclass->_constructionProcessSection($websiteUrl, 'net-bg-tr'); ?>
 
-        <?php $callclass->_statisticsSection($websiteUrl); ?>
-
         <?php include '../footer.php' ?>
     </section>
 </body>

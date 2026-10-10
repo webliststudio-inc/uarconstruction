@@ -37,18 +37,18 @@
 <div class="sidenavdiv">
     <div class="live-chat-back-div">
 
-        <a href="tel:+1832-288-5625" title="Call Customer Care">
+        <a href="tel:(832) 288-5625" title="Call Customer Care">
             <div class="chat-div">
                 <div class="icon-div" style="background:#008040;"><i class="bi-telephone-outbound"></i></div>
-                <div class="text">+1832-288-5625</div>
+                <div class="text">(832) 288-5625</div>
                 <br clear="all" />
             </div>
         </a>
 
-        <a href="https://api.whatsapp.com/send?text=Greetings! I'd like to make an enquiry on the services you offer.&phone=+18322885625" target="_blank" title="Whatsapp">
+        <a href="https://api.whatsapp.com/send?text=Greetings! I'd like to make an enquiry on the services you offer.&phone=(832) 288-5625" target="_blank" title="Whatsapp">
             <div class="chat-div">
                 <div class="icon-div" style="background:#25D366;"><i class="bi-whatsapp"></i></div>
-                <div class="text">+1832-288-5625</div>
+                <div class="text">(832) 288-5625</div>
                 <br clear="all" />
             </div>
         </a>
