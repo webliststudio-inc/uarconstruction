@@ -23,44 +23,12 @@ class allClass
                         <div class="title-div">
                             <div class="inner-div">
                                 <span class="top-title">ABOUT US</span>
-                                <h2>We are Best construction in the <span>World</span></h2>
+                                <h2>Building with Integrity. Delivering with <span>Excellence.</span></h2>
                             </div>
                         </div>
 
                         <div class="text-div">
-                            <p>Urban and Rural Construction  is a leading construction company specializing in
-                                residential, commercial, renovation, remodeling, and infrastructure development
-                                services across the USA. With a commitment to quality craftsmanship and dependable
-                                project delivery, we build durable and innovative solutions for our clients.</p>
-
-                            <div class="success-metrics">
-                                <div class="metric" data-aos="fade-up" data-aos-duration="1200">
-                                    <div class="icon">
-                                        <img src="<?php echo $websiteUrl?>/all-images/images/exprerience.png"
-                                            alt="Years Experience" />
-                                    </div>
-                                    <h3 data-count="598">25<span>+</span></h3>
-                                    <h4>Years Experience</h4>
-                                </div>
-
-                                <div class="metric" data-aos="fade-up" data-aos-duration="1500">
-                                    <div class="icon">
-                                        <img src="<?php echo $websiteUrl?>/all-images/images/completed-project.png"
-                                            alt="Completed Projects" />
-                                    </div>
-                                    <h3 data-count="128">128<span>+</span></h3>
-                                    <h4>Completed Projects</h4>
-                                </div>
-
-                                <div class="metric" data-aos="fade-up" data-aos-duration="1700">
-                                    <div class="icon">
-                                        <img src="<?php echo $websiteUrl?>/all-images/images/satisfaction.png"
-                                            alt="Client Satisfaction" />
-                                    </div>
-                                    <h3 data-count="120">120<span>+</span></h3>
-                                    <h4>Client Satisfaction</h4>
-                                </div>
-                            </div>
+                            <p>Urban & Rural Construction LLC is a trusted construction firm specializing in residential and commercial construction, renovations, remodeling, and infrastructure development. Driven by quality craftsmanship, technical expertise, and a commitment to excellence, we deliver innovative, durable, and cost-effective construction solutions tailored to our clients’ needs. From concept to completion, we prioritize precision, reliability, and exceptional project execution.</p>
                         </div>
                     </div>
 
@@ -187,7 +155,7 @@ class allClass
     <?php }
 
     function _statisticsSection($websiteUrl) { ?>
-        <section class="body-div statistics-body">
+        <!-- <section class="body-div statistics-body">
             <div class="body-div-in statistics-body-div-in">
                 <div class="statistics-back-div">
                     <div class="statistics-div" data-aos="fade-up" data-aos-duration="1000">
@@ -234,7 +202,7 @@ class allClass
             <script>
             _countStatistics();
             </script>
-        </section>
+        </section> -->
     <?php }
 } //end of class
 $callclass = new allClass();
