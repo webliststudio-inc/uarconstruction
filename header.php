@@ -11,7 +11,7 @@
                         info@uarconstruction.com</a>
                 </div>
                 <div class="service-info">
-                    <i class="bi bi-clock-fill"></i> 24/7 Services Available
+                    <i class="bi bi-clock-fill"></i> Mon - Fri | 8am - 5pm
                 </div>
             </div>
 
