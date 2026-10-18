@@ -87,7 +87,7 @@ header .header-top .header-top-inner .btn-container .btn:hover{
 }
 
 @media all and (max-width: 850px) {
-  header .header-top .header-top-inner .contact-info .service-info{
+  header .header-top .header-top-inner .contact-info .email-info{
       display: none;
   }
 }
@@ -96,6 +96,16 @@ header .header-top .header-top-inner .btn-container .btn:hover{
   header .header-top .header-top-inner .contact-info .email-info{
       display: none;
   }
+}
+
+@media all and (max-width: 530px) {
+  header .header-top .header-top-inner .btn-container .btn{
+    display: none;
+  }
+  header .header-top .header-top-inner .contact-info{
+    width: 100%;
+    justify-content: space-between;
+}
 }
 
 @media all and (max-width: 400px) {
